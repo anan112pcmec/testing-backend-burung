@@ -16,7 +16,7 @@ export default function () {
         email_kurir:"anan29837@gmail.com",
        },
        data_pengiriman:[{
-        id_pengiriman:1,
+        id_pengiriman:12,
         id_transaksi_pengiriman:2,
         id_alamat_pengiriman:3,
         id_kurir_pengiriman:0,
@@ -29,7 +29,7 @@ export default function () {
         berat_total_kg_pengiriman:18,
        },
        {
-         id_pengiriman:2,
+         id_pengiriman:13,
         id_transaksi_pengiriman:1,
         id_alamat_pengiriman:3,
         id_kurir_pengiriman:0,
