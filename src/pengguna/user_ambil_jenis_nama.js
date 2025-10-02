@@ -26,5 +26,5 @@ export default function () {
 
     console.log(`✅ Nama Barang: ${nama_barang}, Jenis: ${jenis}, Response status: ${res.status}`);
     console.log(`Response body: ${res.body}`);
-    sleep(1)
+
 }
