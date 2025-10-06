@@ -12,9 +12,9 @@ export default function () {
     // payload harus sesuai dengan struct PayloadKomentarBarang
     const payload = JSON.stringify({
           id_pengguna_keranjang:1,
-          id_barang_induk_keranjang: 73,
-          id_kategori_barang_keranjang: 76,
-         data_payload_edit_keranjang:20
+          id_barang_induk_keranjang: 61,
+          id_kategori_barang_keranjang: 64,
+         data_payload_edit_keranjang:10
     });
 
     const params = {

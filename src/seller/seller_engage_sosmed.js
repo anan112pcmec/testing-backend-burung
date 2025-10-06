@@ -7,30 +7,23 @@ export let options = {
 };
 
 export default function () {
-    const url = 'http://localhost:8080/seller/order-processing/approve';
+    const url = 'http://localhost:8080/seller/social-media/social-media-engage';
 
     const payload = JSON.stringify({
-       data_identitas_seller:{
-            id_seller:1,
-            username_seller:"adidas",
-            email_seller:"anan29837@gmail.com"
-       },
-       seller_transaksi_order_approve:[
-        {
-            id_transaksi: 5,
-            id_pengguna_transaksi: 1,
-            id_seller_transaksi: 1,
-            id_barang_induk_transaksi: 61,
-            id_alamat_pengguna_transaksi: 3,
-            id_pembayaran_transaksi: 9,
-            kode_order_transaksi: "XSUV-74924-Q261K3",
-            status_transaksi: "Dibayar",
-            metode_transaksi: "bank_transfer",
-            catatan_transaksi: "",
-            kuantitas_barang_transaksi: 10,
-            total_transaksi: 3500000,
-        }
-       ]
+      data_identitas_seller:{
+        id_seller:1,
+        username_seller:"adidas",
+        email_seller:"anan29837@gmail.com"
+      },
+      data_social_media:{
+        id_social_media:2,
+        entity_id_social_media:1,
+        whatsapp_social_media:"08138970",
+        facebook_social_media:"coy adidas",
+        tiktok_social_media:"manya",
+        instagram_social_media:"adidasan",
+      }
+
     });
 
     const params = {
@@ -38,6 +31,7 @@ export default function () {
             'Content-Type': 'application/json',
         },
     };
+
 
     const res = http.patch(url, payload, params);
 

@@ -3,7 +3,7 @@ import { check, sleep } from 'k6';
 
 export let options = {
   vus: 1,
-  duration: '5s',
+  duration: '10s',
 };
 
 export default function () {
@@ -11,17 +11,22 @@ export default function () {
   const urlBatal = 'http://localhost:8080/user/transaksi/batal-checkout-barang';
 
   const payloadCheckout = JSON.stringify({
-    id_pengguna_checkout_barang: 1,
-    username_pengguna_checkout_barang: "user1",
-    data_checkout: [
-      {
-        id_pengguna_keranjang: 1,
-        id_barang_induk_keranjang: 73,
-        id_kategori_barang_keranjang: 76,
-        count_keranjang: 20,
-        status_keranjang: "Ready",
-      }
-    ]
+      data_identitas_pengguna:{
+        id_pengguna:1,
+        username_pengguna:"user1",
+        email_pengguna:"ananlol156@gmail.com"
+      },
+  data_checkout: [
+    {
+      id_pengguna_keranjang: 1,
+      id_barang_induk_keranjang: 61,
+      id_seller_barang_induk_keranjang:1,
+      id_kategori_barang_keranjang: 64,
+      count_keranjang: 10,
+      status_keranjang: "Ready",
+    }
+  ],
+  jenis_layanan_kurir_checkout_barang: ""
   });
 
   const params = {
@@ -37,11 +42,8 @@ export default function () {
 
   sleep(1);
 
-  // Ambil hanya response_payload dari body
   const bodyCheckout = JSON.parse(resCheckout.body);
   const payloadBatal = JSON.stringify(bodyCheckout.response_payload);
-
-  // Kirim DELETE request untuk batal checkout
   const resBatal = http.request('DELETE', urlBatal, payloadBatal, params);
 
   check(resBatal, { 'batal status is 200': (r) => r.status === 200 });

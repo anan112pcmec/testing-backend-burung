@@ -9,28 +9,22 @@ export let options = {
 const urlCheckout = 'http://localhost:8080/user/transaksi/checkout-barang';
 
 const payloadCheckout = {
-  id_pengguna_checkout_barang: 1,
-  username_pengguna_checkout_barang: "user1",
+  data_identitas_pengguna:{
+        id_pengguna:1,
+        username_pengguna:"user1",
+        email_pengguna:"ananlol156@gmail.com"
+      },
   data_checkout: [
     {
       id_pengguna_keranjang: 1,
-      id_barang_induk_keranjang: 73,
+      id_barang_induk_keranjang: 61,
       id_seller_barang_induk_keranjang:1,
-      id_kategori_barang_keranjang: 76,
-      count_keranjang: 20,
-      status_keranjang: "Ready",
-    },
-    {
-      id_pengguna_keranjang: 1,
-      id_barang_induk_keranjang: 23,
-      id_seller_barang_induk_keranjang:1,
-      id_kategori_barang_keranjang: 23,
-      count_keranjang: 20,
+      id_kategori_barang_keranjang: 64,
+      count_keranjang: 10,
       status_keranjang: "Ready",
     }
   ],
-  layanan_kurir_checkout_barang: "motor",
-  jenis_layanan_kurir_checkout_barang: "express"
+  jenis_layanan_kurir_checkout_barang: "reguler"
 };
 
 const params = {
