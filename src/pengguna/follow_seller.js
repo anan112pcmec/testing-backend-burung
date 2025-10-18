@@ -6,7 +6,7 @@ export let options = {
   duration: '1s',
 };
 
-const urlCheckout = 'http://localhost:8080/user/transaksi/checkout-barang';
+const urlCheckout = 'http://localhost:8080/user/social-media/follow-seller';
 
 const payloadCheckout = {
   data_identitas_pengguna:{
@@ -14,18 +14,8 @@ const payloadCheckout = {
         username_pengguna:"user1",
         email_pengguna:"ananlol156@gmail.com"
       },
-  data_checkout: [
-    {
-      id_pengguna_keranjang: 1,
-      id_barang_induk_keranjang: 47,
-      id_seller_barang_induk_keranjang:1,
-      id_kategori_barang_keranjang: 47,
-      count_keranjang: 100,
-      status_keranjang: "apalah",
+      id_seller_follow:1
     }
-  ],
-  jenis_layanan_kurir_checkout_barang: "reguler"
-};
 
 const params = {
   headers: {

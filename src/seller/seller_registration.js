@@ -10,9 +10,9 @@ export default function () {
     const url = 'http://localhost:8080/auth/seller/registration';
 
     const payload = JSON.stringify({
-        username_seller: "faiz Hannan",
-        nama_seller: "Faiz Hannan",
-        email_seller: "anan29837@gmail.com",
+        username_seller: "apakah",
+        nama_seller: "mamam",
+        email_seller: "ananlol156@gmail.com",
         pass_seller: "StrongPassword123",
         jenis_seller: "Personal",           // bisa Personal atau Perusahaan
         seller_dedication: "Semua Barang",  // default bisa dikirim

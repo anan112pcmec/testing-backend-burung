@@ -10,8 +10,8 @@ export default function () {
     const url = 'http://localhost:8080/auth/user/login';
 
     const payload = JSON.stringify({
-        email_user: "ananlol156@gmail.com",
-        pass_user: "keren123"
+        email_user: "faiz4087.rpl2@smkprestasiprima.sch.id",
+        pass_user: "mantap123"
     });
 
     const params = {
