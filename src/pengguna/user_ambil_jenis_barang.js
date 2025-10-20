@@ -6,12 +6,12 @@ export let options = {
     duration: '20s', // durasi tes
 };
 
-const jenisList = ["Semua Barang", "Alat Tulis", "Pakaian & Fashion"];
+const jenisList = ["Semua Barang"];
 
 export default function () {
     for (let i = 0; i < jenisList.length; i++) {
         const jenis = encodeURIComponent(jenisList[i]); // encode spasi & karakter khusus
-        const url = `http://localhost:8080/user/barang-spesified?jenis=${jenis}`;
+        const url = `http://localhost:8080/user/barang-spesified?jenis=${jenis}&finalTake=5`;
 
         const res = http.get(url);
 

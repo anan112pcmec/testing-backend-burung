@@ -7,12 +7,12 @@ export let options = {
 };
 
 export default function () {
-    const nama_barang = encodeURIComponent("Rompi"); // encode spasi & karakter khusus
+    const nama_barang = encodeURIComponent("Voli"); // encode spasi & karakter khusus
     const jenis = encodeURIComponent("Semua Barang");
     const seller = ""; // kosong jika tidak ingin pakai seller
 
     // Susun URL dengan parameter yang ada
-    let url = `http://localhost:8080/user/barang-spesified?nama_barang=${nama_barang}&seller=${"2"}`;
+    let url = `http://localhost:8080/user/barang-spesified?nama_barang=${nama_barang}&seller=${"1"}&finalTake=0`;
     
 
     const res = http.get(url);

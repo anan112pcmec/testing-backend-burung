@@ -10,7 +10,7 @@ export default function () {
     const url = 'http://localhost:8080/auth/user/registration/validate';
 
     const payload = JSON.stringify({
-        otp_key: "05941893"
+        otp_key: "53146011"
     });
 
     const params = {

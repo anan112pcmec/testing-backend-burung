@@ -3,11 +3,11 @@ import { check, sleep } from 'k6';
 
 export let options = {
     vus: 1,
-    duration: '60s',
+    duration: '10s',
 };
 
 export default function () {
-    const url = 'http://localhost:8080/seller/barang-all';
+    const url = 'http://localhost:8080/seller/barang-all?finalTake=10';
     const res = http.get(url);
 
     check(res, {

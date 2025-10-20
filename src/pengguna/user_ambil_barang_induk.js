@@ -7,7 +7,7 @@ export let options = {
 };
 export default function () {
     // loop untuk id_barang_induk dari 22 sampai 48
-    let id = 41; // contoh, nanti bisa diganti loop
+    let id = 6; // contoh, nanti bisa diganti loop
     let url = `http://localhost:8080/user/data-barang-induk?barang_induk=${id}`;
     let res = http.get(url);
 
