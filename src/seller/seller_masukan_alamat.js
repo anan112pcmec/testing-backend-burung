@@ -10,6 +10,11 @@ export default function () {
     const url = 'http://localhost:8080/seller/alamat/masukan-alamat';
 
    const payloads = JSON.stringify({
+        identitas_seller:{
+            id_seller:1,
+            username_seller:"apakah",
+            email_seller:"ananlol156@gmail.com"
+        },
         data_alamat_seller:{
             id_seller_alamat_seller:1,
             panggilan_alamat_seller:"Toko",

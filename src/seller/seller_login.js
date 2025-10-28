@@ -10,8 +10,8 @@ export default function () {
     const url = 'http://localhost:8080/auth/seller/login';
 
     const payload = JSON.stringify({
-        email_seller: "anan29837@gmail.com",
-        pass_seller: "makanatap123"
+        email_seller: "ananlol156@gmail.com",
+        pass_seller: "StrongPassword123"
     });
 
     const params = {

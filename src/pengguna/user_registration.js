@@ -3,16 +3,16 @@ import { check, sleep } from 'k6';
 
 export let options = {
     vus: 1,       // jumlah virtual users
-    duration: '1s', // durasi tes
+    duration: '3s', // durasi tes
 };
 
 export default function () {
     const url = 'http://localhost:8080/auth/user/registration';
 
     const payload = JSON.stringify({
-        username_user: "si cuy tuh",
-        nama_user: "anancuy",
-        email_user: "faiz4087.rpl2@smkprestasiprima.sch.id",
+        username_user: "an",
+        nama_user: "as",
+        email_user: "anan2978.rpl2@smkprestasiprima.sch.id",
         pass_user: "mantap123"
     });
 

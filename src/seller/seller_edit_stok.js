@@ -10,14 +10,18 @@ export default function () {
     const url = 'http://localhost:8080/seller/edit/stok-barang';
 
     const payload = JSON.stringify({
-        id_barang_induk_stok_edit: 164,
-        id_seller_edit_stok: 1,
+        identitas_seller:{
+            id_seller:1,
+            username_seller:"apakah",
+            email_seller:"ananlol156@gmail.com"
+        },
+        id_barang_induk_stok_edit: 2,
         stok_barang_edit:[
             {
-                id_kategori_barang_edit_stok: 155,
-                nama_kategori_barang_edit_stok: "Baju",
-                sku_kategori_barang: "PTH-001",
-                jumlah_stok: 40
+                id_kategori_barang_edit_stok: 5,
+                nama_kategori_barang_edit_stok: "Semua Barang",
+                sku_kategori_barang: "SPT-829",
+                jumlah_stok: 100
             }
         ]
         

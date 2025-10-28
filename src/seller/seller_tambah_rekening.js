@@ -3,13 +3,18 @@ import { check, sleep } from 'k6';
 
 export let options = {
     vus: 1,
-    duration: '1s',
+    duration: '3s',
 };
 
 export default function () {
     const url = 'http://localhost:8080/seller/credential/tambah-rekening';
 
    const payloads = JSON.stringify({
+    identitas_seller:{
+            id_seller:1,
+            username_seller:"apakah",
+            email_seller:"ananlol156@gmail.com"
+        },
     data_rekening_seller:{
         id_seller:1,
         nama_bank_rekening_seller: "MANDIRI",

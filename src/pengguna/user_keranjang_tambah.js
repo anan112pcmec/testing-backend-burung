@@ -13,9 +13,9 @@ export default function () {
         data_payload_tambah_keranjang: {
           id_pengguna_keranjang:1,
           id_seller_barang_induk_keranjang:1,
-          id_barang_induk_keranjang: 61,
-          id_kategori_barang_keranjang: 64,
-          count_keranjang: 10000,
+          id_barang_induk_keranjang: 5,
+          id_kategori_barang_keranjang: 5,
+          count_keranjang: 20,
           status_keranjang: "Unready"
         }
     });

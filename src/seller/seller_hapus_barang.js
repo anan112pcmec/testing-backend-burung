@@ -10,12 +10,17 @@ export default function () {
     const url = 'http://localhost:8080/seller/hapus_barang';
 
     const payload = JSON.stringify({
-        id_seller: 1,
+        identitas_seller:{
+            id_seller:1,
+            username_seller:"apakah",
+            email_seller:"ananlol156@gmail.com"
+        },
         barang_induk_hapus: {
-            nama_barang_induk: "Legging",
-            jenis_barang_induk: "Pakaian & Fashion",
-            deskripsi_barang_induk: "Baju buat lari adidas",
-            tanggal_rilis_barang_induk: "12-08-2025"
+            id_barang_induk: 2,
+            nama_barang_induk: "Jersey Bola Manchester United 2025",
+            jenis_barang_induk: "Semua Barang",
+            deskripsi_barang_induk: "Bola voli resmi dengan kualitas turnamen",
+            tanggal_rilis_barang_induk: "2025-09-11"
         }
     });
 

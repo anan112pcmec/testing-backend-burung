@@ -9,18 +9,18 @@ export let options = {
 const urlCheckout = 'http://localhost:8080/user/transaksi/checkout-barang';
 
 const payloadCheckout = {
-  data_identitas_pengguna:{
+  identitas_pengguna:{
         id_pengguna:1,
-        username_pengguna:"user1",
-        email_pengguna:"ananlol156@gmail.com"
+        username_pengguna:"si cuy tuh",
+        email_pengguna:"faiz4087.rpl2@smkprestasiprima.sch.id"
       },
   data_checkout: [
     {
       id_pengguna_keranjang: 1,
-      id_barang_induk_keranjang: 47,
+      id_barang_induk_keranjang: 9,
       id_seller_barang_induk_keranjang:1,
-      id_kategori_barang_keranjang: 47,
-      count_keranjang: 100,
+      id_kategori_barang_keranjang: 9,
+      count_keranjang: 1,
       status_keranjang: "apalah",
     }
   ],

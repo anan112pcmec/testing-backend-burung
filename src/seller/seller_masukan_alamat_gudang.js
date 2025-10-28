@@ -10,10 +10,10 @@ export default function () {
     const url = 'http://localhost:8080/seller/alamat/tambah-alamat-gudang';
 
    const payloads = JSON.stringify({
-    data_identitas_seller:{
+    identitas_seller:{
         id_seller:1,
-        username_seller:"adidas",
-        email_seller:"anan29837@gmail.com"
+        username_seller:"apakah",
+        email_seller:"ananlol156@gmail.com"
     },
     data_tambah_alamat_gudang:{
         id_alamat_gudang:12,

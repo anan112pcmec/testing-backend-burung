@@ -19,7 +19,6 @@ export default function () {
         jam_operasional_seller: "08:00-17:00",
         punchline_seller: "Terbaik di kelasnya",
         deskripsi_seller: "Seller yang handal",
-        norek_seller: "12345678"
     });
 
     const params = {

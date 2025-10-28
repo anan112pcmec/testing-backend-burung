@@ -10,21 +10,24 @@ export default function () {
     const url = 'http://localhost:8080/seller/hapus_kategori_barang';
 
     const payload = JSON.stringify({
-        id_barang_induk_hapus_kategori: 23,
-        id_seller_hapus_kategori:1,
+        identitas_seller:{
+            id_seller:1,
+            username_seller:"apakah",
+            email_seller:"ananlol156@gmail.com"
+        },
+        id_barang_induk_hapus_kategori: 4,
         hapus_kategori_barang:[
-            
             {
-                    id_kategori_barang: 95,
-                    nama_kategori_barang: "Warna_Putihnya",
-                    deskripsi_kategori_barang: "Baju Versi putihnya",
-                    warna_kategori_barang: "potehh",
-                    stok_kategori_barang: 100,
-                    harga_kategori_barang: 179000,
-                    berat_gram_kategori_barang: 1500,
-                    dimensi_panjang_cm_kategori_barang: 30,
-                    dimensi_tinggi_cm_kategori_barang: 12,
-                    sku_kategori: "SPT-001"
+                    id_kategori_barang: 4,
+                    nama_kategori_barang: "Hitam",
+                    deskripsi_kategori_barang: "Topi snapback dengan bahan katun berkualitas tinggi",
+                    warna_kategori_barang: "Hitam",
+                    stok_kategori_barang: 40,
+                    harga_kategori_barang: 320000,
+                    berat_gram_kategori_barang: 180,
+                    dimensi_panjang_cm_kategori_barang: 18,
+                    dimensi_tinggi_cm_kategori_barang: 10,
+                    sku_kategori: "TP-005"
             },
 
         ]

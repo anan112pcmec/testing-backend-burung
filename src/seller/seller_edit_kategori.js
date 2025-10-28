@@ -10,11 +10,15 @@ export default function () {
     const url = 'http://localhost:8080/seller/edit_kategori_barang';
 
     const payload = JSON.stringify({
-        id_barang_induk_edit_kategori: 164,
-        id_seller_edit_kategori:1,
+        identitas_seller:{
+            id_seller:1,
+            username_seller:"apakah",
+            email_seller:"ananlol156@gmail.com"
+        },
+        id_barang_induk_edit_kategori: 5,
         edit_kategori_barang:[
             {
-                    id_kategori_barang: 175,
+                    id_kategori_barang: 5,
                     nama_kategori_barang: "Warna_Putihnya",
                     deskripsi_kategori_barang: "Baju Versi putihnya",
                     warna_kategori_barang: "potehh",
@@ -25,30 +29,6 @@ export default function () {
                     dimensi_tinggi_cm_kategori_barang: 12,
                     sku_kategori: "SPT-829"
             },
-            {
-                id_kategori_barang: 176,
-                nama_kategori_barang: "warnaabu",
-                    deskripsi_kategori_barang: "Baju Versi putihnya",
-                    warna_kategori_barang: "potehh",
-                    stok_kategori_barang: 100,
-                    harga_kategori_barang: 179000,
-                    berat_gram_kategori_barang: 1500,
-                    dimensi_panjang_cm_kategori_barang: 30,
-                    dimensi_tinggi_cm_kategori_barang: 12,
-                    sku_kategori: "SPT-3322"
-            },
-            {
-                id_kategori_barang: 177,
-                nama_kategori_barang: "Warnapink",
-                    deskripsi_kategori_barang: "Baju Versi putihnya",
-                    warna_kategori_barang: "potehh",
-                    stok_kategori_barang: 100,
-                    harga_kategori_barang: 20000,
-                    berat_gram_kategori_barang: 1500,
-                    dimensi_panjang_cm_kategori_barang: 30,
-                    dimensi_tinggi_cm_kategori_barang: 12,
-                    sku_kategori: "SPT-11111"
-            }
         ]
         
     });
