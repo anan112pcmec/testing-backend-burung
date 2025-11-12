@@ -2,8 +2,8 @@ import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export let options = {
-    vus: 1,       // jumlah virtual users
-    duration: '10s', // durasi tes
+    vus: 10,       // jumlah virtual users
+    duration: '30s', // durasi tes
 };
 
 export default function () {
@@ -11,18 +11,14 @@ export default function () {
 
     const payload = JSON.stringify({
         identitas_kurir:{
-            id_kurir:1,
-            username_kurir:"kurirmantap123",
-            email_kurir:"anan29837@gmail.com",
+           id_kurir: 1,
+            username_kurir: "kurirmantap1234",
+            email_kurir: "ananlol156@gmail.com"
         },
-        informasi_kurir:{
-            informasi_id_kurir:1,
-            informasi_umur_kurir:25,
-            informasi_alasan_kurir:"Mau Cari Nafkah",
-            informasi_ktp_kurir:true,
-            informasi_alamat_kurir:"jalan buni no 5",
-            status_perizinan_kendaraan_kurir:"Keren",
-        }
+         tanggal_lahir: "1998-12-05",
+            alasan: "Ingin memperbarui data dan menambahkan dokumen SIM",
+            informasi_ktp: true,
+            informasi_sim: true
     });
 
     const params = {

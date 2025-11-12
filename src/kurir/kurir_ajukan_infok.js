@@ -3,7 +3,7 @@ import { check, sleep } from 'k6';
 
 export let options = {
     vus: 1,       // jumlah virtual users
-    duration: '1s', // durasi tes
+    duration: '30s', // durasi tes
 };
 
 export default function () {
@@ -11,19 +11,17 @@ export default function () {
 
     const payload = JSON.stringify({
         identitas_kurir:{
-            id_kurir:1,
-            username_kurir:"kurirmantap123",
-            email_kurir:"anan29837@gmail.com",
+            id_kurir: 1,
+            username_kurir: "kurirmantap1234",
+            email_kurir: "ananlol156@gmail.com"
         },
-        informasi_kendaraan:{
-            kurir_pemiliki_informasi_kendaraan:1,
-            jenis_kendaraan_kurir:"Motor",
-            nama_kendaraan_kurir:"Beat Luxury 2024",
-            roda_kendaraan_kurir:"2",
-            informasi_stnk_kendaraan_kurir:true,
-            informasi_bpkb_kendaraan_kurir:true,
-            status_perizinan_kendaraan_kurir:"Mantap",
-        }
+       jenis_kendaraan: "Motor",
+        nama_kendaraan: "Honda Beat Street",
+        roda_kendaraan: "2",
+        informasi_stnk: true,
+        informasi_bpkb: true,
+        nomor_rangka: "MH12345XYZ67890",
+        nomor_mesin: "ENG98765XYZ12345",
     });
 
     const params = {
@@ -42,5 +40,4 @@ export default function () {
     console.log('Response status: ' + res.status);
     console.log('Response body: ' + res.body);
 
-    sleep(1);
 }

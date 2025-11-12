@@ -10,7 +10,7 @@ export default function () {
     const url = 'http://localhost:8080/auth/kurir/registration/validate';
 
     const payload = JSON.stringify({
-        otp_key: "39284708"
+        otp_key: "02077186"
     });
 
     const params = {
