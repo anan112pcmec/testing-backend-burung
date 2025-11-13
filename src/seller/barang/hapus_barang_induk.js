@@ -15,7 +15,7 @@ export default function () {
       username_seller: 'ananapparel',
       email_seller: 'anan29837@gmail.com',
     },
-    id_barang_induk: 1,               // ID barang yang mau dihapus
+    id_barang_induk: 3,               // ID barang yang mau dihapus
   });
 
   const headers = {

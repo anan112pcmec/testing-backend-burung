@@ -17,7 +17,7 @@ export default function () {
     },
     data_barang_induk: {
       id_seller_barang_induk: 1,
-      nama_barang_induk: "Kemeja Pria Slim Fit",
+      nama_barang_induk: "Barang Down",
       jenis_barang_induk: "Pakaian & Fashion",
       deskripsi_barang_induk: "Kemeja pria slim fit bahan katun lembut nyaman dipakai.",
       original_kategori: 1,
