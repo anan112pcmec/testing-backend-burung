@@ -1,5 +1,4 @@
-// k6 run barang/edit_child_komen.js
-
+// k6 run wishlist/hapus_barang.js
 import http from "k6/http";
 import { check, sleep } from "k6";
 
@@ -9,8 +8,7 @@ export const options = {
 };
 
 export default function () {
-  const url = "http://localhost:8080/user/barang/komentar-child/edit"; 
-  // ⚠️ GANTI kalau endpoint-mu beda
+  const url = "http://localhost:8080/user/wishlist/hapus-barang"; // ganti sesuai server
 
   const payload = JSON.stringify({
     identitas_pengguna: {
@@ -18,8 +16,8 @@ export default function () {
       username_pengguna: "ananlol",
       email_pengguna: "ananlol156@gmail.com"
     },
-    id_child_komentar: 7283,                        // GANTI sesuai data real
-    komentar_child_komentar: "Komentar child ini sudah saya ubah via k6!"
+    id_wishlist: 1,      // ganti sesuai wishlist ID
+    id_barang_induk: 2   // ganti sesuai barang
   });
 
   const params = {
@@ -29,14 +27,14 @@ export default function () {
     },
   };
 
-  const res = http.patch(url, payload, params);
+  const res = http.del(url, payload, params);
 
   check(res, {
-    "Status 200 OK": (r) => r.status === 200,
-    "Response tidak kosong": (r) => r.body.length > 0,
+    "status 200 / 204": (r) => r.status === 200 || r.status === 204,
+    "response exists": (r) => r.body !== null,
   });
 
   console.log(res.body);
-  sleep(1);
 
+  sleep(1);
 }

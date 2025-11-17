@@ -1,16 +1,14 @@
-// k6 run barang/edit_child_komen.js
-
+// k6 run barang/edit_keranjang.js
 import http from "k6/http";
 import { check, sleep } from "k6";
 
 export const options = {
-  vus: 1,          // jumlah virtual user
-  duration: "1s",  // lama test
+  vus: 1,
+  duration: "1s",
 };
 
 export default function () {
-  const url = "http://localhost:8080/user/barang/komentar-child/edit"; 
-  // ⚠️ GANTI kalau endpoint-mu beda
+  const url = "http://localhost:8080/user/barang/keranjang-barang/edit"; // GANTI sesuai server
 
   const payload = JSON.stringify({
     identitas_pengguna: {
@@ -18,8 +16,10 @@ export default function () {
       username_pengguna: "ananlol",
       email_pengguna: "ananlol156@gmail.com"
     },
-    id_child_komentar: 7283,                        // GANTI sesuai data real
-    komentar_child_komentar: "Komentar child ini sudah saya ubah via k6!"
+    id_keranjang: 1,       // ID keranjang yang mau di-edit
+    id_barang_induk: 2,    // GANTI sesuai barang
+    id_kategori_barang: 4, // GANTI sesuai kategori
+    jumlah_di_keranjang: 20   // GANTI sesuai jumlah baru
   });
 
   const params = {
@@ -32,11 +32,10 @@ export default function () {
   const res = http.patch(url, payload, params);
 
   check(res, {
-    "Status 200 OK": (r) => r.status === 200,
-    "Response tidak kosong": (r) => r.body.length > 0,
+    "status 200 / 201": (r) => r.status === 200 || r.status === 201,
+    "response exists": (r) => r.body !== null,
   });
 
   console.log(res.body);
   sleep(1);
-
 }
