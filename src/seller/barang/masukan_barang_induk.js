@@ -1,9 +1,10 @@
+// k6 run barang/masukan_barang_induk.js
 import http from "k6/http";
 import { check, sleep } from "k6";
 
 export const options = {
-  vus: 1,          // jumlah virtual users
-  duration: "1s",  // durasi pengujian
+  vus: 1,
+  duration: "1s",
 };
 
 export default function () {
@@ -18,7 +19,7 @@ export default function () {
     data_barang_induk: {
       id_seller_barang_induk: 1,
       nama_barang_induk: "Barang Down",
-      jenis_barang_induk: "Pakaian & Fashion",
+      jenis_barang_induk: "Semua Barang",
       deskripsi_barang_induk: "Kemeja pria slim fit bahan katun lembut nyaman dipakai.",
       original_kategori: 1,
       harga_kategori_barang: 250000,
@@ -55,6 +56,22 @@ export default function () {
         dimensi_tinggi_cm_kategori_barang: 2,
         sku_kategori: "KMJ-PUT-M",
         is_original_kategori_barang: false,
+      },
+      {
+        id_seller_kategori_barang: 1,
+        id_barang_induk_kategori: 1,
+        id_alamat_gudang_kategori_barang: 2,
+        id_rekening_kategori_barang: 3,
+        nama_kategori_barang: "Kemeja Biru Lengan Pendek",
+        deskripsi_kategori_barang: "Ukuran M warna biru bahan linen.",
+        warna_kategori_barang: "Biru",
+        stok_kategori_barang: 50,
+        harga_kategori_barang: 230000,
+        berat_gram_kategori_barang: 340,
+        dimensi_panjang_cm_kategori_barang: 30,
+        dimensi_tinggi_cm_kategori_barang: 2,
+        sku_kategori: "KMJ-BIR-M",
+        is_original_kategori_barang: true,
       }
     ],
     id_alamat_gudang: 4,

@@ -7,6 +7,8 @@ export const options = {
   duration: "1s",   // lama tes
 };
 
+
+
 export default function () {
   const url = "http://localhost:8080/user/transaksi/checkout-barang"; // GANTI sesuai server-mu
 
@@ -21,9 +23,18 @@ export default function () {
         id_keranjang: 2,
         id_pengguna_keranjang: 1,
         id_seller_barang_induk_keranjang: 1,
-        id_barang_induk_keranjang: 2,
-        id_kategori_barang_keranjang: 4,
-        jumlah_keranjang: 50,
+        id_barang_induk_keranjang: 4,
+        id_kategori_barang_keranjang: 10,
+        jumlah_keranjang: 20,
+        status_keranjang: "Ready",
+      },
+      {
+        id_keranjang: 2,
+        id_pengguna_keranjang: 1,
+        id_seller_barang_induk_keranjang: 1,
+        id_barang_induk_keranjang: 4,
+        id_kategori_barang_keranjang: 9,
+        jumlah_keranjang: 20,
         status_keranjang: "Ready",
       },
     ],
