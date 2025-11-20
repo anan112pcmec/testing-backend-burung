@@ -18,12 +18,12 @@ export default function () {
         id_seller_barang_keranjang: 1,
         nama_seller_barang_keranjang: "Faiz Apparel",
         jenis_barang_keranjang: "Pakaian & Fashion",
-        id_barang_induk_keranjang: 2,
-        id_kategori_barang_keranjang: 4,
+        id_barang_induk_keranjang: 4,
+        id_kategori_barang_keranjang: 10,
         nama_barang_keranjang: "Kemeja Pria Slim Fit",
         nama_kategori_barang_keranjang: "Kemeja Putih Lengan Pendek",
         harga_barang_kategori_keranjang: 220000,
-        dipesan_barang_keranjang: 30,
+        dipesan_barang_keranjang: 80,
         status_barang_keranjang: true,
         pesan_data_keranjang: "Barang siap dibatalkan checkout."
       }
