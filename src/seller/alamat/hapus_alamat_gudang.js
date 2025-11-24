@@ -1,3 +1,4 @@
+// k6 run alamat/hapus_alamat_gudang.js
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 

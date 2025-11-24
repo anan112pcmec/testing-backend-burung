@@ -3,7 +3,7 @@ import http from "k6/http";
 import { check, sleep } from "k6";
 
 export let options = {
-  vus: 10,              // jumlah virtual user
+  vus: 1,              // jumlah virtual user
   duration: "15s",      // lama tes
 };
 
@@ -19,7 +19,8 @@ export default function () {
     panggilan_alamat: "Rumah Faiz",
     nomor_telefon: "08123456789",
     nama_alamat: "Jalan Melati No. 7",
-    kota: "Bandung",
+    provinsi: "jawa_timur",
+    kota:     "bandung",
     kode_pos: "40123",
     kode_negara: "ID",
     deskripsi: "Rumah utama buat kirim barang",

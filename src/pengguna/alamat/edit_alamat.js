@@ -16,11 +16,12 @@ export default function () {
       username_pengguna: "ananlol",
       email_pengguna: "ananlol156@gmail.com",
     },
-    id_alamat_pengguna: 2,     // ⚠️ GANTI sesuai ID yang mau di-edit
+    id_alamat_pengguna: 1,     // ⚠️ GANTI sesuai ID yang mau di-edit
     panggilan_alamat: "Kantor Faiz",
     nomor_telefon: "081299887755",
     nama_alamat: "Jalan Sakura No. 15",
-    kota: "Jakarta Selatan",
+    provinsi: "dki_jakarta",
+    kota: "jakarta timur",
     kode_pos: "12560",
     kode_negara: "ID",
     deskripsi: "Ini alamat kantor baru",
@@ -35,6 +36,7 @@ export default function () {
   };
 
   const res = http.patch(url, payload, headers);
+
 
   check(res, {
     "Status 200": (r) => r.status === 200,

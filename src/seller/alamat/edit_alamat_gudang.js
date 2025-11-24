@@ -1,3 +1,4 @@
+// k6 run alamat/edit_alamat_gudang.js
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
@@ -19,7 +20,8 @@ export default function () {
     panggilan_alamat: "Gudang Satu",
     nomor_telefon: "+62 812-8970-7890",
     nama_alamat: "Gudang Pusat Anan Apparel Indonesia",
-    kota: "Jakarta Selatan",
+    provinsi: "banten",
+    kota: "serang",
     kode_pos: "12950",
     kode_negara: "IDN",
     deskripsi: "Perubahan alamat gudang pusat untuk optimalisasi distribusi dan penyimpanan barang.",

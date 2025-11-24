@@ -1,9 +1,10 @@
+// k6 run alamat/tambah_alamat_gudang.js
 import http from 'k6/http';
 import { sleep } from 'k6';
 
 export let options = {
   vus: 10,
-  duration: '30s',
+  duration: '15s',
 };
 
 export default function () {
@@ -18,7 +19,8 @@ export default function () {
     panggilan_alamat: 'Gudang Kedua',
     nomor_telefon: '+62 812-3456-7890',
     nama_alamat: 'jl haji mungkir no.1',
-    kota: 'Jakarta Selatan',
+    provinsi: 'jawa_timur',
+    kota: 'bandung',
     kode_pos: '12950',
     kode_negara: 'IDN',
     deskripsi: 'Gudang utama penyimpanan stok barang dan pengiriman domestik.',
@@ -34,10 +36,6 @@ export default function () {
 
   const res = http.post(url, payload, params);
 
-  try {
-    console.log(JSON.stringify(JSON.parse(res.body), null, 2));
-  } catch {
-    console.log(res.body);
-  }
+ 
 
 }
