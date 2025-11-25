@@ -10,73 +10,58 @@ export const options = {
 export default function () {
   const url = "http://localhost:8080/seller/masukan_barang"; // sesuaikan port/backend kamu
 
-  const payload = JSON.stringify({
-    identitas_seller: {
-      id_seller: 1,
-      username_seller: 'ananapparel',
-      email_seller: 'anan29837@gmail.com',
+ const payload = JSON.stringify({
+  identitas_seller: {
+    id_seller: 1,
+    username_seller: 'ananapparel',
+    email_seller: 'anan29837@gmail.com',
+  },
+  data_barang_induk: {
+    id_seller_barang_induk: 2,
+    nama_barang_induk: "Jaket Hoodie Basic",
+    jenis_barang_induk: "Semua Barang",
+    deskripsi_barang_induk: "Hoodie basic bahan fleece premium, lembut dan hangat.",
+    original_kategori: 1,
+    harga_kategori_barang: 180000,
+  },
+  data_kategori_barang_induk: [
+    {
+      id_seller_kategori_barang: 2,
+      id_barang_induk_kategori: 2,
+      id_alamat_gudang_kategori_barang: 6,   // tidak diubah
+      id_rekening_kategori_barang: 12994,    // tidak diubah
+      nama_kategori_barang: "Hoodie Hitam Size L",
+      deskripsi_kategori_barang: "Hoodie warna hitam size L bahan fleece.",
+      warna_kategori_barang: "Hitam",
+      stok_kategori_barang: 70,
+      harga_kategori_barang: 180000,
+      berat_gram_kategori_barang: 500,
+      dimensi_panjang_cm_kategori_barang: 35,
+      dimensi_tinggi_cm_kategori_barang: 4,
+      sku_kategori: "HD-BLK-L",
+      is_original_kategori_barang: true,
     },
-    data_barang_induk: {
-      id_seller_barang_induk: 1,
-      nama_barang_induk: "Barang Down",
-      jenis_barang_induk: "Semua Barang",
-      deskripsi_barang_induk: "Kemeja pria slim fit bahan katun lembut nyaman dipakai.",
-      original_kategori: 1,
-      harga_kategori_barang: 250000,
-    },
-    data_kategori_barang_induk: [
-      {
-        id_seller_kategori_barang: 1,
-        id_barang_induk_kategori: 1,
-        id_alamat_gudang_kategori_barang: 2,
-        id_rekening_kategori_barang: 3,
-        nama_kategori_barang: "Kemeja Hitam Lengan Panjang",
-        deskripsi_kategori_barang: "Ukuran L warna hitam bahan katun.",
-        warna_kategori_barang: "Hitam",
-        stok_kategori_barang: 120,
-        harga_kategori_barang: 250000,
-        berat_gram_kategori_barang: 350,
-        dimensi_panjang_cm_kategori_barang: 30,
-        dimensi_tinggi_cm_kategori_barang: 2,
-        sku_kategori: "KMJ-HIT-L",
-        is_original_kategori_barang: true,
-      },
-      {
-        id_seller_kategori_barang: 1,
-        id_barang_induk_kategori: 1,
-        id_alamat_gudang_kategori_barang: 2,
-        id_rekening_kategori_barang: 3,
-        nama_kategori_barang: "Kemeja Putih Lengan Pendek",
-        deskripsi_kategori_barang: "Ukuran M warna putih bahan linen.",
-        warna_kategori_barang: "Putih",
-        stok_kategori_barang: 80,
-        harga_kategori_barang: 220000,
-        berat_gram_kategori_barang: 330,
-        dimensi_panjang_cm_kategori_barang: 30,
-        dimensi_tinggi_cm_kategori_barang: 2,
-        sku_kategori: "KMJ-PUT-M",
-        is_original_kategori_barang: false,
-      },
-      {
-        id_seller_kategori_barang: 1,
-        id_barang_induk_kategori: 1,
-        id_alamat_gudang_kategori_barang: 2,
-        id_rekening_kategori_barang: 3,
-        nama_kategori_barang: "Kemeja Biru Lengan Pendek",
-        deskripsi_kategori_barang: "Ukuran M warna biru bahan linen.",
-        warna_kategori_barang: "Biru",
-        stok_kategori_barang: 50,
-        harga_kategori_barang: 230000,
-        berat_gram_kategori_barang: 340,
-        dimensi_panjang_cm_kategori_barang: 30,
-        dimensi_tinggi_cm_kategori_barang: 2,
-        sku_kategori: "KMJ-BIR-M",
-        is_original_kategori_barang: true,
-      }
-    ],
-    id_alamat_gudang: 4,
-    id_rekening: 12994,
-  });
+    {
+      id_seller_kategori_barang: 2,
+      id_barang_induk_kategori: 2,
+      id_alamat_gudang_kategori_barang: 6,   // tidak diubah
+      id_rekening_kategori_barang: 12994,    // tidak diubah
+      nama_kategori_barang: "Hoodie Abu Size M",
+      deskripsi_kategori_barang: "Hoodie warna abu size M bahan fleece.",
+      warna_kategori_barang: "Abu-abu",
+      stok_kategori_barang: 55,
+      harga_kategori_barang: 175000,
+      berat_gram_kategori_barang: 480,
+      dimensi_panjang_cm_kategori_barang: 35,
+      dimensi_tinggi_cm_kategori_barang: 4,
+      sku_kategori: "HD-GRY-M",
+      is_original_kategori_barang: false,
+    }
+  ],
+  id_alamat_gudang: 6,   // tidak diubah
+  id_rekening: 12994,    // tidak diubah
+});
+
 
   const headers = {
     "Content-Type": "application/json",

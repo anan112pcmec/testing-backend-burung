@@ -20,23 +20,14 @@ export default function () {
     },
     data_checkout: [
       {
-        id_keranjang: 2,
+        id_keranjang: 6,
         id_pengguna_keranjang: 1,
         id_seller_barang_induk_keranjang: 1,
-        id_barang_induk_keranjang: 4,
-        id_kategori_barang_keranjang: 10,
-        jumlah_keranjang: 20,
+        id_barang_induk_keranjang: 5,
+        id_kategori_barang_keranjang: 12,
+        jumlah_keranjang: 1,
         status_keranjang: "Ready",
-      },
-      {
-        id_keranjang: 2,
-        id_pengguna_keranjang: 1,
-        id_seller_barang_induk_keranjang: 1,
-        id_barang_induk_keranjang: 4,
-        id_kategori_barang_keranjang: 9,
-        jumlah_keranjang: 50,
-        status_keranjang: "Ready",
-      },
+      }
     ],
     jenis_layanan_kurir_checkout_barang: "reguler"
   });

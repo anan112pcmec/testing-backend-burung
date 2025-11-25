@@ -18,7 +18,7 @@ export default function () {
     },
     id_barang_induk: 4,        // contoh ID barang induk
     id_kategori_barang: 9,     // contoh ID kategori barang
-    id_alamat_gudang: 5        // contoh ID alamat gudang baru
+    id_alamat_gudang: 6        // contoh ID alamat gudang baru
   });
 
   const params = {

@@ -17,8 +17,8 @@ export default function () {
       email_pengguna: "ananlol156@gmail.com"
     },
     id_seller: 1,        // GANTI sesuai seller
-    id_barang_induk: 4,  // GANTI sesuai barang
-    id_kategori_barang: 9 // GANTI sesuai kategori
+    id_barang_induk: 5,  // GANTI sesuai barang
+    id_kategori_barang: 12 // GANTI sesuai kategori
   });
 
   const params = {
