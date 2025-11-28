@@ -1,14 +1,14 @@
-// k6 run rekening/edit_rekening.js
+// k6 run informasi/edit_informasi_kurir.js
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export const options = {
-    vus: 1,       // jumlah virtual users
-    duration: '3s', // durasi test
+    vus: 1,            // jumlah virtual user
+    duration: '3s',    // durasi test
 };
 
 export default function () {
-    const url = 'http://localhost:8080/kurir/rekening/edit-rekening';
+    const url = 'http://localhost:8080/kurir/informasi/edit-informasi-kurir';
 
     const payload = JSON.stringify({
         identitas_kurir: {
@@ -16,10 +16,11 @@ export default function () {
             username_kurir: "kurir_4d09a543",
             email_kurir: "anan29837@gmail.com"
         },
-        id_rekening: 2,
-        nama_bank: "BRI",
-        nomor_rekening: "2820372092081092",
-        pemilik_rekening: "Faiz Hannan"
+        id_informasi_kurir: 1,
+        tanggal_lahir: "2021-05-20",
+        alasan: "Perubahan informasi kurir untuk pembaruan data.",
+        informasi_ktp: true,
+        informasi_sim: true
     });
 
     const params = {
@@ -36,6 +37,5 @@ export default function () {
     });
 
     console.log(res.body);
-
     sleep(1);
 }

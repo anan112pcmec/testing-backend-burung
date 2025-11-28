@@ -1,14 +1,14 @@
-// k6 run rekening/edit_rekening.js
+// k6 run informasi/ajukan_informasi_kendaraan.js
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export const options = {
-    vus: 1,       // jumlah virtual users
-    duration: '3s', // durasi test
+    vus: 1,             // jumlah virtual user
+    duration: '3s',     // durasi test
 };
 
 export default function () {
-    const url = 'http://localhost:8080/kurir/rekening/edit-rekening';
+    const url = 'http://localhost:8080/kurir/informasi/ajukan-informasi-kendaraan';
 
     const payload = JSON.stringify({
         identitas_kurir: {
@@ -16,10 +16,13 @@ export default function () {
             username_kurir: "kurir_4d09a543",
             email_kurir: "anan29837@gmail.com"
         },
-        id_rekening: 2,
-        nama_bank: "BRI",
-        nomor_rekening: "2820372092081092",
-        pemilik_rekening: "Faiz Hannan"
+        jenis_kendaraan: "Motor",
+        nama_kendaraan: "Honda Beat",
+        roda_kendaraan: "2",
+        informasi_stnk: true,
+        informasi_bpkb: false,
+        nomor_rangka: "MH12ABCD1234567",
+        nomor_mesin: "EN987654321"
     });
 
     const params = {
@@ -28,7 +31,7 @@ export default function () {
         },
     };
 
-    const res = http.patch(url, payload, params);
+    const res = http.post(url, payload, params);
 
     check(res, {
         'status 200': (r) => r.status === 200,
@@ -36,6 +39,5 @@ export default function () {
     });
 
     console.log(res.body);
-
     sleep(1);
 }

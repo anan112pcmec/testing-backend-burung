@@ -3,8 +3,8 @@ import http from "k6/http";
 import { check, sleep } from "k6";
 
 export let options = {
-  vus: 1,              // jumlah virtual user
-  duration: "15s",      // lama tes
+  vus: 10,              // jumlah virtual user
+  duration: "30s",      // lama tes
 };
 
 export default function () {
@@ -40,5 +40,6 @@ export default function () {
     "status adalah 200": (r) => r.status === 200,
     "response tidak kosong": (r) => r.body.length > 0,
   });
+
 
 }

@@ -12,9 +12,9 @@ export default function () {
 
     const payload = JSON.stringify({
         identitas_kurir: {
-            id_kurir: 1,
-            email_kurir: "faizbaru@mail.com",
-            username_kurir: "faizkurirbaru"
+            id_kurir: 2,
+            username_kurir: "kurir_4d09a543",
+            email_kurir: "anan29837@gmail.com"
         },
         nama_bank: "BCA",
         nomor_rekening: "1234567890",

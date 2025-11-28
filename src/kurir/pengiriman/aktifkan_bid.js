@@ -1,14 +1,14 @@
-// k6 run rekening/edit_rekening.js
+// k6 run pengiriman/aktifkan_bid.js
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export const options = {
-    vus: 1,       // jumlah virtual users
-    duration: '3s', // durasi test
+    vus: 1,
+    duration: '10s',
 };
 
 export default function () {
-    const url = 'http://localhost:8080/kurir/rekening/edit-rekening';
+    const url = 'http://localhost:8080/kurir/pengiriman/aktifkan-bid';
 
     const payload = JSON.stringify({
         identitas_kurir: {
@@ -16,10 +16,14 @@ export default function () {
             username_kurir: "kurir_4d09a543",
             email_kurir: "anan29837@gmail.com"
         },
-        id_rekening: 2,
-        nama_bank: "BRI",
-        nomor_rekening: "2820372092081092",
-        pemilik_rekening: "Faiz Hannan"
+        jenis_pengiriman: "Instant",
+        mode: "manual",
+        provinsi: "dki_jakarta",
+        kota: "jakarta barat",
+        alamat: "Jl. Meruya Selatan No. 12",
+        longitude: 106.7438,
+        latitude: -6.2019,
+        max_kg: 15
     });
 
     const params = {
@@ -36,6 +40,4 @@ export default function () {
     });
 
     console.log(res.body);
-
-    sleep(1);
 }

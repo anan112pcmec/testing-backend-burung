@@ -12,14 +12,15 @@ export default function () {
 
     const payload = JSON.stringify({
         identitas_kurir: {
-            id_kurir: 1,
-            email_kurir: "anan29837@gmail.com",
-            username_kurir: "kurir_310f2592"
+            id_kurir: 2,
+            username_kurir: "kurir_4d09a543",
+            email_kurir: "anan29837@gmail.com"
         },
         panggilan_alamat: "Rumah",
         nomor_telephone: "081234567890",
         nama_alamat: "Alamat Utama",
-        kota: "Jakarta",
+        provinsi: "dki_jakarta",
+        kota: "jakarta timur",
         kode_negara: "ID",
         kode_pos: "12345",
         deskripsi: "Alamat utama kurir",
