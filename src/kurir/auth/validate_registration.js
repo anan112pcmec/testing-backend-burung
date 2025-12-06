@@ -15,7 +15,7 @@ export default function () {
   const otp = Math.floor(100000 + Math.random() * 900000).toString();
 
   const payload = JSON.stringify({
-    otp_key: "11452872",
+    otp_key: "06500278",
   });
 
   const params = {

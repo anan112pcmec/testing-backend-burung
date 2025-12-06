@@ -16,7 +16,7 @@ export default function () {
             username_seller: 'ananapparel',
             email_seller: 'anan29837@gmail.com',
         },
-        id_transaksi: 3
+        id_transaksi: 8
     });
 
     const params = {
@@ -32,5 +32,4 @@ export default function () {
     });
 
     console.log(res.body);
-    sleep(1);
 }

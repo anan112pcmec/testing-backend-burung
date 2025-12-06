@@ -1,29 +1,27 @@
-// k6 run informasi/edit_informasi_kendaraan.js
+// k6 run pengiriman/kirim_non_eks.js
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export const options = {
-    vus: 1,            // jumlah virtual user
-    duration: '10s',    // durasi test
+    vus: 1,
+    duration: '5s',
 };
 
 export default function () {
-    const url = 'http://localhost:8080/kurir/informasi/edit-informasi-kendaraan';
+    const url = 'http://localhost:8080/kurir/pengiriman/kirim-pengiriman-non-eks';
 
     const payload = JSON.stringify({
-       identitas_kurir: {
+        identitas_kurir: {
             id_kurir: 2,
             username_kurir: "kurir_4d09a543",
             email_kurir: "anan29837@gmail.com"
         },
-        id_informasi_kendaraan: 1,
-        jenis_kendaraan: "Motor",
-        nama_kendaraan: "Honda Vario",
-        roda_kendaraan: "2",
-        informasi_stnk: true,
-        informasi_bpkb: false,
-        nomor_rangka: "MH12ABCD1234567",
-        nomor_mesin: "EN987654321"
+        id_bid: 1,
+        id_pengiriman: 1,
+        lokasi: "Jakarta Selatan",
+        keterangan: "Pengiriman selesai dikirim",
+        latitude: -6.2762,
+        longitude: 106.8272
     });
 
     const params = {
@@ -40,5 +38,6 @@ export default function () {
     });
 
     console.log(res.body);
-   
+
+    sleep(1);
 }

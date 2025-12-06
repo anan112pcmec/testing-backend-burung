@@ -1,24 +1,22 @@
-// k6 run rekening/masukan_rekening.js
+// k6 run pengiriman/lock_siap_antar.js
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export const options = {
-    vus: 1,       // jumlah virtual users
-    duration: '10s', // durasi test
+    vus: 1,
+    duration: '10s',
 };
 
 export default function () {
-    const url = 'http://localhost:8080/kurir/rekening/masukan-rekening';
+    const url = 'http://localhost:8080/kurir/pengiriman/lock-siap-antar-bid';
 
     const payload = JSON.stringify({
         identitas_kurir: {
             id_kurir: 3,
-             username_kurir: "kurir_db1b0b65",
+            username_kurir: "kurir_db1b0b65",
             email_kurir: "ananlol156@gmail.com"
         },
-        nama_bank: "bca",
-        nomor_rekening: "1234567890",
-        pemilik_rekening: "Faiz Hannan"
+        id_bid_kurir: 3
     });
 
     const params = {
@@ -27,7 +25,7 @@ export default function () {
         },
     };
 
-    const res = http.post(url, payload, params);
+    const res = http.patch(url, payload, params);
 
     check(res, {
         'status 200': (r) => r.status === 200,

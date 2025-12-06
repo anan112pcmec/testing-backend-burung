@@ -1,24 +1,28 @@
-// k6 run rekening/masukan_rekening.js
+// k6 run pengiriman/sampai_eks.js
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export const options = {
-    vus: 1,       // jumlah virtual users
-    duration: '10s', // durasi test
+    vus: 1,
+    duration: '10s',
 };
 
 export default function () {
-    const url = 'http://localhost:8080/kurir/rekening/masukan-rekening';
+    const url = 'http://localhost:8080/kurir/pengiriman/sampai-pengiriman-eks';
 
     const payload = JSON.stringify({
         identitas_kurir: {
             id_kurir: 3,
-             username_kurir: "kurir_db1b0b65",
+            username_kurir: "kurir_db1b0b65",
             email_kurir: "ananlol156@gmail.com"
         },
-        nama_bank: "bca",
-        nomor_rekening: "1234567890",
-        pemilik_rekening: "Faiz Hannan"
+        id_bid_kurir: 3,
+        id_pengiriman: 7, // json tag: id_pengiriman
+        no_resi_ekspedisi:"JBCS-832-XAUWBDC972",
+        lokasi: "Jakarta Selatan",
+        keterangan: "Kurir telah sampai di lokasi penerima",
+        latitude: -6.2105,
+        longitude: 106.8457
     });
 
     const params = {
@@ -27,7 +31,7 @@ export default function () {
         },
     };
 
-    const res = http.post(url, payload, params);
+    const res = http.patch(url, payload, params);
 
     check(res, {
         'status 200': (r) => r.status === 200,
@@ -36,4 +40,5 @@ export default function () {
 
     console.log(res.body);
 
+    sleep(1);
 }

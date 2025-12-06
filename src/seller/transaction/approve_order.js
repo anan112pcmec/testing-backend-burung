@@ -21,7 +21,7 @@ export default function () {
             username_seller: 'ananapparel',
             email_seller: 'anan29837@gmail.com',
         },
-        id_transaksi: 3,
+        id_transaksi: 8,
         catatan_approve: "Pesanan disetujui",
         auto_pengiriman: false,
         waktu_auto_pengiriman: waktuAuto

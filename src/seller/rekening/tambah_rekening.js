@@ -1,9 +1,10 @@
+// k6 run rekening/tambah_rekening.js
 import http from "k6/http";
 import { check, sleep } from "k6";
 
 export const options = {
-  vus: 1,
-  duration: "3s",
+  vus: 10,
+  duration: "60s",
 };
 
 export default function () {
@@ -15,7 +16,7 @@ export default function () {
       username_seller: 'ananapparel',
       email_seller: 'anan29837@gmail.com',
     },
-    nama_bank: "Bri",
+    nama_bank: "bri89j",
     nomor_rekening: "1372893",
     pemilik_rekening: "Anan Apparel Indonesia",
   });
@@ -33,5 +34,5 @@ export default function () {
   });
 
   console.log(`Response: ${res.body}`);
-  sleep(1);
+  
 }

@@ -1,3 +1,5 @@
+// k6 run auth/registration.js
+
 import http from 'k6/http';
 import { sleep } from 'k6';
 
@@ -10,12 +12,12 @@ export default function () {
   const url = 'http://localhost:8080/auth/user/registration';
 
   const payload = JSON.stringify({
-    username_user: 'ananlol',
-    nama_user: 'Anan Lol',
-    email_user: 'ananlol156@gmail.com',
-    pass_user: 'SuperSecret123',
-    pin_user: '123456',
-    status_user: 'Offline',
+    username: 'ananlol123456',
+    nama: 'anancihuy',
+    email: 'appburung@gmail.com',
+    password_hash: 'SuperSecret123',
+    pin_hash: '123456',
+    status: 'Offline',
   });
 
   const params = {

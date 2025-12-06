@@ -16,7 +16,7 @@ export default function () {
 
   const payload = JSON.stringify({
     nama_kurir: `Kurir ${randomId}`,
-    email_kurir: `anan29837@gmail.com`,
+    email_kurir: `ananlol156@gmail.com`,
     pass_kurir: "password12345",
     username_kurir: `kurir_${randomId}`
   });

@@ -11,15 +11,16 @@ export default function () {
     const url = 'http://localhost:8080/kurir/pengiriman/aktifkan-bid';
 
     const payload = JSON.stringify({
-        identitas_kurir: {
-            id_kurir: 2,
-            username_kurir: "kurir_4d09a543",
-            email_kurir: "anan29837@gmail.com"
+         identitas_kurir: {
+            id_kurir: 3,
+            username_kurir: "kurir_db1b0b65",
+            email_kurir: "ananlol156@gmail.com"
         },
-        jenis_pengiriman: "Instant",
+        jenis_pengiriman: "Reguler",
         mode: "manual",
         provinsi: "dki_jakarta",
         kota: "jakarta barat",
+        is_ekspedisi:true,
         alamat: "Jl. Meruya Selatan No. 12",
         longitude: 106.7438,
         latitude: -6.2019,

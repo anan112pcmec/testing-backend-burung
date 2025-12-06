@@ -20,12 +20,12 @@ export default function () {
     },
     data_checkout: [
       {
-        id_keranjang: 6,
+        id_keranjang: 8,
         id_pengguna_keranjang: 1,
         id_seller_barang_induk_keranjang: 1,
-        id_barang_induk_keranjang: 5,
-        id_kategori_barang_keranjang: 12,
-        jumlah_keranjang: 1,
+        id_barang_induk_keranjang: 6,
+        id_kategori_barang_keranjang: 14,
+        jumlah_keranjang: 20,
         status_keranjang: "Ready",
       }
     ],

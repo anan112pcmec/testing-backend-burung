@@ -4,7 +4,7 @@ import { check, sleep } from "k6";
 
 export const options = {
   vus: 1,          // jumlah virtual user
-  duration: "1s",  // lama test
+  duration: "9s",  // lama test
 };
 
 export default function () {
@@ -17,8 +17,8 @@ export default function () {
       email_pengguna: "ananlol156@gmail.com"
     },
     id_seller: 1,        // GANTI sesuai seller
-    id_barang_induk: 5,  // GANTI sesuai barang
-    id_kategori_barang: 12 // GANTI sesuai kategori
+    id_barang_induk: 6,  // GANTI sesuai barang
+    id_kategori_barang: 14 // GANTI sesuai kategori
   });
 
   const params = {

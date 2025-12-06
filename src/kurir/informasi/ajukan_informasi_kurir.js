@@ -1,4 +1,4 @@
-// k6 run informasi/ajukan_informasi_kurir.js
+// 6 run iknformasi/ajukan_informasi_kurir.js
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
@@ -12,9 +12,9 @@ export default function () {
 
     const payload = JSON.stringify({
         identitas_kurir: {
-            id_kurir: 2,
-            username_kurir: "kurir_4d09a543",
-            email_kurir: "anan29837@gmail.com"
+            id_kurir: 3,
+            username_kurir: "kurir_db1b0b65",
+            email_kurir: "ananlol156@gmail.com"
         },
         tanggal_lahir: "1998-05-20",
         alasan: "Melengkapi data kurir untuk keperluan verifikasi.",
