@@ -17,7 +17,7 @@ export default function () {
             email_kurir: "anan29837@gmail.com"
         },
         id_bid: 1,
-        id_pengiriman: 1,
+        id_pengiriman: 2,
         lokasi: "Jakarta Selatan",
         keterangan: "Pengiriman selesai dikirim",
         latitude: -6.2762,

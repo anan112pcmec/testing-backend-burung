@@ -12,11 +12,11 @@ export default function () {
 
     const payload = JSON.stringify({
         identitas_kurir: {
-            id_kurir: 3,
-            username_kurir: "kurir_db1b0b65",
-            email_kurir: "ananlol156@gmail.com"
+            id_kurir: 2,
+            username_kurir: "kurir_4d09a543",
+            email_kurir: "anan29837@gmail.com"
         },
-        id_pengiriman: 1,
+        id_pengiriman: 2,
         id_bid: 1,
         jenis_pengiriman: "Reguler"
     });

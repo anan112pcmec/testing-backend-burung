@@ -4,7 +4,7 @@ import { check, sleep } from 'k6';
 
 export const options = {
     vus: 1,
-    duration: '10s',
+    duration: '1s',
 };
 
 export default function () {
@@ -17,7 +17,7 @@ export default function () {
             email_kurir: "anan29837@gmail.com"
         },
         id_bid: 1,
-        id_pengiriman: 1,
+        id_pengiriman: 2,
         lokasi: "Jakarta Timur",
         keterangan: "Pengiriman sudah sampai",
         latitude: -6.2100,

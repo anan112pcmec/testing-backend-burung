@@ -16,10 +16,10 @@ export default function () {
       username_pengguna: "ananlol",
       email_pengguna: "ananlol156@gmail.com"
     },
-    id_keranjang: 6,       // ID keranjang yang mau di-edit
-    id_barang_induk: 5,    // GANTI sesuai barang
-    id_kategori_barang: 12, // GANTI sesuai kategori
-    jumlah_di_keranjang: 1990   // GANTI sesuai jumlah baru
+    id_keranjang: 9,       // ID keranjang yang mau di-edit
+    id_barang_induk: 6,    // GANTI sesuai barang
+    id_kategori_barang: 14, // GANTI sesuai kategori
+    jumlah_di_keranjang: 10   // GANTI sesuai jumlah baru
   });
 
   const params = {
