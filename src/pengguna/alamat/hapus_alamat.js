@@ -3,7 +3,7 @@ import http from "k6/http";
 import { check, sleep } from "k6";
 
 export let options = {
-  vus: 10,              // jumlah virtual user
+  vus: 1,              // jumlah virtual user
   duration: "10s",      // durasi test
 };
 
@@ -12,11 +12,11 @@ export default function () {
 
   const payload = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlol",
-      email_pengguna: "ananlol156@gmail.com",
+      id_pengguna: 4,
+      username_pengguna: "andika putra madya",
+      email_pengguna: "anan29837@gmail.com",
     },
-    id_alamat_hapus_alamat: 1,   // ⚠️ GANTI sesuai ID alamat yang mau dihapus
+    id_alamat_hapus_alamat: 7,   // ⚠️ GANTI sesuai ID alamat yang mau dihapus
   });
 
   const params = {

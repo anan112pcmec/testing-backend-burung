@@ -3,7 +3,7 @@ import http from "k6/http";
 import { check, sleep } from "k6";
 
 export let options = {
-  vus: 10,            // jumlah virtual user
+  vus: 1,            // jumlah virtual user andika putra madya
   duration: "10s",    // lama test
 };
 
@@ -12,11 +12,11 @@ export default function () {
 
   const payload = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlol",
-      email_pengguna: "ananlol156@gmail.com",
+      id_pengguna: 4,
+      username_pengguna: "andika putra madya",
+      email_pengguna: "anan29837@gmail.com",
     },
-    id_alamat_pengguna: 1,     // ⚠️ GANTI sesuai ID yang mau di-edit
+    id_alamat_pengguna: 7,     // ⚠️ GANTI sesuai ID yang mau di-edit
     panggilan_alamat: "Kantor Faiz",
     nomor_telefon: "081299887755",
     nama_alamat: "Jalan Sakura No. 15",
@@ -37,7 +37,7 @@ export default function () {
 
   const res = http.patch(url, payload, headers);
 
-
+  console.log(res.body);
   check(res, {
     "Status 200": (r) => r.status === 200,
     "Response OK": (r) => r.body.length > 0,

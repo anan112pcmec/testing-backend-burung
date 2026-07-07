@@ -4,19 +4,19 @@ import http from 'k6/http';
 import { sleep } from 'k6';
 
 export let options = {
-  vus: 3,           // jumlah virtual user
-  duration: '10s',  // lama test
+  vus: 1,           // jumlah virtual user
+  duration: '5s',  // lama test
 };
 
 export default function () {
   const url = 'http://localhost:8080/auth/user/registration';
 
   const payload = JSON.stringify({
-    username: 'ananlol123456',
-    nama: 'anancihuy',
-    email: 'appburung@gmail.com',
-    password_hash: 'SuperSecret123',
-    pin_hash: '123456',
+    username: 'anann',
+    nama: 'Faiz Hannan Hakim',
+    email: 'anan29837@gmail.com',
+    password_hash: 'rahasiadeh123',
+    pin_hash: '120022',
     status: 'Offline',
   });
 
@@ -34,5 +34,5 @@ export default function () {
     console.log(res.body);
   }
 
-  sleep(1);
+  sleep(1)
 }

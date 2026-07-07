@@ -12,20 +12,20 @@ export default function () {
 
   let payload = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlol",
-      email_pengguna: "ananlol156@gmail.com",
+      id_pengguna: 4,
+      username_pengguna: "andika putra madya",
+      email_pengguna: "anan29837@gmail.com",
     },
-    panggilan_alamat: "Rumah Faiz",
-    nomor_telefon: "08123456789",
+    panggilan_alamat: "Rumah celek",
+    nomor_telefon: "0812847928",
     nama_alamat: "Jalan Melati No. 7",
     provinsi: "jawa_timur",
     kota:     "bandung",
     kode_pos: "40123",
     kode_negara: "ID",
     deskripsi: "Rumah utama buat kirim barang",
-    longitude: 107.6098,
-    latitude: -6.9147,
+    longitude: 108.6098,
+    latitude: -7.9147,
   });
 
   let params = {
@@ -35,6 +35,8 @@ export default function () {
   };
 
   let res = http.post(url, payload, params);
+
+  console.log(res.body)
 
   check(res, {
     "status adalah 200": (r) => r.status === 200,
