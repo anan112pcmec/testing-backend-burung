@@ -1,23 +1,20 @@
-// k6 run /auth/registration.js
+// k6 run /auth/login.js
+
 
 import http from 'k6/http';
 import { sleep } from 'k6';
 
 export let options = {
-  vus: 3,
-  duration: '10s',
+  vus: 1,           // jumlah virtual user
+  duration: '5s',  // lama test
 };
 
 export default function () {
-  const url = 'http://localhost:8080/auth/seller/registration';
+  const url = 'http://localhost:8080/auth/user/login';
 
   const payload = JSON.stringify({
-    username: 'ananapparel',
-    nama: 'Anan Apparel Indonesia',
-    email: 'appburung@gmail.com',
-    jenis: 'Personal',
-    seller_dedication: 'Pakaian & Fashion',
-    password_hash: 'ApparelProSecure@2025',
+    email: 'anan29837@gmail.com',
+    password_hash: 'rahasiadeh123',
   });
 
   const params = {
@@ -34,5 +31,5 @@ export default function () {
     console.log(res.body);
   }
 
-  sleep(1);
+  sleep(1)
 }
