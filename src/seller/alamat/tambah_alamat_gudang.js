@@ -12,10 +12,10 @@ export default function () {
 
   const payload = JSON.stringify({
     identitas_seller: {
-      id_seller: 1,
-      username_seller: 'ananapparel',
-      email_seller: 'anan29837@gmail.com',
-    },
+    id_seller: 8,
+    username_seller: "ananapparel",
+    email_seller: "appburung@gmail.com",
+  },
     panggilan_alamat: 'Gudang Surabaya',
     nomor_telefon: '+62 812-3456-7890',
     nama_alamat: 'Suroboyo rek',
@@ -38,4 +38,5 @@ export default function () {
 
   console.log(res.body);
 
+  sleep(1);
 }

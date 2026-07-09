@@ -3,8 +3,8 @@ import http from "k6/http";
 import { check, sleep } from "k6";
 
 export const options = {
-  vus: 100,
-  duration: "10s",
+  vus: 1,
+  duration: "7s",
 };
 
 export default function () {
@@ -12,12 +12,12 @@ export default function () {
 
  const payload = JSON.stringify({
   identitas_seller: {
-    id_seller: 1,
-    username_seller: 'ananapparel',
-    email_seller: 'anan29837@gmail.com',
+    id_seller: 8,
+    username_seller: "ananapparel",
+    email_seller: "appburung@gmail.com",
   },
   data_barang_induk: {
-    id_seller: 1,
+    id_seller: 8,
     nama: "Kaos Oversize Premium",
     jenis: "Semua Barang",
     deskripsi: "Kaos oversize bahan cotton combed 30s, adem dan nyaman.",
@@ -40,7 +40,7 @@ export default function () {
       dimensi_tinggi_cm_kategori_barang: 2,
       sku_kategori: "TS-BLK-OV-L",
       is_original_kategori_barang: true,
-    }
+    },
   ],
   id_alamat_gudang: 6,
   id_rekening: 1,
@@ -60,4 +60,5 @@ export default function () {
   });
 
   console.log(`Response: ${res.body}`);
+  sleep(1);
 }

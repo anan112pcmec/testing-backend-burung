@@ -3,8 +3,8 @@ import http from "k6/http";
 import { check, sleep } from "k6";
 
 export const options = {
-  vus: 10,
-  duration: "60s",
+  vus: 1,
+  duration: "10s",
 };
 
 export default function () {
@@ -12,13 +12,13 @@ export default function () {
 
   const payload = JSON.stringify({
     identitas_seller: {
-      id_seller: 1,
-      username_seller: 'ananapparel',
-      email_seller: 'anan29837@gmail.com',
-    },
-    nama_bank: "bri89j",
-    nomor_rekening: "1372893",
-    pemilik_rekening: "Anan Apparel Indonesia",
+    id_seller: 8,
+    username_seller: "ananapparel",
+    email_seller: "appburung@gmail.com",
+  },
+    nama_bank: "bni",
+    nomor_rekening: "2838237832",
+    pemilik_rekening: "Anan Apparel Indonesia Admin4",
   });
 
   const params = {
@@ -34,5 +34,5 @@ export default function () {
   });
 
   console.log(`Response: ${res.body}`);
-  
+  sleep(1)
 }

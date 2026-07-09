@@ -12,7 +12,7 @@ export default function () {
   const url = 'http://localhost:8080/auth/seller/registration/validate';
 
   const payload = JSON.stringify({
-    otp_key: '14571558', // ganti sesuai OTP yang kamu pakai
+    otp_key: '94368071', // ganti sesuai OTP yang kamu pakai
   });
 
   const params = {
