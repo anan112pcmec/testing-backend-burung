@@ -112,4 +112,52 @@ Skema Salah: 	Username update tidak berisikan setidaknya 1 angka atau underscore
 skemabenar: *, skemasalah: *,
 }
 
+Catatan Keberhasilan Alamat Services Pengguna 
+{
+MasukanAlamatPengguna:
+
+Skema Benar: 	Nomor Telfon harus berisikan atleast 10-13 digit
+		nama provinsi terdaftar
+		nama kota terdaftar
+		kode negara harus IDN
+		kode pos harus 5 satuan
+
+Skema Salah: 	Nomor Telfon tidak berisikan atleast 10 - 13 digit atau lebih 
+		nama provinsi tidak terdaftar
+		nama kota tidak terdaftar
+		kode negara tidak IDN
+		Kode Pos tidak berisikan 5 satuan digit
+
+skemabenar: *, skemasalah: *,
+}
+{
+EditAlamatPengguna:
+Skema Benar:   Nomor Telfon harus berisikan atleast 10-13 digit
+  nama provinsi terdaftar
+  nama kota terdaftar
+  kode negara harus IDN
+  kode pos harus 5 satuan
+
+Skema Salah:   Nomor Telfon tidak berisikan atleast 10 - 13 digit atau lebih 
+  nama provinsi tidak terdaftar
+  nama kota tidak terdaftar
+  kode negara tidak IDN
+  Kode Pos tidak berisikan 5 satuan digit
+}
+{
+HapusAlamatPengguna:
+
+Skema Benar:	Harus ada identitas
+		id alamat tak boleh lebih kecil dari 0
+
+Skema Salah:	tak ada identitas 
+		id alamat lebih kecil dari 0
+}
+
+CATATAN MASUKAN "REFACTOR SEMUA THRESHOLD HARUS SOFT DELETE".
+		
+		
+
+
+
 

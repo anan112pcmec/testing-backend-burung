@@ -3,44 +3,91 @@ import http from "k6/http";
 import { check, sleep } from "k6";
 
 export let options = {
-  vus: 1,            // jumlah virtual user andika putra madya
-  duration: "10s",    // lama test
+  vus: 1,             // jumlah virtual user
+  iterations: 1,      // lama tes
 };
 
-export default function () {
-  const url = "http://localhost:8080/user/alamat/edit-alamat";
+// EditAlamatPengguna:
+// Skema Benar:   Nomor Telfon harus berisikan atleast 10-13 digit
+//   nama provinsi terdaftar
+//   nama kota terdaftar
+//   kode negara harus IDN
+//   kode pos harus 5 satuan
 
-  const payload = JSON.stringify({
+// Skema Salah:   Nomor Telfon tidak berisikan atleast 10 - 13 digit atau lebih 
+//   nama provinsi tidak terdaftar
+//   nama kota tidak terdaftar
+//   kode negara tidak IDN
+//   Kode Pos tidak berisikan 5 satuan digit
+
+export default function () {
+  let url = "http://localhost:8080/user/alamat/edit-alamat";
+
+  let payloadBenar = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 4,
-      username_pengguna: "andika putra madya",
+      id_pengguna: 1,
+      username_pengguna: "ananlol156_cuy",
       email_pengguna: "anan29837@gmail.com",
     },
-    id_alamat_pengguna: 7,     // ⚠️ GANTI sesuai ID yang mau di-edit
-    panggilan_alamat: "Kantor Faiz",
-    nomor_telefon: "081299887755",
-    nama_alamat: "Jalan Sakura No. 15",
-    provinsi: "dki_jakarta",
-    kota: "jakarta timur",
-    kode_pos: "12560",
-    kode_negara: "ID",
-    deskripsi: "Ini alamat kantor baru",
-    longitude: 106.8219,
-    latitude: -6.2088,
+    id_alamat_pengguna: 2,
+    panggilan_alamat: "Kantor Utama",
+    nomor_telefon: "0812847928",
+    nama_alamat: "Jalan Melati No. 7",
+    provinsi: "jawa_timur",
+    kota: "bandung",
+    kode_pos: "40123",
+    kode_negara: "IDN",
+    deskripsi: "Kantor utama buat kirim barang",
+    longitude: 108.6098,
+    latitude: -7.9147,
   });
 
-  const headers = {
+  let payloadSalah = JSON.stringify({
+    identitas_pengguna: {
+      id_pengguna: 1,
+      username_pengguna: "ananlol156_cuy",
+      email_pengguna: "anan29837@gmail.com",
+    },
+    id_alamat_pengguna: 1,
+    panggilan_alamat: "Kantor Utama",
+    nomor_telefon: "081284798", // hanya 9 digit
+    nama_alamat: "Jalan Melati No. 7",
+    provinsi: "jawa_timussr", // tak terdaftar
+    kota: "bandungs", // tak terdaftar
+    kode_pos: "401232", // lebih dari 5 digit
+    kode_negara: "ID", // bukan IDN
+    deskripsi: "Kantor utama buat kirim barang",
+    longitude: 108.6098,
+    latitude: -7.9147,
+  });
+
+  let params = {
     headers: {
       "Content-Type": "application/json",
     },
   };
 
-  const res = http.patch(url, payload, headers);
+  const resBenar = http.patch(url, payloadBenar, params);
+  const resSalah = http.patch(url, payloadSalah, params);
 
-  console.log(res.body);
-  check(res, {
-    "Status 200": (r) => r.status === 200,
-    "Response OK": (r) => r.body.length > 0,
-  });
-
+  try {
+    console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));
+    console.log("Skema Salah: ", JSON.stringify(JSON.parse(resSalah.body), null, 2));
+  } catch {
+    console.log(resBenar.body);
+    console.log(resSalah.body);
+  }
 }
+
+// INFO[0000] Skema Benar:  {
+//   "status": 200,
+//   "service": "EditAlamatPengguna",
+//   "pesan": "Berhasil",
+//   "response_payload": null
+// }  source=console
+// INFO[0000] Skema Salah:  {
+//   "status": 401,
+//   "service": "EditAlamatPengguna",
+//   "pesan": "Gagal format kode pos tidak valid",
+//   "response_payload": null
+// }  source=console

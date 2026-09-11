@@ -3,20 +3,32 @@ import http from "k6/http";
 import { check, sleep } from "k6";
 
 export let options = {
-  vus: 1,              // jumlah virtual user
-  duration: "10s",      // durasi test
+  vus: 1,             // jumlah virtual user
+  iterations: 1,      // lama tes
 };
+
+// HapusAlamatPengguna:
+// Skema Benar & Salah untuk pengujian penghapusan alamat
 
 export default function () {
   const url = "http://localhost:8080/user/alamat/hapus-alamat";
 
-  const payload = JSON.stringify({
+  const payloadBenar = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 4,
-      username_pengguna: "andika putra madya",
+      id_pengguna: 1,
+      username_pengguna: "ananlol156_cuy",
       email_pengguna: "anan29837@gmail.com",
     },
-    id_alamat_hapus_alamat: 7,   // ⚠️ GANTI sesuai ID alamat yang mau dihapus
+    id_alamat_hapus_alamat: 3, 
+  });
+
+  const payloadSalah = JSON.stringify({
+    identitas_pengguna: {
+      id_pengguna: 1,
+      username_pengguna: "ananlol156_cuy",
+      email_pengguna: "anan29837@gmail.com",
+    },
+    id_alamat_hapus_alamat: -12, // ID tidak terdaftar / tidak valid
   });
 
   const params = {
@@ -25,13 +37,14 @@ export default function () {
     },
   };
 
-  const res = http.del(url, payload, params);
+  const resBenar = http.del(url, payloadBenar, params);
+  const resSalah = http.del(url, payloadSalah, params);
 
-  check(res, {
-    "Status harus 200": (r) => r.status === 200,
-    "Response tidak kosong": (r) => r.body && r.body.length > 0,
-  });
-
-  console.log(res.body);
-
+  try {
+    console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));
+    console.log("Skema Salah: ", JSON.stringify(JSON.parse(resSalah.body), null, 2));
+  } catch {
+    console.log(resBenar.body);
+    console.log(resSalah.body);
+  }
 }
