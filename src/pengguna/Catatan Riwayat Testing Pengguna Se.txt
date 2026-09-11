@@ -1,0 +1,40 @@
+Catatan Riwayat Testing Pengguna Services
+
+* = berhasil
+- = gagal
+Catatan Keberhasilan Service Pengguna:
+{
+PreUserRegistration:
+Skema Benar: 	username harus memiliki setidaknya 1 angka
+
+		email harus memiliki @gmail.com 
+
+		password harus memiliki 1 angka dan underscore juga harus ada 1 huruf kapital
+
+Skema Salah: 	username tidak memiliki setidaknya 1 angka
+
+		email tidak memiliki @gmail.com
+
+		password tidak memiliki 1 angka dan underscore dan 1 huruf kapital
+
+skemabenar: * , skemasalah: *}
+
+{ValidateUserRegistration: 
+Skema Benar: 	Otp harus memiliki 8 satuan angka, tidak berisikan huruf
+
+Skema Salah: 	Otp tidak pas 8 satuan angka, berisikan setidaknya 1 huruf
+
+skemabenar:* , skemasalah:* 
+},
+
+{UserLogin: 
+
+Skema Benar: 	Email Harus memiliki @gmail.com
+
+Skema Salah	Email Tidak memiliki @gmail.com
+
+skemabenar:*, skemasalah:*,
+}//AUTH SERVICES PENGGUNA PASSED
+
+
+
