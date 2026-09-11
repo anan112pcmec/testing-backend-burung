@@ -2,7 +2,7 @@ Catatan Riwayat Testing Pengguna Services
 
 * = berhasil
 - = gagal
-Catatan Keberhasilan Service Pengguna:
+Catatan Keberhasilan Auth Pengguna Service:
 {
 PreUserRegistration:
 Skema Benar: 	username harus memiliki setidaknya 1 angka
@@ -36,5 +36,62 @@ Skema Salah	Email Tidak memiliki @gmail.com
 skemabenar:*, skemasalah:*,
 }//AUTH SERVICES PENGGUNA PASSED
 
+Catatan Keberhasilan Credential Service Pengguna 
+{
+PreubahPasswordPengguna:
+Skema benar:	Password Baru Harus memiliki 1 angka dan underscore
+		Password Sebelum harus memiliki 1 angka dan underscore
+		Faktor Kedua harus diantara "OTP" atau "PIN" 
+		Harus Menyertakan Identitas
 
+Skema Salah: 	Password Baru tidak memiliki 1 angka atau underscore 
+		Password Sebelum tidak memiliki 1 angka atau underscore 
+		Faktor kedua selain "OTP" atau "PIN"
+		Tidak Menyertakan Identitas
+ 
+skemabenar: *, skemasalah: *,
+}
+{
+ValidateUbahPasswordPenggunaViaOtp:
 
+Skema benar: 	Otp Harus Bernilai Angka semua 8 satuan
+
+Skema Salah: 	Otp memiliki karakter atau tidak pas 8 satuan
+
+skemabenar: *, skemasalah: *,
+}
+{
+MembuatPinPengguna:
+
+Skema Benar: 	PIN harus berisikan angka seluruhnya dan berisikan 6 satuan
+		Password harus memiliki 1 angka dan underscore
+		Harus Menyertakan Identitas 
+
+Skema Salah: 	PIN tidak berisikan angka seluruhnya, dan tidak berisikan pas 6 Password 
+		Password tidak memiliki setidaknya 1 angka atau underscore
+		Tidak menyertakan Identitas
+
+skemabenar: *, skemasalah: *,
+},
+{
+UpdateSecretPinPengguna: 
+
+Skema benar: 	PIN lama harus bernilai angka semua 6 satuan
+		PIN baru harus bernilai angka semua 6 satuan 
+		Harus Menyertakan Identitas 
+
+Skema Salah: 	PIN lama memiliki karakter atau tidak pas 6 satuan
+		PIN baru memiliki karakter atau tidak pas 6 satuan 
+		Tidak menyertakan Identitas
+
+skemabenar: *, skemasalah: *,
+}
+{
+ValidateUbahPasswordPenggunaViaPin: 
+ 
+Skema benar:	PIN harus bernilai angka semua 6 satuan
+
+Skema salah: 	PIN memiliki karakter atau tidak pas 6 satuan
+
+skemabenar: *, skemasalah: *,
+}
