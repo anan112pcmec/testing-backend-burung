@@ -2,6 +2,7 @@ Catatan Riwayat Testing Pengguna Services
 
 * = berhasil
 - = gagal
+
 Catatan Keberhasilan Auth Pengguna Service:
 {
 PreUserRegistration:
@@ -95,3 +96,20 @@ Skema salah: 	PIN memiliki karakter atau tidak pas 6 satuan
 
 skemabenar: *, skemasalah: *,
 }
+
+Catatan Keberhasilan Profiling Pengguna Services 
+{
+UbahPersonalProfilingPengguna:
+
+Skema Benar: 	Username update berisikan setidaknya 1 angka dan underscore
+		Email update setidaknya memiliki @gmail.com
+		menyertakan Identitas pengguna
+
+Skema Salah: 	Username update tidak berisikan setidaknya 1 angka atau underscore 
+		email update tidak mengandung @gmail.com
+		tidak menyertakan Identitas Pengguna
+
+skemabenar: *, skemasalah: *,
+}
+
+
