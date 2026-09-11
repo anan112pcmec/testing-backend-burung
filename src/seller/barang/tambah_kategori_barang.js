@@ -1,3 +1,4 @@
+// k6 run barang/tambah_kategori_barang.js
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
@@ -10,51 +11,56 @@ export default function () {
   const url = 'http://localhost:8080/seller/tambah_kategori_barang'; // sesuaikan endpoint
 
   const payload = JSON.stringify({
-    identitas_seller: {
-      id_seller: 1,
-      username_seller: 'ananapparel',
-      email_seller: 'anan29837@gmail.com',
+  identitas_seller: {
+    id_seller: 8,
+    username_seller: "ananapparel",
+    email_seller: "appburung@gmail.com",
+  },
+  data_barang_induk: {
+    id_seller: 8,
+    nama: "Kaos Oversize Premium",
+    jenis: "Semua Barang",
+    deskripsi: "Kaos oversize bahan cotton combed 30s, adem dan nyaman.",
+    original_kategori: 1,
+    harga_kategori_barang: 95000,
+  },
+  data_kategori_barang_induk: [
+    {
+      id_seller_kategori_barang: -55,
+      id_barang_induk_kategori: 9999,
+      id_alamat_gudang_kategori_barang: 0,
+      id_rekening_kategori_barang: 12994,
+      nama_kategori_barang: "Kaos Oversize Denim Blue L",
+      deskripsi_kategori_barang: "Kaos denim blue oversize size L bahan cotton combed.",
+      warna_kategori_barang: "Denim Blue",
+      stok_kategori_barang: 70,
+      harga_kategori_barang: 95000,
+      berat_gram_kategori_barang: 200,
+      dimensi_panjang_cm_kategori_barang: 30,
+      dimensi_tinggi_cm_kategori_barang: 2,
+      sku_kategori: "TS-DNM-OV-L",
+      is_original_kategori_barang: false,
     },
-    id_barang_induk_tambah_kategori: 2, // contoh id barang induk
-    tambah_kategori_barang: [
-      {
-        id_kategori_barang: 1,
-        id_seller_kategori_barang: 101,
-        id_barang_induk_kategori: 12,
-        id_alamat_gudang_kategori_barang: 3,
-        id_rekening_kategori_barang: 4,
-        nama_kategori_barang: "Kemeja Flanel Lengan Panjang",
-        deskripsi_kategori_barang: "Kemeja flanel premium dengan bahan lembut dan hangat, cocok untuk gaya kasual.",
-        warna_kategori_barang: "Merah Hitam",
-        stok_kategori_barang: 120,
-        harga_kategori_barang: 175000,
-        berat_gram_kategori_barang: 450,
-        dimensi_panjang_cm_kategori_barang: 30,
-        dimensi_tinggi_cm_kategori_barang: 20,
-        sku_kategori: "KMJ-FLN-MRH-01",
-        is_original_kategori_barang: true
-      },
-      {
-        id_kategori_barang: 0,
-        id_seller_kategori_barang: 101,
-        id_barang_induk_kategori: 12,
-        id_alamat_gudang_kategori_barang: 3,
-        id_rekening_kategori_barang: 4,
-        nama_kategori_barang: "Kemeja Linen Lengan Pendek",
-        deskripsi_kategori_barang: "Kemeja linen adem dan ringan, cocok untuk aktivitas santai di luar ruangan.",
-        warna_kategori_barang: "Putih",
-        stok_kategori_barang: 80,
-        harga_kategori_barang: 155000,
-        berat_gram_kategori_barang: 350,
-        dimensi_panjang_cm_kategori_barang: 28,
-        dimensi_tinggi_cm_kategori_barang: 18,
-        sku_kategori: "KMJ-LNN-PTH-02",
-        is_original_kategori_barang: true
-      }
-    ],
-    id_alamat_gudang: 4,
-    id_rekening: 12985,
-  });
+    {
+      id_seller_kategori_barang: 777777,
+      id_barang_induk_kategori: -5,
+      id_alamat_gudang_kategori_barang: -1,
+      id_rekening_kategori_barang: 12994,
+      nama_kategori_barang: "Kaos Oversize Mustard S",
+      deskripsi_kategori_barang: "Kaos mustard oversize size S bahan cotton combed.",
+      warna_kategori_barang: "Mustard",
+      stok_kategori_barang: 85,
+      harga_kategori_barang: 95000,
+      berat_gram_kategori_barang: 170,
+      dimensi_panjang_cm_kategori_barang: 26,
+      dimensi_tinggi_cm_kategori_barang: 2,
+      sku_kategori: "TS-MSTD-OV-S",
+      is_original_kategori_barang: false,
+    },
+  ],
+  id_alamat_gudang: 1,
+  id_rekening: 2,
+});
 
   const params = {
     headers: {

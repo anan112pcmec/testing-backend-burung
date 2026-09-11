@@ -17,7 +17,7 @@ export default function () {
       username_pengguna: "ananlol",
       email_pengguna: "ananlol156@gmail.com",
     },
-    password_user_membuat_pin: "PasswordBaru123!",
+    password_user_membuat_pin: "rahasiadeh123",
     pin_user_membuat_pin: "123456"
   });
 

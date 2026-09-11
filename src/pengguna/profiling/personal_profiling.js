@@ -13,11 +13,11 @@ export default function () {
   const payload = JSON.stringify({
     identitas_pengguna: {
       id_pengguna: 1,
-      username_pengguna: "username_baru",
-      email_pengguna: "emailbaru@example.com"
+      username_pengguna: "anancuy",
+      email_pengguna: "anan29837@gmail.com"
     },
     update_username_user: "ananlol",
-    update_nama_user: "Nama Baru",
+    update_nama_user: "Nama Baru Anan",
     update_email_user: "ananlol156@gmail.com"
   });
 

@@ -12,12 +12,12 @@ export default function () {
   const url = 'http://localhost:8080/auth/user/registration';
 
   const payload = JSON.stringify({
-    username: 'anann',
+    username: 'anancuy',
     nama: 'Faiz Hannan Hakim',
     email: 'anan29837@gmail.com',
     password_hash: 'rahasiadeh123',
     pin_hash: '120022',
-    status: 'Offline',
+    status: '',
   });
 
   const params = {

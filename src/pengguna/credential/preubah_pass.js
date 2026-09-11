@@ -16,7 +16,7 @@ export default function () {
       username_pengguna: "ananlol",
       email_pengguna: "ananlol156@gmail.com",
     },
-    password_sebelum_user: "PasswordBaru123!",     // ⚠️ HARUS sesuai password di DB
+    password_sebelum_user: "rahasiadeh123",     // ⚠️ HARUS sesuai password di DB
     password_baru_user: "makan_atap",
     faktor_kedua_ganti_password_user: "PIN",    // misalnya OTP, PIN, dll
   });
