@@ -1,0 +1,33 @@
+Catatan keberhasilan Auth Services Seller 
+{
+PreSellerRegistration:
+
+Skema Benar: 	email harus mengandung @gmail.com
+		username harus mengandung setidaknya 1 angka dan underscore
+		password harus memiliki setidaknya 1 angka, huruf kapital, dan karakter khusus unik
+		jenis harus Personal
+		seller_dedication Harus Valid Terdaftar
+
+
+Skema Salah: 	email tidak mengandung @gmail.com
+		username tidak mengandung setidaknya 1 angka atau underscore
+		password tidak memiliki setidaknya 1 anggka atau huruf kapital atau karakter khusus unik
+
+skemabenar: *, skemasalah:*,
+}
+{
+ValidateSellerRegistration:
+Skema Benar: 	otp berisikan pas 8 satuan 
+		otp tidak mengandung karakter selain angka
+
+Skema Salah: 	otp tidak berisikan pas 8 satuan 
+		otp mengandung karakter selain angka
+
+skemabenar: *, skemasalah: *,
+}
+{
+
+SellerLogin:
+Skema Benar: 	email harus mengandung @gmail.com
+		password harus memiliki setidaknya 1 angka, huruf kapital, dan karakter khusus unik
+}
