@@ -31,3 +31,56 @@ SellerLogin:
 Skema Benar: 	email harus mengandung @gmail.com
 		password harus memiliki setidaknya 1 angka, huruf kapital, dan karakter khusus unik
 }
+Catatan Keberhasilan Alamat Services Seller 
+{
+TambahAlamatGudang:
+
+Skema Benar:	Nomor Telephone harus hanya brisikan angka saja dan dalam jangkauan 11-13 karakter 
+		Provinsi harus tedaftar
+		Kota harus terdaftar
+		KodePos harus terdaftar
+		Kode negara harus "IDN"
+		Harus Menyertakan Identitas
+
+Skema Salah:	Nomor Telephone tidak berisikan angka saja dan dalam pas 11-13 karakter 
+		Provinsi tidak terdaftar
+		Kota tidak terdaftar
+		KodePos tidak terdaftar
+		Kode negara selain "IDN"
+		Tidak menyertakan Identitas
+
+skemabenar: *, skemasalah: *,
+}
+{
+EditAlamatGudang:
+
+Skema Benar:	Harus Menyertakan Id Alamat Gudang dan Id alamat Gudang harus lebih besar dari 0
+		Nomor Telephone harus hanya brisikan angka saja dan dalam jangkauan 11-13 karakter 
+		Provinsi harus tedaftar
+		Kota harus terdaftar
+		KodePos harus terdaftar
+		Kode negara harus "IDN"
+		Harus Menyertakan Identitas
+
+Skema Salah:	Tidak Menyertakan Id Alamat Gudang dan Id alamat Gudang tidak lebih besar dari 0
+
+		Nomor Telephone tidak berisikan angka saja dan dalam pas 11-13 karakter 
+		Provinsi tidak terdaftar
+		Kota tidak terdaftar
+		KodePos tidak terdaftar
+		Kode negara selain "IDN"
+		Tidak menyertakan Identitas
+}
+{
+HapusAlamatGudang:
+
+Skema Benar: 	Menyertakan Id Alamat Gudang dan Id Alamat Gudang lebih besar dari 0
+		
+Skema Salah: 	Tidak Menyertakan Id Alamat Gudang dan Id Alamat Gudang Tidak lebih besar dari 0
+
+skemabenar: *, skemasalah: *,
+}
+
+
+
+
