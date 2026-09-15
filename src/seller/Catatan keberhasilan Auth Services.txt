@@ -81,6 +81,64 @@ Skema Salah: 	Tidak Menyertakan Id Alamat Gudang dan Id Alamat Gudang Tidak lebi
 skemabenar: *, skemasalah: *,
 }
 
+Catatan Keberhasilan Rekening Seller Services 
+{
+TambahkanNorekSeller:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		nama bank terdaftar
+		nomor rekening harus memiliki digit antara 10 sampai 15 dan semuanya berisikan angka
+		Pemilik Rekening Harus Setidaknya berisikan 5 Karakter
+
+Skema Salah: 	Tidak menyertakan identitas seller 
+		nama bank tidak terdaftar
+		nomor rekening tidak memiliki digit di antara 10 sampai 15 dan memiliki karakter 
+		Pemilik Rekening Harus Setidaknya berisikan 3 Karakter
+	
+skemabenar: *, skemasalah: *,
+}
+{
+EditNotekSeller: 
+
+Skema Benar: 	Id Alamat Rekening Yang Dituju tidak lebih kecil dari 0
+		Menyertakan Identitas Seller
+		nama bank terdaftar
+		nomor rekening harus memiliki digit antara 10 sampai 15 dan semuanya berisikan angka	
+		Pemilik Rekening Harus Setidaknya berisikan 5 Karakter
+
+Skema Salah: 	Id Alamat Rekening Yang Dituju lebih kecil dari 0
+		Tidak menyertakan identitas seller 
+		nama bank tidak terdaftar
+		nomor rekening tidak memiliki digit di antara 10 sampai 15 dan memiliki karakter 
+		Pemilik Rekening Harus Setidaknya berisikan 3 Karakter
+
+skemabenar: *, skemasalah: *,
+}
+{
+SetDefaultRekeningSeller:
+
+Skema Benar: 	IdRekening Lebih Tidak Lebih Kecil dari 0
+		Menyertakan Identitas seller
+
+Skema Salah:  	IdRekening Lebih Kecil Dari 0
+		Tidak Menyertakan Identitas Seller
+
+skemabenar: *, skemasalah: *,
+}
+{
+HapusNorekSeller:
+
+
+Skema Benar: 	IdRekening Lebih Tidak Lebih Kecil dari 0
+		nomor rekening harus memiliki digit antara 10 sampai 15 dan semuanya berisikan angka
+		Menyertakan Identitas seller
+
+Skema Salah:  	IdRekening Lebih Kecil Dari 0
+		nomor rekening tidak memiliki digit antara 10 sampai 15 dan tidak semuanya berisikan angka
+		Tidak Menyertakan Identitas Seller
+
+skemabenar: *, skemasalah: *,
+}
 
 
 
