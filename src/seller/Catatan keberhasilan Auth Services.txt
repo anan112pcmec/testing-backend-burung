@@ -98,7 +98,7 @@ Skema Salah: 	Tidak menyertakan identitas seller
 skemabenar: *, skemasalah: *,
 }
 {
-EditNotekSeller: 
+EditNorekSeller: 
 
 Skema Benar: 	Id Alamat Rekening Yang Dituju tidak lebih kecil dari 0
 		Menyertakan Identitas Seller
@@ -140,5 +140,30 @@ Skema Salah:  	IdRekening Lebih Kecil Dari 0
 skemabenar: *, skemasalah: *,
 }
 
+Catatan Keberhasilan Credential Seller Services :
+{
+PreUbahPasswordSeller:
+Skema Benar: 	Password Baru Harus memiliki setidaknya 1 angka dan karakter unik dan minimal 10 karakter dan memilik 1 huruf besar
+
+		Password Lama harus memiliki setidaknya 1 angka dan karakter unik dan minimal 10 karakter 
+		Harus Menyertakan identitas seller dan memilik 1 huruf besar
 
 
+Skema Salah: 	Password Baru tidak memiliki setidaknya 1 angka atau tidak memiliki karakter unik dan kurang dari 10 karakter atau tidak memilik 1 huruf besar
+
+
+		Password Lama tidak memiliki setidaknya 1 angka atau tidak memiliki karakter unik dan kurang dari 10 karakter atau tidak memilik 1 huruf besar
+
+		
+		Tidak menyertakan identitas seller 
+
+}
+{
+ValidateUbahPasswordSeller:
+
+Skema Benar:	Otp Harus Bernilai Angka semua 8 satuan
+		Menyertakan Identitas Seller
+
+Skema Salah: 	Otp Tidak bernilai 8 angka satuan atau berisikan huruf
+		Tidak menyertakan Identitas Seller
+}

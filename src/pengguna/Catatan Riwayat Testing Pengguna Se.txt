@@ -40,8 +40,11 @@ skemabenar:*, skemasalah:*,
 Catatan Keberhasilan Credential Service Pengguna 
 {
 PreubahPasswordPengguna:
-Skema benar:	Password Baru Harus memiliki 1 angka dan underscore
-		Password Sebelum harus memiliki 1 angka dan underscore
+
+		Password Baru tidak memiliki setidaknya 1 angka atau tidak memiliki karakter unik dan kurang dari 10 karakter atau tidak memilik 1 huruf besar
+
+
+		Password Lama tidak memiliki setidaknya 1 angka atau tidak memiliki karakter unik dan kurang dari 10 karakter atau tidak memilik 1 huruf besar
 		Faktor Kedua harus diantara "OTP" atau "PIN" 
 		Harus Menyertakan Identitas
 
