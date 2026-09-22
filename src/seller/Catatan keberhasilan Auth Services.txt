@@ -157,6 +157,8 @@ Skema Salah: 	Password Baru tidak memiliki setidaknya 1 angka atau tidak memilik
 		
 		Tidak menyertakan identitas seller 
 
+skemabenar: *, skemasalah: *,
+
 }
 {
 ValidateUbahPasswordSeller:
@@ -167,3 +169,75 @@ Skema Benar:	Otp Harus Bernilai Angka semua 8 satuan
 Skema Salah: 	Otp Tidak bernilai 8 angka satuan atau berisikan huruf
 		Tidak menyertakan Identitas Seller
 }
+Catatan Keberhasilan Diskon Services Seller:
+{
+TambahDiskonProduk: 
+
+Skema Benar:	Menyertakan Identitas Seller
+		Nama lebih dari 5 karakter
+		DiskonPersen harus lebih besar dari 0 dan lebih kecil sama dari 100
+		BerlakuMulai Harus Lebih Kecil Dari Berlaku Sampai
+
+Skema Salah:	Tidak Menyertakan Identitas Seller 
+		Nama Tidak Sampai 5 karakter
+		DiskonPersen lebih kecil dari 0 atau lebih besar dari 100
+		BerlakuMulai Lebih besar dari berlaku sampai
+
+skemabenar: *, skemasalah: *,
+}
+{
+EditDiskonProduk: 
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdDiskonProduk harus lebih besar dari 0
+		Nama Lebih dari 5 karakter 
+		BerlakuMulai Harus Lebih Kecil Dari Berlaku Sampai
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdDiskon lebih kecil dari 0
+		Nama kurang dari 5 karakter 
+		BerlakuMulai Lebih Besar daripada Berlaku Sampai
+
+skemabenar: *, skemasalah: *,
+}
+{
+HapusDiskonProduk:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdDuskonProduk Lebih besar dari 0
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller 
+		IdDiskonProduk Lebih kecil dari 0 
+
+skemabenar: *, skemasalah: *,
+}
+{
+TetapkanDiskonPadaBarang: 
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdDiskonProduk Lebih Besar dari 0
+		IdBarangInduk lebih besar dari 0 
+		IdKategoriBarang lebih besar dari 0 
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller 
+		IdDiskonProduk lebih kecil dari 0 
+		IdBarangInduk lebih kecil dari 0 
+		IdKategoriBarang lebih kecil dari 0 
+
+skemabenar: *,  skemasalah: *,
+
+}
+{
+HapusDiskonPadaBarang:
+
+Skema Benar: 	Menyertakan Identitas Seller 
+		IdBarangDiDiskon lebih besar dari 0 
+		
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBarangDiDiskon lebih kecil dari 0 
+
+skemabenar: *, skemasalah: *,
+
+}
+
+

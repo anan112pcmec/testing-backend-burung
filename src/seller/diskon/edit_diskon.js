@@ -7,35 +7,74 @@ export const options = {
   duration: "5s", // lama pengujian
 };
 
+// EditDiskonProduk: 
+
+// Skema Benar: 	Menyertakan Identitas Seller
+// 		IdDiskonProduk harus lebih besar dari 0
+// 		Nama Lebih dari 5 karakter 
+// 		BerlakuMulai Harus Lebih Kecil Dari Berlaku Sampai
+
+// Skema Salah: 	Tidak Menyertakan Identitas Seller
+// 		IdDiskon lebih kecil dari 0
+// 		Nama kurang dari 5 karakter 
+// 		BerlakuMulai Lebih Besar daripada Berlaku Sampai
+
+// skemabenar: *, skemasalah: *,
+
+
 export default function () {
   const url = "http://localhost:8080/seller/diskon/edit-diskon";
 
-  const payload = JSON.stringify({
-    identitas_seller: {
-      id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com"
-    },
-    id_diskon_produk: 1,
-    nama: "Diskon Spesial Akhir Tahun",
-    deksripsi: "Update promo akhir tahun untuk semua produk burung premium.",
-    diskon_persen: 30,
-    berlaku_mulai: "2025-11-13T00:00:00Z",
-    berlaku_sampai: "2025-12-31T00:00:00Z"
-  });
-
-  const params = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
-
-  const res = http.patch(url, payload, params);
-
-  check(res, {
-    "status is 200": (r) => r.status === 200,
-    "response not empty": (r) => r.body && r.body.length > 0,
-  });
-
-  console.log(res.body);
+   const payloadBenar = JSON.stringify({
+       identitas_seller: {
+        id_seller: 1,
+        username_seller: "ananapparel",
+        email_seller: "anan29837@gmail.com"
+      },
+      id_diskon_produk: 1,
+      nama: "Diskon Musim Panas",
+      deksripsi: "Potongan harga besar untuk semua produk burung hias.",
+      diskon_persen: 20,
+      berlaku_mulai: "2025-11-13T00:00:00Z",
+      berlaku_sampai: "2025-12-13T00:00:00Z"
+    });
+  
+    const payloadSalah = JSON.stringify({
+      identitas_seller: {
+        id_seller: 1,
+        username_seller: "ananapparel",
+        email_seller: "anan29837@gmail.com"
+      },
+      id_diskon_produk: 1,
+      nama: "ucd",
+      deskripsi: "Potongan Harga Bla bla bla",
+      diskon_persen: 201,
+      berlaku_mulai: "2025-11-13T00:00:00Z",
+      berlaku_sampai: "2025-12-13T00:00:00Z"
+    })
+  
+    const params = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+  
+     const resBenar = http.patch(url, payloadBenar, params);
+      const resSalah = http.patch(url, payloadSalah, params);
+    
+      check(resBenar, {
+        "skema benar status 200": (r) => r.status === 200,
+      });
+    
+      check(resSalah, {
+        "skema salah ditolak (bukan 200)": (r) => r.status !== 200,
+      });
+    
+      try {
+        console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));
+        console.log("Skema Salah: ", JSON.stringify(JSON.parse(resSalah.body), null, 2));
+      } catch {
+        console.log("Respon Benar: ", resBenar.body);
+        console.log("Respon Salah: ", resSalah.body);
+      }
 }

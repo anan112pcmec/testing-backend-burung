@@ -7,10 +7,20 @@ export let options = {
   duration: "15s", // durasi test
 };
 
+// HapusDiskonProduk:
+
+// Skema Benar: 	Menyertakan Identitas Seller
+// 		IdDuskonProduk Lebih besar dari 0
+
+// Skema Salah: 	Tidak Menyertakan Identitas Seller 
+// 		IdDiskonProduk Lebih kecil dari 0 
+
+// skemabenar: *, skemasalah: *,
+
 export default function () {
   const url = "http://localhost:8080/seller/diskon/hapus-diskon";
 
-  const payload = JSON.stringify({
+  const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
       username_seller: "ananapparel",
@@ -19,18 +29,38 @@ export default function () {
     id_diskon_produk: 1, // ubah sesuai ID diskon yang ingin dihapus
   });
 
-  const params = {
-    headers: {
-      "Content-Type": "application/json",
+  const payloadSalah = JSON.stringify({
+    identitas_seller: {
+      id_seller: 1,
+      username_seller: "ananapparel",
+      email_seller: "anan29837@gmail.com",
     },
-  };
-
-  const res = http.del(url, payload, params);
-
-  check(res, {
-    "status code 200": (r) => r.status === 200,
-    "response not empty": (r) => r.body.length > 0,
+    id_diskon_produk: -2, // ubah sesuai ID diskon yang ingin dihapus
   });
 
-  console.log(res.body);
+
+   const params = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+  
+     const resBenar = http.patch(url, payloadBenar, params);
+      const resSalah = http.patch(url, payloadSalah, params);
+    
+      check(resBenar, {
+        "skema benar status 200": (r) => r.status === 200,
+      });
+    
+      check(resSalah, {
+        "skema salah ditolak (bukan 200)": (r) => r.status !== 200,
+      });
+    
+      try {
+        console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));
+        console.log("Skema Salah: ", JSON.stringify(JSON.parse(resSalah.body), null, 2));
+      } catch {
+        console.log("Respon Benar: ", resBenar.body);
+        console.log("Respon Salah: ", resSalah.body);
+      }
 }
