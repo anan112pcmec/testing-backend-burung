@@ -240,4 +240,63 @@ skemabenar: *, skemasalah: *,
 
 }
 
+Catatan Keberhasilan Etalase Seller Services:
+{
+MenambahEtalase:
+
+Skema Benar:	Menyertakan Identitas Seller 
+		Nama Etalase harus lebih dari 5 karakter
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller 
+		Nama Etalase lebih sedikit dari 5 karakter
+
+}
+{
+EditEtalase:
+
+
+Skema Benar: 	Menyertakan Identitas Seller 
+		IdEtalase lebih besar dari 0
+		Nama  Etalase harus lebih dari 5 karakter
+		
+Skema Salah:	Tidak Menyertakan Identitas Seller
+		IdEtalase lebih kecil dari 0 atau kosong atau nol 
+		Nama Etalase kurang dari 5 karakter
+}
+{
+HapusEtalase:
+
+Skema Benar: 	Menyertakan Identitas Seller 
+		IdEtalase lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Seller
+		IdEtalase lebih kecil dari 0
+}
+{
+TambahkanBarangKeEtalase:
+
+Skema Benar:	Menyertakan Identitas Seller
+		IdEtalase lebih besar dari 0
+		IdBarangInduk lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Seller
+		IdEtalase lebih kecil dari 0 
+		IdBarangInduk lebih kecil dari 0
+}
+{
+HapusBarangDiEtalase:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBarangKeEtalase lebih besar dari 0
+		IdEtalase lebih besar dari 0 
+		IdBarangInduk besar kecil dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Seller
+		IdBarangKeEtalase lebih besar dari 0
+		IdEtalase lebih besar dari 0 
+		IdBarangInduk besar kecil dari 0
+}
+		
+
+
 
