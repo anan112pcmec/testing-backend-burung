@@ -296,7 +296,112 @@ Skema Salah:	Tidak Menyertakan Identitas Seller
 		IdEtalase lebih besar dari 0 
 		IdBarangInduk besar kecil dari 0
 }
+
+Catatan Keberhasilan Jenis Seller Services:
+{
+MasukanDataDistributor
+
+Skema Benar: 	Menyertakan IdentitasSeller
+		Nama Perusahaan Tak boleh Kosong
+		NIB harus berisikan 13 Digit hanya angka
+		NPWP harus berisikan 15-16 digit
+		DokumenIzinDistributor tak boleh kosong urlnya atau tak valid
+
+Skema Salah:	Tidak Menyertakan IdentitasSeller
+		Nama Perusahaan Kosong
+		NIB tak berisikan pas 13 digit hanya angka
+		NPWP Lebih atau kurang dari 15-16 digit
+		DokumenIzinDistributor Kosong urlnya
+}
+{
+EditDataDistributor:
+
+Skema Benar: 	Menyertakan IdentitasSeller
+		IdDistributorData harus lebih besar dari 0
+		Nama Perusahaan Tak boleh Kosong
+		NIB harus berisikan 13 Digit 
+		NPWP harus berisikan 15-16 digit
+		DokumenIzinDistributor tak boleh kosong urlnya
 		
+
+Skema Salah:	Tidak Menyertakan IdentitasSeller
+		IdDistributorData lebih kecil dari 0 atau 0
+		Nama Perusahaan Kosong
+		NIB tak berisikan pas 13 hanya angka
+		NPWP Lebih atau kurang dari 15-16 digit
+		DokumenIzinDistributor Kosong urlnya
+}
+
+{
+HapusDataDistributor:
+	
+Skema Benar: 	Menyertakan Identitas Seller
+		IdDistributorData lebih kecil besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Seller
+		IdDistributorData lebih kecil dari 0 atau 0
+}
+
+{
+MasukanDataBrand:
+
+Skema Benar:	Menyertakan IdentitasSeller
+		NamaPerushaaan Tak boleh kosong
+		Negara Asal tak boleh kosong dan valid
+		LembagaPendaftaran tak boleh kosong dan valid berdasarkan opsi DJKI Dst
+		NomorPendaftaranMerek Tak Boleh Kosong
+		SertifikatMerekUrl Boleh Kosong
+		DokumenPerwakilanUrl tak boleh kosong
+		NIB harus berisikan pas 13 hanya angka
+		NPWP harus berisikan 15-16 digit hanya angka
+
+SkemaSalah: 	Tidak Menyertakan IdentitasSeller
+		NamaPerusahaan Kosong
+		Negara Asal kosong atau tak valid
+		LembagaPendaftaran Kosong Atau tak valid
+		NomorPendaftaranMerekUrl Kosong
+		DokumenPerwakilanUrl Kosong
+		NIB tak berisikan pas 13 digit angka
+		NPWP tak berisikan pas 15-16 digit angka
+}
+
+{
+EditDataBrand:
+	
+Skema Benar:	Menyertakan IdentitasSeller
+		IdDataBrand lebih besar dari 0
+		NamaPerushaaan Tak boleh kosong
+		Negara Asal tak boleh kosong dan valid
+		LembagaPendaftaran tak boleh kosong dan valid berdasarkan opsi DJKI Dst
+		NomorPendaftaranMerek Tak Boleh Kosong
+		SertifikatMerekUrl Boleh Kosong
+		DokumenPerwakilanUrl tak boleh kosong
+		NIB harus berisikan pas 13 hanya angka
+		NPWP harus berisikan 15-16 digit hanya angka
+
+Skema Salah:	Tidak Menyertakan IdentitasSeller
+		IdDataBrand Lebih kecil dari 0
+		NamaPerusahaan Kosong
+		Negara Asal kosong atau tak valid
+		LembagaPendaftaran Kosong Atau tak valid
+		NomorPendaftaranMerekUrl Kosong
+		DokumenPerwakilanUrl Kosong
+		NIB tak berisikan pas 13 digit angka
+		NPWP tak berisikan pas 15-16 digit angka
+}
+{
+HapusDataBrand:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdDataBrand Lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Seller
+		IdDataBrand Lebih kecil dari 0
+}
+		
+
+
+
 
 
 
