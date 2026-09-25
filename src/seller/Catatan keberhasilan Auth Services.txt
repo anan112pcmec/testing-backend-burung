@@ -398,7 +398,57 @@ Skema Benar: 	Menyertakan Identitas Seller
 Skema Salah:	Tidak Menyertakan Identitas Seller
 		IdDataBrand Lebih kecil dari 0
 }
-		
+
+Catatan Keberhasilan Transaksi Services Seller:
+
+{
+ApproveOrderTransaksi:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdTransaksi Tak boleh lebih kecil atau sama dengan 0
+		AutoPengiriman Tak Boleh Waktu Lampau
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdTransaksi lebih kecil atau sama dengan 0
+		AutoPengiriman WaktuYangLampau
+}
+
+{
+KirimOrderTransaksi:
+
+Skema Benar:	Menyertakan IdentitasSeller
+		IdTransaksi Tak Boleh lebih kecil atau sama dengan 0
+
+Skema Salah:	Tidak Menyertakan IdentitasSeller
+		IdTransaksi Lebih kecil atau sama dengan 0
+
+}
+
+{
+UnApproveOrderSeller:
+
+Skema Benar: 	Menyertakan IdentitasSeller
+		IdTransaksi Tak boleh lebih kecil atau sama dengan 0
+
+Skema Salah:	Tidak Menyertakan IdentitasSeller
+		IdTransaksi lebih kecil atau sama dengan 0
+}
+
+{
+RatingPengirimanKurir:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdPengiriman Tak boleh lebih kecil atau sama dengan 0
+		IdKurir tak boleh lebih kecil atau sama dengan 0
+		Rating range 1 - 5 
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdPengiriman lebih kecil atau sama dengan 0 
+		IdKurir lebih kecil atau sama dengan 0
+		Rating selain angka 1 - 5
+}
+
+
 
 
 
