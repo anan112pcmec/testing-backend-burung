@@ -11,11 +11,22 @@ export let options = {
   iterations: 1, // cukup 1x biar jelas
 };
 
+// UbahFotoProfilSeller:
+
+// Skema Benar: 	Menyertakan Identitas Seller
+// 		Ekstensi Valid Untuk Foto
+
+// Skema Salah: 	Tidak Menyertakan Identitas Seller
+// 		Ekstensi Tidak Valid Untuk Foto
+
+
 export default function () {
   /* ===============================
      1️⃣ MINTA PRESIGNED URL
      =============================== */
-  const payload = JSON.stringify({
+
+  var payloads = []
+  const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
       username_seller: "ananapparel",
@@ -23,10 +34,22 @@ export default function () {
     },
     ekstensi: "jpg",
   });
+  
+  const payloadSalah = JSON.stringify({
+     identitas_seller: {
+      id_seller: 1,
+      username_seller: "ananapparel",
+      email_seller: "anan29837@gmail.com",
+    },
+    ekstensi: "gajelas", // ekstensi ini salah
+  })
 
-  const presignedRes = http.put(
+  payloads.push(payloadBenar, payloadSalah)
+
+  for (const p of payloads) {
+    const presignedRes = http.put(
     "http://localhost:8080/seller/media/ubah-foto-profile",
-    payload,
+      p,
     { headers: { "Content-Type": "application/json" } }
   );
 
@@ -44,7 +67,7 @@ export default function () {
     uploadUrl =
       json.upload_url ||
       json.data?.upload_url ||
-      json.response_payload?.upload_url;
+      json.p?.upload_url;
   } catch (e) {
     console.error("Gagal parse JSON:", presignedRes.body);
     return;
@@ -72,5 +95,7 @@ export default function () {
     "upload success": (r) => r.status === 200 || r.status === 204,
   });
 
-  sleep(1);
+  }
+
+  
 }

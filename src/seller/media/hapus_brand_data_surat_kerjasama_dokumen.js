@@ -1,40 +1,69 @@
 // k6 run media/hapus_brand_data_surat_kerjasama_dokumen.js
-
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export let options = {
-  vus: 1,
-  iterations: 1,
+  vus: 1,         // jumlah virtual user
+  iterations: 1,  // lama test
 };
 
+// HapusBrandDataSuratKerjasamaDokumen:
+
+// Skema Benar:   Menyertakan Identitas Seller
+//                IdBrandData Lebih besar dari 0
+//                IdMediaBrandDataSuratKerjasamaDokumen Lebih besar dari 0
+//                KeyDokumen Tak Boleh Kosong
+
+// Skema Salah:   Tidak Menyertakan Identitas Seller
+//                IdBrandData Lebih kecil atau sama dengan 0
+//                IdMediaBrandDataSuratKerjasamaDokumen Lebih kecil atau sama dengan 0
+//                KeyDokumen Kosong
+
 export default function () {
-  const payload = JSON.stringify({
+  const url = "http://localhost:8080/seller/media/hapus-dokumen-brand-data-surat-kerjasama";
+
+  const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
       username_seller: "ananapparel",
       email_seller: "anan29837@gmail.com",
     },
-    id_brand_data: 5, // ⬅️ sesuai DB
-    id_media_brand_data_surat_kerjasama_dokumen: 12, // ⬅️ ID media
-    key_dokumen: "brand/5/surat_kerjasama/uuid.pdf", // ⬅️ KEY DI MINIO
+    id_brand_data: 5,
+    id_media_brand_data_surat_kerjasama_dokumen: 12,
+    key_dokumen: "brand/5/surat_kerjasama/uuid.pdf",
   });
 
-  const res = http.del(
-    "http://localhost:8080/seller/media/hapus-dokumen-brand-data-surat-kerjasama",
-    payload,
-    {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
-
-  check(res, {
-    "hapus dokumen status 200": (r) => r.status === 200,
+  const payloadSalah = JSON.stringify({
+    // Tidak menyertakan identitas_seller
+    id_brand_data: 0,                                // IdBrandData <= 0
+    id_media_brand_data_surat_kerjasama_dokumen: -1, // IdMediaBrandDataSuratKerjasamaDokumen <= 0
+    key_dokumen: "",                                 // KeyDokumen kosong
   });
 
-  console.log(res.body);
+  const params = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  const resBenar = http.patch(url, payloadBenar, params);
+  const resSalah = http.patch(url, payloadSalah, params);
+
+  check(resBenar, {
+    "skema benar status 200": (r) => r.status === 200,
+  });
+
+  check(resSalah, {
+    "skema salah ditolak (bukan 200)": (r) => r.status !== 200,
+  });
+
+  try {
+    console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));
+    console.log("Skema Salah: ", JSON.stringify(JSON.parse(resSalah.body), null, 2));
+  } catch {
+    console.log("Respon Benar: ", resBenar.body);
+    console.log("Respon Salah: ", resSalah.body);
+  }
 
   sleep(1);
 }

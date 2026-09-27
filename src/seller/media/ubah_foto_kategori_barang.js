@@ -1,5 +1,4 @@
 // k6 run media/ubah_foto_kategori_barang.js
-
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
@@ -8,74 +7,104 @@ const fileBytes = open('foto/kategori_barang.jpg', 'b');
 
 export let options = {
   vus: 1,
-  iterations: 1, // deterministic
+  iterations: 1, // cukup 1x biar jelas
 };
 
+// UbahKategoriBarangFoto:
+
+// Skema Benar:   Menyertakan Identitas Seller
+//                IdBarangInduk Lebih besar dari 0
+//                IdKategoriBarang Lebih besar dari 0
+//                Ekstensi Valid Untuk Foto
+
+// Skema Salah:   Tidak Menyertakan Identitas Seller
+//                IdBarangInduk Lebih kecil atau sama dengan 0
+//                IdKategoriBarang Lebih kecil atau sama dengan 0
+//                Ekstensi Tidak Valid Untuk Foto
+
 export default function () {
+  const url = "http://localhost:8080/seller/media/ubah-foto-kategori-barang";
+  const params = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
   /* ===============================
-     1️⃣ MINTA PRESIGNED URL
+     1️⃣ SKEMA BENAR (PRESIGNED + UPLOAD)
      =============================== */
-  const payload = JSON.stringify({
+  const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
       username_seller: "ananapparel",
       email_seller: "anan29837@gmail.com",
     },
-    id_barang_induk: 25,     // ⬅️ SESUAI DB
-    id_kategori_barang: 14,  // ⬅️ SESUAI DB
+    id_barang_induk: 25,
+    id_kategori_barang: 14,
     ekstensi: "jpg",
   });
 
-  const presignedRes = http.put(
-    "http://localhost:8080/seller/media/ubah-foto-kategori-barang",
-    payload,
-    {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
+  const resBenar = http.put(url, payloadBenar, params);
 
-  check(presignedRes, {
-    "presigned status 200": (r) => r.status === 200,
+  check(resBenar, {
+    "skema benar presigned status 200": (r) => r.status === 200,
   });
 
-  // ❗ PARSING JSON DENGAN AMAN
+  // Parsing JSON & Upload ke MinIO untuk Skema Benar
   let uploadUrl = null;
-
   try {
-    const json = presignedRes.json();
+    const json = resBenar.json();
+
     uploadUrl =
       json.upload_url ||
       json.data?.upload_url ||
+      json.p?.upload_url ||
       json.response_payload?.upload_url;
   } catch (e) {
-    console.error("Gagal parse JSON:", presignedRes.body);
-    return;
+    console.error("Gagal parse JSON Skema Benar:", resBenar.body);
   }
 
-  // ❌ STOP JIKA URL KOSONG
   if (!uploadUrl) {
-    console.error("UPLOAD URL KOSONG!");
-    console.error("RESPONSE:", presignedRes.body);
-    return;
-  }
+    console.error("UPLOAD URL SKEMA BENAR KOSONG!");
+    console.error("RESPONSE BENAR:", resBenar.body);
+  } else {
+    console.log("UPLOAD URL BENAR:", uploadUrl);
 
-  console.log("UPLOAD URL:", uploadUrl);
+    const uploadRes = http.put(uploadUrl, fileBytes, {
+      headers: {
+        "Content-Type": "image/jpeg",
+      },
+    });
+
+    check(uploadRes, {
+      "upload foto kategori success": (r) =>
+        r.status === 200 || r.status === 204,
+    });
+  }
 
   /* ===============================
-     2️⃣ UPLOAD FOTO KE MINIO
+     2️⃣ SKEMA SALAH (DITOLAK)
      =============================== */
-  const uploadRes = http.put(uploadUrl, fileBytes, {
-    headers: {
-      "Content-Type": "image/jpeg",
-    },
+  const payloadSalah = JSON.stringify({
+    // Tidak menyertakan identitas_seller
+    id_barang_induk: 0,       // IdBarangInduk <= 0
+    id_kategori_barang: -10,  // IdKategoriBarang <= 0
+    ekstensi: "gajelas",      // Ekstensi foto tidak valid
   });
 
-  check(uploadRes, {
-    "upload foto kategori success": (r) =>
-      r.status === 200 || r.status === 204,
+  const resSalah = http.put(url, payloadSalah, params);
+
+  check(resSalah, {
+    "skema salah ditolak (bukan 200)": (r) => r.status !== 200,
   });
+
+  try {
+    console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));
+    console.log("Skema Salah: ", JSON.stringify(JSON.parse(resSalah.body), null, 2));
+  } catch {
+    console.log("Respon Benar: ", resBenar.body);
+    console.log("Respon Salah: ", resSalah.body);
+  }
 
   sleep(1);
 }

@@ -4,13 +4,24 @@ import { sleep, check } from "k6";
 
 export const options = {
   vus: 1,          // jumlah virtual user
-  duration: "15s", // lama test /media_seller_profil_foto/1/ddf9c747ebbf22bc69f06ab1-pto.jpg
+  iterations: 1, // lama test /media_seller_profil_foto/1/ddf9c747ebbf22bc69f06ab1-pto.jpg
 };
+
+// HapusFotoProfilSeller:
+
+// Skema Benar: 	Menyertakan Identitas Seller
+// 		IdMediaSellerProfilFoto Lebih besar dari 0
+// 		KeyFoto tak boleh kosong
+
+// Skema Salah: 	Tidak Menyertakan Identitas seller
+// 		IdMediaSellerProfilFoto lebih kecil atau sama dengan 0
+// 		KeyFoto Kosong
+
 
 export default function () {
   const url = "http://localhost:8080/seller/media/hapus-foto-profile"; // ganti kalau beda
 
-  const payload = JSON.stringify({
+  const payloadBenar = JSON.stringify({
      identitas_seller: {
       id_seller: 1,
       username_seller: "ananapparel",
@@ -20,20 +31,40 @@ export default function () {
     key_foto:"/media_seller_profil_foto/1/ddf9c747ebbf22bc69f06ab1-pto.jpg"  // GANTI sesuai id komentar yg mau dihapus
   });
 
-  const params = {
-    headers: {
-      "Content-Type": "application/json",
+  const payloadSalah = JSON.stringify({
+     identitas_seller: {
+      id_seller: 1,
+      username_seller: "ananapparel",
+      email_seller: "anan29837@gmail.com",
     },
-  };
-
-  const res = http.del(url, payload, params);
-
-  check(res, {
-    "status 200 / 204": (r) => r.status === 200 || r.status === 204,
-    "response exists": (r) => r.body !== null,
+    id_media_seller_profil_foto: -10, // Salah id lebih kecil dari 0
+    key_foto:"/media_seller_profil_foto/1/ddf9c747ebbf22bc69f06ab1-pto.jpg"  // GANTI sesuai id komentar yg mau dihapus
   });
 
-  console.log(res.body);
-
-  sleep(1);
+  const params = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+  
+      const resBenar = http.patch(url, payloadBenar, params);
+      const resSalah = http.patch(url, payloadSalah, params);
+         
+             check(resBenar, {
+               "skema benar status 200": (r) => r.status === 200,
+             });
+           
+             check(resSalah, {
+               "skema salah ditolak (bukan 200)": (r) => r.status !== 200,
+             });
+           
+             try {
+               console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));
+               console.log("Skema Salah: ", JSON.stringify(JSON.parse(resSalah.body), null, 2));
+             } catch {
+               console.log("Respon Benar: ", resBenar.body);
+               console.log("Respon Salah: ", resSalah.body);
+             }
+  
+   
 }

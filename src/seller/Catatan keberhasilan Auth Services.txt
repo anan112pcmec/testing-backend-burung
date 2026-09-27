@@ -447,11 +447,418 @@ Skema Salah: 	Tidak Menyertakan Identitas Seller
 		IdKurir lebih kecil atau sama dengan 0
 		Rating selain angka 1 - 5
 }
+Catatan Keberhasilan Seller Media Services:
+{
+UbahFotoProfilSeller:
 
+Skema Benar: 	Menyertakan Identitas Seller
+		Ekstensi Valid Untuk Foto
 
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		Ekstensi Tidak Valid Untuk Foto
+}
+{
+HapusFotoProfilSeller:
 
+Skema Benar: 	Menyertakan Identitas Seller
+		IdMediaSellerProfilFoto Lebih besar dari 0
+		KeyFoto tak boleh kosong
 
+Skema Salah: 	Tidak Menyertakan Identitas seller
+		IdMediaSellerProfilFoto lebih kecil atau sama dengan 0
+		KeyFoto Kosong
 
+}
+{
+UbahFotoBannerSeller:
+
+Skema Benar:	Menyertakan Identitas Seller
+		Ekstensi Valid Untuk Foto
+
+Skema Salah:	Tidak Menyertakan Identitas Seller
+		Ekstensi Tidak Valid Untuk Foto
+
+}
+{
+HapusFotoBannerSeller:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdMediaBannerSellerFoto Lebih besar dari 0
+		KeyFoto Tak Boleh Kosong
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdMediaBannerSellerFoto Lebih kecil atau sama dengan 0
+		KeyFoto Kosong
+}
+
+{
+TambahkanFotoTokoFisikSeller:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		Seluruh Isi Ekstensi Valid Untuk Foto
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		Isi Ekstensi ada yang tidak valid untuk foto
+}
+{
+HapusFotoTokoFisikSeller:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		Id Media dalam Data MediaFotoTokoFisik tidak ada yang lebih kecil dari 0 dan keymedia tak boleh kosong
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdMedia dalam data MediaFotoTokoFisik ada yang lebih kecil dari nol atau keymedia ada yang kosong 
+}
+{
+UbahFotoEtalaseSeller:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdEtalase lebih besar dari 0
+		Ekstensi Valid Untuk Foto
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdEtalase lebih kecil atau sama dengan 0
+		Ekstensi Tidak Valid Untuk Foto
+}
+{
+HapusFotoEtalaseSeller
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdMediaEtalaseFoto lebih besar dari 0
+		KeyFoto Tidak Boleh Kosong
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdMediaEtalaseFoto lebih kecil sama dengan 0
+		Keyfoto kosong
+}
+{
+TambahkanMediaBarangIndukFoto:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBarangInduk Lebih besar dari 0
+		Seluruh Isi Ekstensi Valid Untuk Foto
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBarangInduk Lebih kecil atau sama dengan 0
+		Isi Ekstensi ada yang tidak valid untuk foto
+}
+{
+HapusMediaBarangIndukFoto:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdMedia dalam Data DataMediaBarangIndukFoto tidak ada yang lebih kecil dari 0 dan KeyMedia tak boleh kosong
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdMedia dalam data DataMediaBarangIndukFoto ada yang lebih kecil dari nol atau KeyMedia ada yang kosong
+}
+{
+UbahBarangIndukVideo:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBarangInduk Lebih besar dari 0
+		Ekstensi Valid Untuk Video
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBarangInduk Lebih kecil atau sama dengan 0
+		Ekstensi Tidak Valid Untuk Video
+}
+{
+HapusBarangIndukVideo:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdMediaBarangIndukVideo Lebih besar dari 0
+		KeyVideo Tak Boleh Kosong
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdMediaBarangIndukVideo Lebih kecil atau sama dengan 0
+		KeyVideo Kosong
+}
+{
+UbahKategoriBarangFoto:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBarangInduk Lebih besar dari 0
+		IdKategoriBarang Lebih besar dari 0
+		Ekstensi Valid Untuk Foto
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBarangInduk Lebih kecil atau sama dengan 0
+		IdKategoriBarang Lebih kecil atau sama dengan 0
+		Ekstensi Tidak Valid Untuk Foto
+}
+{
+HapusKategoriBarangFoto:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdMediaKategoriBarangFoto Lebih besar dari 0
+		KeyFoto Tak Boleh Kosong
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdMediaKategoriBarangFoto Lebih kecil atau sama dengan 0
+		KeyFoto Kosong
+}
+{
+TambahDistributorDataDokumen:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdDistributorData Lebih besar dari 0
+		Ekstensi Valid Untuk Dokumen
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdDistributorData Lebih kecil atau sama dengan 0
+		Ekstensi Tidak Valid Untuk Dokumen
+}
+{
+HapusMediaDistributorDataDokumen:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdDistributorData Lebih besar dari 0
+		IdMediaDistributorDataDokumen Lebih besar dari 0
+		KeyDokumen Tak Boleh Kosong
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdDistributorData Lebih kecil atau sama dengan 0
+		IdMediaDistributorDataDokumen Lebih kecil atau sama dengan 0
+		KeyDokumen Kosong
+}
+{
+TambahMediaDistributorDataNPWPFoto:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdDistributorData Lebih besar dari 0
+		Ekstensi Valid Untuk Foto
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdDistributorData Lebih kecil atau sama dengan 0
+		Ekstensi Tidak Valid Untuk Foto
+}
+{
+HapusMediaDistributorDataNPWPFoto:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdDistributorData Lebih besar dari 0
+		IdMediaDistributorDataNPWPFoto Lebih besar dari 0
+		KeyFoto Tak Boleh Kosong
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdDistributorData Lebih kecil atau sama dengan 0
+		IdMediaDistributorDataNPWPFoto Lebih kecil atau sama dengan 0
+		KeyFoto Kosong
+}
+{
+TambahDistributorDataNIBFoto:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdDistributorData Lebih besar dari 0
+		Ekstensi Valid Untuk Foto
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdDistributorData Lebih kecil atau sama dengan 0
+		Ekstensi Tidak Valid Untuk Foto
+}
+{
+HapusDistributorDataNIBFoto:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdDistributorData Lebih besar dari 0
+		IdMediaDistributorDataNIBFoto Lebih besar dari 0
+		KeyFoto Tak Boleh Kosong
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdDistributorData Lebih kecil atau sama dengan 0
+		IdMediaDistributorDataNIBFoto Lebih kecil atau sama dengan 0
+		KeyFoto Kosong
+}
+{
+TambahDistributorDataSuratKerjasamaDokumen:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdDistributorData Lebih besar dari 0
+		Ekstensi Valid Untuk Dokumen
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdDistributorData Lebih kecil atau sama dengan 0
+		Ekstensi Tidak Valid Untuk Dokumen
+}
+{
+HapusDistributorDataSuratKerjasamaDokumen:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdDistributorData Lebih besar dari 0
+		IdMediaDistributorDataSuratkerjasamaDokumen Lebih besar dari 0
+		KeyDokumen Tak Boleh Kosong
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdDistributorData Lebih kecil atau sama dengan 0
+		IdMediaDistributorDataSuratkerjasamaDokumen Lebih kecil atau sama dengan 0
+		KeyDokumen Kosong
+}
+{
+TambahBrandDataPerwakilanDokumen:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBrandData Lebih besar dari 0
+		Ekstensi Valid Untuk Dokumen
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBrandData Lebih kecil atau sama dengan 0
+		Ekstensi Tidak Valid Untuk Dokumen
+}
+{
+HapusBrandDataPerwakilanDokumen:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBrandData Lebih besar dari 0
+		IdMediaBrandDataPerwakilanDokumen Lebih besar dari 0
+		KeyDokumen Tak Boleh Kosong
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBrandData Lebih kecil atau sama dengan 0
+		IdMediaBrandDataPerwakilanDokumen Lebih kecil atau sama dengan 0
+		KeyDokumen Kosong
+}
+{
+TambahBrandDataSertifikatFoto:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBrandData Lebih besar dari 0
+		Ekstensi Valid Untuk Foto
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBrandData Lebih kecil atau sama dengan 0
+		Ekstensi Tidak Valid Untuk Foto
+}
+{
+HapusBrandDataSertifikatFoto:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBrandData Lebih besar dari 0
+		IdMediaBrandDataSertifikatFoto Lebih besar dari 0
+		KeyFoto Tak Boleh Kosong
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBrandData Lebih kecil atau sama dengan 0
+		IdMediaBrandDataSertifikatFoto Lebih kecil atau sama dengan 0
+		KeyFoto Kosong
+}
+{
+TambahMediaBrandDataNIBFoto:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBrandData Lebih besar dari 0
+		Ekstensi Valid Untuk Foto
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBrandData Lebih kecil atau sama dengan 0
+		Ekstensi Tidak Valid Untuk Foto
+}
+{
+HapusMediaBrandDataNIBFoto:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBrandData Lebih besar dari 0
+		IdMediaBrandDataNIBFoto Lebih besar dari 0
+		KeyFoto Tak Boleh Kosong
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBrandData Lebih kecil atau sama dengan 0
+		IdMediaBrandDataNIBFoto Lebih kecil atau sama dengan 0
+		KeyFoto Kosong
+}
+{
+TambahMediaBrandDataNPWPFoto:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBrandData Lebih besar dari 0
+		Ekstensi Valid Untuk Foto
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBrandData Lebih kecil atau sama dengan 0
+		Ekstensi Tidak Valid Untuk Foto
+}
+{
+HapusMediaBrandDataNPWPFoto:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBrandData Lebih besar dari 0
+		IdMediaBrandDataNPWPFoto Lebih besar dari 0
+		KeyFoto Tak Boleh Kosong
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBrandData Lebih kecil atau sama dengan 0
+		IdMediaBrandDataNPWPFoto Lebih kecil atau sama dengan 0
+		KeyFoto Kosong
+}
+{
+TambahMediaBrandDataLogoFoto:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBrandData Lebih besar dari 0
+		Ekstensi Valid Untuk Foto
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBrandData Lebih kecil atau sama dengan 0
+		Ekstensi Tidak Valid Untuk Foto
+}
+{
+HapusMediaBrandDataLogoFoto:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBrandData Lebih besar dari 0
+		IdMediaBrandDataLogoBrandFoto Lebih besar dari 0
+		KeyFoto Tak Boleh Kosong
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBrandData Lebih kecil atau sama dengan 0
+		IdMediaBrandDataLogoBrandFoto Lebih kecil atau sama dengan 0
+		KeyFoto Kosong
+}
+{
+TambahBrandDataSuratKerjasamaDokumen:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBrandData Lebih besar dari 0
+		Ekstensi Valid Untuk Dokumen
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBrandData Lebih kecil atau sama dengan 0
+		Ekstensi Tidak Valid Untuk Dokumen
+}
+{
+HapusBrandDataSuratKerjasamaDokumen:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBrandData Lebih besar dari 0
+		IdMediaBrandDataSuratKerjasamaDokumen Lebih besar dari 0
+		KeyDokumen Tak Boleh Kosong
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBrandData Lebih kecil atau sama dengan 0
+		IdMediaBrandDataSuratKerjasamaDokumen Lebih kecil atau sama dengan 0
+		KeyDokumen Kosong
+}
+{
+TambahMediaTransaksiApprovedFoto:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdTransaksi Lebih besar dari 0
+		Ekstensi Valid Untuk Foto
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdTransaksi Lebih kecil atau sama dengan 0
+		Ekstensi Tidak Valid Untuk Foto
+}
+{
+TambahMediaTransaksiApprovedVideo:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdTransaksi Lebih besar dari 0
+		Ekstensi Valid Untuk Video
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdTransaksi Lebih kecil atau sama dengan 0
+		Ekstensi Tidak Valid Untuk Video
+}
 
 
 
