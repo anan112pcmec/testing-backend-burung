@@ -4,41 +4,57 @@ import { check, sleep } from 'k6';
 
 export const options = {
   vus: 1,        // jumlah virtual user (bisa kamu ubah)
-  duration: '5s' // durasi pengujian
+  iterations: 1 // durasi pengujian
 };
 
 export default function () {
   const url = 'http://localhost:8080/seller/profiling/personal-update'; // ganti sesuai alamat API kamu
 
-  const payload = JSON.stringify({
+  const payloadBenar = JSON.stringify({
    identitas_seller: {
       id_seller: 1,
       username_seller: "ananapparel",
       email_seller: "anan29837@gmail.com"
     },
-    update_username_seller: "ananapparel",
+    update_username_seller: "ananapparel_112",
     update_nama_seller: "Faiz Apparel",
-    update_email_seller: "not"
+    update_email_seller: "ananmantap@gmail.com"
   });
 
-  const params = {
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer contohTokenJWT', // hapus kalau endpoint tidak butuh token
+  const payloadSalah = JSON.stringify({
+   identitas_seller: {
+      id_seller: 1,
+      username_seller: "ananapparel",
+      email_seller: "anan29837@gmail.com"
     },
-  };
-
-  const res = http.patch(url, payload, params);
-
-  check(res, {
-    'status 200': (r) => r.status === 200,
-    'profil berhasil diperbarui': (r) =>
-      r.body.includes('berhasil') ||
-      r.body.includes('success') ||
-      r.status === 200,
+    update_username_seller: "ananapparel", // salah username tak memiliki angka
+    update_nama_seller: "Faiz Apparel",
+    update_email_seller: "BLANK"
   });
 
-  console.log(res.body);
-
-  sleep(1);
+  let params = {
+     headers: {
+       "Content-Type": "application/json",
+     },
+   };
+ 
+   const resBenar = http.post(url, payloadBenar, params);
+   const resSalah = http.post(url, payloadSalah, params);
+ 
+   check(resBenar, {
+     "skema benar status 200": (r) => r.status === 200,
+   });
+ 
+   check(resSalah, {
+     "skema salah ditolak (bukan 200)": (r) => r.status !== 200,
+   });
+ 
+   try {
+     console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));
+     console.log("Skema Salah: ", JSON.stringify(JSON.parse(resSalah.body), null, 2));
+   } catch {
+     console.log("Respon Benar: ", resBenar.body);
+     console.log("Respon Salah: ", resSalah.body);
+   }
+ 
 }

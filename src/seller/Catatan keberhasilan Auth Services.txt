@@ -860,5 +860,27 @@ Skema Salah: 	Tidak Menyertakan Identitas Seller
 		Ekstensi Tidak Valid Untuk Video
 }
 
+Catatan Keberhasilan Profiling Seller Services:
+{
+UpdatePersonalSeller:
+
+Skema Benar: 	menyertakan Identitas Seller
+		Email harus memiliki @gmail.com dalam isinya
+		username harus memiliki angka dan underscore 
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		Email tidak memiliki @gmail.com dalam isinya
+		username tidak memiliki angka dan underscore
+}
+{
+UpdateInfoGeneralSeller:
+
+Skema Benar:	Menyertakan Identitas Seller
+		Jam Operasional harus 13 karakter dan waktu sampai lebih besar dari Waktu sebelum
+		Dedication harus valid
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		Jam Operasional Waktu kurang dari 13 karakter atau Waktu mulai lebih besar dari Waktu sampai
+		Dedication Tidak Valid
 
 
