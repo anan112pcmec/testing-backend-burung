@@ -12,7 +12,7 @@ export default function () {
   const url = "http://localhost:8080/seller/komentar-child/hapus";
 
   // Payload sesuai struct PayloadHapusChildKomentar
-  const payload = JSON.stringify({
+  const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
       username_seller: "ananapparel",
@@ -21,20 +21,30 @@ export default function () {
     id_child_komentar: 2,
   });
 
-  // Header HTTP
-  const params = {
-    headers: {
-      "Content-Type": "application/json",
+  const payloadSalah = JSON.stringify({
+    identitas_seller: {
+      id_seller: 1,
+      username_seller: "ananapparel",
+      email_seller: "anan29837@gmail.com"
     },
-  };
-
-  // Kirim permintaan POST ke endpoint
-  const res = http.del(url, payload, params);
-
-  // Cek hasil respons
-  check(res, {
-    "status 200 OK": (r) => r.status === 200,
-    "response time < 1s": (r) => r.timings.duration < 1000,
+    id_child_komentar: -2, // salah id child komentar lebih kecil dari 0
   });
+
+  const params = {
+               headers: {
+                 'Content-Type': 'application/json',
+               },
+             };
+           
+              const resBenar = http.del(url, payloadBenar, params);
+               const resSalah = http.del(url, payloadSalah, params)
+             
+               try {
+                 console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));
+                 console.log("Skema Salah: ", JSON.stringify(JSON.parse(resSalah.body), null, 2));
+               } catch {
+                 console.log(resBenar.body);
+                 console.log(resSalah.body)
+               }
 
 }

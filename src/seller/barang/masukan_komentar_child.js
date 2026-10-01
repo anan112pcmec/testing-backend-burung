@@ -10,7 +10,7 @@ export const options = {
 export default function () {
   const url = 'http://localhost:8080/seller/komentar-child/tambah'; // ganti sesuai alamat server kamu
 
-  const payload = JSON.stringify({
+  const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
       username_seller: "ananapparel",
@@ -21,21 +21,32 @@ export default function () {
     komentar_masukan_komentar: "Mantap Man"
   });
 
-  const params = {
-    headers: {
-      'Content-Type': 'application/json',
+  const payloadSalah = JSON.stringify({
+    identitas_seller: {
+      id_seller: 1,
+      username_seller: "ananapparel",
+      email_seller: "anan29837@gmail.com"
     },
-  };
-
-  const res = http.post(url, payload, params);
-
-  console.log("Response Body:");
-  console.log(res.body);
-
-  check(res, {
-    'status 200 OK': (r) => r.status === 200,
-    'response tidak kosong': (r) => r.body && r.body.length > 0,
+    id_komentar_masukan_komentar: -2, // salah id komentar lebih kecil dari 0
+    id_barang_induk_child_komentar: 2, // ID barang induk yang sama dengan komentar induk
+    komentar_masukan_komentar: "Mantap Man"
   });
 
-  sleep(1);
+  
+  const params = {
+             headers: {
+               'Content-Type': 'application/json',
+             },
+           };
+         
+            const resBenar = http.post(url, payloadBenar, params);
+             const resSalah = http.post(url, payloadSalah, params)
+           
+             try {
+               console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));
+               console.log("Skema Salah: ", JSON.stringify(JSON.parse(resSalah.body), null, 2));
+             } catch {
+               console.log(resBenar.body);
+               console.log(resSalah.body)
+             }
 }

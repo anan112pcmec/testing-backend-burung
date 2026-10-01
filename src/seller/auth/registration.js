@@ -63,7 +63,6 @@ export default function () {
 
   
 
-  sleep(1);
 }
 
 // INFO[0000] Skema Benar:  {

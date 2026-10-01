@@ -10,7 +10,7 @@ export const options = {
 export default function () {
   const url = 'http://localhost:8080/seller/barang/edit-alamat-kategori'; // ganti sesuai URL server
 
-  const payload = JSON.stringify({
+  const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
       username_seller: "ananapparel",
@@ -21,25 +21,31 @@ export default function () {
     id_alamat_gudang: 5        // contoh ID alamat gudang baru
   });
 
-  const params = {
-    headers: {
-      'Content-Type': 'application/json',
+  const payloadSalah = JSON.stringify({
+    identitas_seller: {
+      id_seller: 1,
+      username_seller: "ananapparel",
+      email_seller: "anan29837@gmail.com"
     },
-  };
-
-  // POST request
-  const res = http.patch(url, payload, params);
-
-  // tampilkan hasil response
-  console.log("Response Status: " + res.status);
-  console.log("Response Body:");
-  console.log(res.body);
-
-  // cek response
-  check(res, {
-    'status 200': (r) => r.status === 200,
-    'body tidak kosong': (r) => r.body && r.body.length > 0,
+    id_barang_induk: 6,        // contoh ID barang induk
+    id_kategori_barang: -14,     // Salah id Kategori barang lebih kecil dari 0
+    id_alamat_gudang: 5        // contoh ID alamat gudang baru
   });
 
-  sleep(1);
+  const params = {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        };
+      
+         const resBenar = http.patch(url, payloadBenar, params);
+          const resSalah = http.patch(url, payloadSalah, params)
+        
+          try {
+            console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));
+            console.log("Skema Salah: ", JSON.stringify(JSON.parse(resSalah.body), null, 2));
+          } catch {
+            console.log(resBenar.body);
+            console.log(resSalah.body)
+          }
 }

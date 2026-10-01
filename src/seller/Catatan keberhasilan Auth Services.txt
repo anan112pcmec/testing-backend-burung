@@ -883,4 +883,274 @@ Skema Salah: 	Tidak Menyertakan Identitas Seller
 		Jam Operasional Waktu kurang dari 13 karakter atau Waktu mulai lebih besar dari Waktu sampai
 		Dedication Tidak Valid
 
+Catatan Keberhasilan Barang Services Seller
+{
+MasukanBarangInduk:
+
+
+Skema Benar:	Menyertakan Identitas seller
+		Menyertakan BarangInduk(yang disebut wajib ada): NamaBarang minimal 5 karakter, JenisBarang harus valid terdaftar
+		IdAlamatGudang tak boleh kurang atau sama dengan 0
+		IdRekening tak Boleh kurang atau sama dengan 0
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		Tidak Menyertakan BarangInduk(atau attribute tidak ada):  NamaBarang kurang dari 5 karakter, Jenis Barang tidak valid terdaftar
+		IdAlamatGudang kurang atau sama dengan 0
+		IdRekening kurang atau sama dengan 0
+}
+{
+EditBarangInduk:
+
+SkemaBenar: 	Menyertakan Identitas Seller
+		IdBarangInduk tak boleh lebih kecil atau sama dengan 0
+		Nama Barang tak boleh kurang dari 5 karakter
+		Jenis Barang harus Valid Terdaftar
+
+Skema Salah:	Tidak Menyertakan Identitas Seller
+		IdBarangInduk lebih kecil atau sama dengan 0
+		Nama BarangI Induk kurang dari 5 karakter
+		Jenis Barang Tidak Valid Terdaftar
+}
+{
+HapusBarangInduk:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBarangInduk tak boleh lebih kecil atau sama dengan 0
+
+Skema Salah:	Tidak Menyertakan Identitas Seller
+		IdBarangInduk lebih kecil atau sama dengan 0
+}
+{
+TambahKategori:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBarangInduk lebih besar dari 0
+		Kategori Barang (yang disebutkan wajib ada): (Nama minimal 5 karakter, Warna berisikan hexa, Harga lebih besar dari 200, Berat Gram, DimensiPanjang, DimensiLebar tak boleh lebih kecil atau sama dengan 0, Sku)
+		IdAlamatGudang lebih besar dari 0
+		IdRekening Lebih besar dari 0
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBarangInduk lebih kecil atau sama dengan 0
+		Kategori Barang(yang disebutkan salah satu tidak ada): (Nama minimal 5 karakter, Warna berisikan hexa, Harga, Berat Gram, DimensiPanjang, DimensiLebar, Sku)
+		IdAlamatGudang lebih kecil atau sama dengan 0
+		IdRekening lebih kecil atau sama dengan 0
+
+}
+{
+EditKategori:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBarangInduk lebih besar dari 0
+		IdKategoriBarang lebih besar dari 0
+		Nama lebih dari 5 karakter
+		Warna berupa hexa
+		BeratGram
+		DimensiPanjang
+		DimensiLebar
+		Sku tak boleh kosong
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBarangInduk lebih kecil atau sama dengan 0
+		IdKategoriBarang lebih kecil atau sama dengan 0
+		Nama kurang dari 5 karakter
+		Warna tak berupa hexa
+		BeratGram kosong
+		Dimensi Panjang kosong
+		DimensiLebar Ksong
+		Sku Kosong
+}
+{
+HapusKategori:
+
+Skema Benar:	Menyertakan Identitas Seller
+		IdBarangInduk lebih besar dari 0
+		IdKategoriBarang lebih besar dari 0
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBarangInduk lebih kecil atau sama dengan 0
+		IdKategoriBarang lebih kecil atau sama dengan 0
+}
+{
+UbahHargaKategori:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBarangInduk lebih besar dari 0
+		IdKategoriBarang lebih besar dari 0
+		HargaBarangBaru tak boleh kosong atau lebih kecil dari 200
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBarangInduk lebih kecil atau sama dengan 0
+		IdKategoriBarang lebih kecil atau sama dengan 0
+		HargaBarangBaru kosong atau lebih kecil dari 200
+}
+{
+EditStokKategoriBarang:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBarangInduk lebih besar dari 0
+		IdKategoriBarang lebih besar dari 0
+		
+Skema Salah: 	Tidak menyertakan Identitas Seller
+		IdBarangInduk lebih kecil atau sama dengan 0
+		IdKategoriBarang lebih kecil atau sama dengan 0
+}
+{
+DownBarangInduk:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBarangInduk lebih besar dari 0
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBarangInduk lebih kecil atau sama dengan 0
+}
+{
+DownKategoriBarang:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBarangInduk lebih besar dari 0
+		IdKategoriBarang lebih besar dari 0
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBarangInduk lebih kecil atau sama dengan 0
+		IdKategoriBarang lebih kecil atau sama dengan 0
+}
+{
+EditRekeningBarangInduk:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBarangInduk lebih besar dari 0
+		IdRekeningSeller lebih besar dari 0
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBarangInduk lebih kecil atau sama dengan 0
+		IdRekeningSeller lebih kecil atau sama dengan 0
+}
+{
+EditAlamatBarangInduk:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBarangInduk lebih besar dari 0
+		IdAlamatGudang lebih besar dari 0
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBarangInduk lebih kecil atau sama dengan 0
+		IdAlamatGudang lebih kecil atau sama dengan 0
+}
+{
+EditAlamatBarangKategori:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBarangInduk lebih besar dari 0
+		IdKategoriBarang lebih besar dari 0
+		IdAlamatGudang lebih besar dari 0
+		
+Skema Salah: 	Tidak menyertakan Identitas Seller
+		IdBarangInduk lebih kecil atau sama dengan 0
+		IdKategoriBarang lebih kecil atau sama dengan 0
+		IdAlamatGudang lebih kecil atau sama dengan 0
+}
+{
+MasukanKomentarBarangInduk:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBarangInduk lebih besar dari 0
+		Komentar Tidak string kosong
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBarangInduk lebih kecil atau sama dengan 0
+		Komentar string Kosong
+
+{
+EditKomentarBarangInduk:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBarangInduk lebih besar dari 0
+		Komentar tak boleh string kosong atau hanya spasi
+
+		
+Skema Salah: 	Tidak menyertakan Identitas Seller
+		IdBarangInduk lebih kecil atau sama dengan 0
+		Komentar string kosong atau hanya spasi
+
+}
+{
+EditKomentarBarangInduk:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdKomentar lebih besar dari 0
+		Komentar tak boleh string kosong atau hanya spasi
+
+		
+Skema Salah: 	Tidak menyertakan Identitas Seller
+		IdKomentar lebih kecil atau sama dengan 0
+		Komentar string kosong atau hanya spasi
+
+}
+{
+HapusKomentarBarangInduk:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdKomentar lebih besar dari 0
+
+		
+Skema Salah: 	Tidak menyertakan Identitas Seller
+		IdKomentar lebih kecil atau sama dengan 0
+}
+{
+MasukanChildKomentar:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdKomentarBarang lebih besar dari 0
+		IdBarangInduk lebih besar dari 0
+		Komentar tak boleh string kosong atau hanya spasi
+
+		
+Skema Salah: 	Tidak menyertakan Identitas Seller
+		IdKomentarBarang lebih kecil atau sama dengan 0
+		IdBarangInduk lebih kecil atau sama dengan 0
+		Komentar string kosong atau hanya spasi
+}
+{
+MentionChildKomentar:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdKomentar lebih besar dari 0
+		IdBarangInduk lebih besar dari 0
+		UsernameMentioned tak boleh kosong
+		Komentar tak boleh string kosong atau hanya spasi
+
+		
+Skema Salah: 	Tidak menyertakan Identitas Seller
+		IdKomentar lebih kecil atau sama dengan 0
+		IdBarangInduk lebih kecil atau sama dengan 0
+		UsernameMentioned kosong
+		Komentar string kosong atau hanya spasi
+}
+{
+EditChildKomentar:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdKomentar lebih besar dari 0
+		Komentar tak boleh string kosong atau hanya spasi
+
+		
+Skema Salah: 	Tidak menyertakan Identitas Seller
+		IdKomentar lebih kecil atau sama dengan 0
+		Komentar string kosong atau hanya spasi
+}
+{
+HapusChildKomentar:
+
+Skema Benar: 	Menyertakan Identitas Seller
+		IdKomentar lebih besar dari 0
+
+		
+Skema Salah: 	Tidak menyertakan Identitas Seller
+		IdKomentar lebih kecil atau sama dengan 0
+}
+
+
+
+
+
 

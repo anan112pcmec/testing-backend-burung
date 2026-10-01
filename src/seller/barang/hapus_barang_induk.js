@@ -1,34 +1,67 @@
-import http from "k6/http";
-import { check } from "k6";
+// k6 run barang/hapus_barang_induk.js
+import http from 'k6/http';
+import { check, sleep } from 'k6';
 
-export const options = {
-  vus: 20,          // jumlah virtual users simultan
-  duration: "30s",  // durasi pengujian
+export let options = {
+  vus: 1,         // jumlah virtual user
+  iterations: 1,  // deterministic
 };
 
+// HapusBarangInduk:
+
+// Skema Benar:   Menyertakan Identitas Seller
+//                IdBarangInduk tak boleh lebih kecil atau sama dengan 0
+
+// Skema Salah:   Tidak Menyertakan Identitas Seller
+//                IdBarangInduk lebih kecil atau sama dengan 0
+
 export default function () {
-  const url = "http://localhost:8080/seller/hapus_barang"; // ganti sesuai URL server kamu
-
-  const payload = JSON.stringify({
-   identitas_seller: {
-      id_seller: 1,
-      username_seller: 'ananapparel',
-      email_seller: 'anan29837@gmail.com',
+  const url = "http://localhost:8080/seller/hapus_barang";
+  const params = {
+    headers: {
+      "Content-Type": "application/json",
     },
-    id_barang_induk: 3,               // ID barang yang mau dihapus
-  });
-
-  const headers = {
-    "Content-Type": "application/json",
   };
 
-  const res = http.del(url, payload, { headers });
-
-  check(res, {
-    "status 200 (OK)": (r) => r.status === 200,
-    "status 404 (Not Found)": (r) => r.status === 404,
-    "status 500 (Server Error)": (r) => r.status === 500,
+  /* ===============================
+     1️⃣ SKEMA BENAR
+     =============================== */
+  const payloadBenar = JSON.stringify({
+    identitas_seller: {
+      id_seller: 1,
+      username_seller: "ananapparel",
+      email_seller: "anan29837@gmail.com",
+    },
+    id_barang_induk: 3, // > 0
   });
 
-  
+  const resBenar = http.del(url, payloadBenar, params);
+
+  check(resBenar, {
+    "skema benar status 200": (r) => r.status === 200,
+  });
+
+  /* ===============================
+     2️⃣ SKEMA SALAH (DITOLAK)
+     =============================== */
+  const payloadSalah = JSON.stringify({
+    // Tidak menyertakan identitas_seller
+    id_barang_induk: 0, // <= 0
+  });
+
+  const resSalah = http.del(url, payloadSalah, params);
+
+  check(resSalah, {
+    "skema salah ditolak (bukan 200)": (r) => r.status !== 200,
+  });
+
+  try {
+    console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));
+    console.log("Skema Salah: ", JSON.stringify(JSON.parse(resSalah.body), null, 2));
+  } catch {
+    console.log("Respon Benar: ", resBenar.body);
+    console.log("Respon Salah: ", resSalah.body);
+  }
+
+  sleep(1);
 }
