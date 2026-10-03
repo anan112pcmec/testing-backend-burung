@@ -1,4 +1,4 @@
-// k6 run barang/tambah_keranjang.js
+// k6 run barang/like_review_barang.js
 import http from "k6/http";
 import { check, sleep } from "k6";
 
@@ -7,21 +7,17 @@ export const options = {
   iterations: 1,  // lama test
 };
 
-// TambahDataKeranjangBarang:
+// LikeReviewBarang:
 
-// Skema Benar:  	Menyertakan Identitas Pengguna
-// 		IdSeller lebih besar dari 0
-// 		IdBarangInduk lebih besar dari 0
-// 		IdKategori Lebih besar dari 0
+// Skema Benar: 	Menyertakan Identitas Pengguna
+// 		IdReview lebih besar dari 0
 
-// Skema Salah:	Tidak Menyertakan Identitas Pengguna
-// 		IdSeller lebih kecil atau sama dengan 0
-// 		IdBarangInduk lebih kecil atau sama dengan 0	
-// 		IdKategori lebih kecil atau sama dengan 0
+// Skema Salah:	Tidak Menyertakan Identitas Seller
+// 		IdReview lebih kecil dari atau sama dengan 0
 
 
 export default function () {
-  const url = "http://localhost:8080/user/barang/keranjang-barang/tambah"; // GANTI sesuai server
+  const url = "http://localhost:8080/user/barang/review/like"; // GANTI sesuai server
 
   const payloadBenar = JSON.stringify({
     identitas_pengguna: {
@@ -29,20 +25,16 @@ export default function () {
       username_pengguna: "ananlol",
       email_pengguna: "ananlol156@gmail.com"
     },
-    id_seller: 1,        // GANTI sesuai seller
-    id_barang_induk: 6,  // GANTI sesuai barang
-    id_kategori_barang: 14 // GANTI sesuai kategori
+    id_review: 2,
   });
 
   const payloadSalah = JSON.stringify({
-    identitas_pengguna: {
+     identitas_pengguna: {
       id_pengguna: 1,
       username_pengguna: "ananlol",
       email_pengguna: "ananlol156@gmail.com"
     },
-    id_seller: -1,        // gagal lebih kecil dari 0
-    id_barang_induk: 6,  
-    id_kategori_barang: 14 
+    id_review: -10, // salah lebih kecil dari 0
   });
 
   const params = {
@@ -51,8 +43,8 @@ export default function () {
         },
       };
     
-      const resBenar = http.post(url, payloadBenar, params);
-      const resSalah = http.post(url, payloadSalah, params)
+      const resBenar = http.patch(url, payloadBenar, params);
+      const resSalah = http.patch(url, payloadSalah, params)
     
       try {
         console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));

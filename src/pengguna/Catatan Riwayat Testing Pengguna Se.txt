@@ -157,6 +157,187 @@ Skema Salah:	tak ada identitas
 		id alamat lebih kecil dari 0
 }
 
+Catatan Keberhasilan Pengguna Barang Services: 
+{
+ViewBarang:
+
+Skema Benar:	Menyertakan Identitas Pengguna
+		IdBarangInduk harus lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Pengguna
+		IdBarangInduk lebih kecil atau sama dengan 0
+}
+{
+LikesBarang:
+
+Skema Benar:	Menyertakan Identitas Pengguna
+		IdBarangInduk harus lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Pengguna
+		IdBarangInduk lebih kecil atau sama dengan 0
+}
+{
+
+UnlikeBarang:
+
+Skema Benar:	Menyertakan Identitas Pengguna
+		IdBarangDisukai harus lebih besar dari 0
+		IdBarangInduk harus lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Pengguna
+		IdBarangDisukai lebih kecil atau sama dengan 0
+		IdBarangInduk lebih kecil atau sama dengan 0
+}
+{
+MasukanKomentarBarang:
+
+Skema Benar:	Menyertakan Identitas Pengguna
+		IdBarangInduk harus lebih besar dari 0
+		Komentar tidak berisikan string kosong atau kasarnya kosong
+
+Skema Salah:	Tidak Menyertakan Identitas Pengguna
+		IdBarangInduk lebih kecil atau sama dengan 0
+		Komentar berisikan string kosong atau kasarnya kosong
+}
+{
+EditKomentarBarang:
+
+Skema Benar:	Menyertakan Identitas Pengguna
+		IdKomentar harus lebih besar dari 0
+		Komentar tidak berisikan string kosong atau kasarnya kosong
+
+Skema Salah:	Tidak Menyertakan Identitas Pengguna
+		IdKomentar lebih kecil atau sama dengan 0
+		Komentar berisikan string kosong atau kasarnya kosong
+}
+{
+HapusKomentarBarang:
+
+Skema Benar:	Menyertakan Identitas Pengguna
+		IdKomentar harus lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Pengguna
+		IdKomentar lebih kecil atau sama dengan 0
+}
+{
+MasukanChildKomentar:
+
+Skema Benar:	Menyertakan Identitas Pengguna
+		IdKomentarBarang harus lebih besar dari 0
+		Komentar tidak berisikan string kosong atau kasarnya kosong
+
+Skema Salah:	Tidak Menyertakan Identitas Pengguna
+		IdKomentarBarang lebih kecil atau sama dengan 0
+		Komentar berisikan string kosong atau kasarnya kosong
+}
+{
+MentionChildKomentar:
+
+Skema Benar:	Menyertakan Identitas Pengguna
+		IdKomentarBarang harus lebih besar dari 0
+		UsernameMentioned harus memiliki setidaknya 1 angka dan underscore
+		Komentar tidak berisikan string kosong atau kasarnya kosong
+
+Skema Salah:	Tidak Menyertakan Identitas Pengguna
+		IdKomentarBarang lebih kecil atau sama dengan 0
+		UsernameMentioned tidak memiliki setidaknya 1 angka dan underscore
+		Komentar berisikan string kosong atau kasarnya kosong
+}
+{
+EditChildKomentar:
+
+Skema Benar:	Menyertakan Identitas Pengguna
+		IdKomentar harus lebih besar dari 0
+		Komentar tidak berisikan string kosong atau kasarnya kosong
+
+Skema Salah:	Tidak Menyertakan Identitas Pengguna
+		IdKomentar lebih kecil atau sama dengan 0
+		Komentar berisikan string kosong atau kasarnya kosong
+}
+{
+HapusChildKomentar:
+
+Skema Benar:	Menyertakan Identitas Pengguna
+		IdKomentar harus lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Pengguna
+		IdKomentar lebih kecil atau sama dengan 0
+}
+{
+TambahDataKeranjangBarang:
+
+Skema Benar:  	Menyertakan Identitas Pengguna
+		IdSeller lebih besar dari 0
+		IdBarangInduk lebih besar dari 0
+		IdKategori Lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Pengguna
+		IdSeller lebih kecil atau sama dengan 0
+		IdBarangInduk lebih kecil atau sama dengan 0	
+		IdKategori lebih kecil atau sama dengan 0
+}
+{
+EditDataKeranjangBarang:
+
+Skema Benar:  	Menyertakan Identitas Pengguna
+		IdKeranjang lebih besar dari 0
+		IdBarangInduk lebih besar dari 0
+		IdKategori Lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Pengguna
+		IdKeranjang lebih kecil atau sama dengan 0
+		IdBarangInduk lebih kecil atau sama dengan 0	
+		IdKategori lebih kecil atau sama dengan 0
+}
+{
+HapusDataKeranjangBarang:
+
+Skema Benar:  	Menyertakan Identitas Pengguna
+		IdKeranjang lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Pengguna
+		IdKeranjang lebih kecil atau sama dengan 0
+}
+{
+BerikanReviewBarang:
+
+Skema Benar:	Menyertakan Identitas Pengguna
+		IdBarangInduk lebih besar dari 0
+		Rating berada dalam range 0 sampai 5
+		
+Skema Salah:	Tidak Menyertakan Identitas Pengguna
+		IdBarangInduk lebih kecil atau sama dengan 0
+		Rating tidak berada dalam range 0 sampai 5
+}
+{
+LikeReviewBarang:
+
+Skema Benar: 	Menyertakan Identitas Pengguna
+		IdReview lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Seller
+		IdReview lebih kecil dari atau sama dengan 0
+}
+{
+UnlikeReviewBarang:
+
+Skema Benar: 	Menyertakan Identitas Pengguna
+		IdReview lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Seller
+		IdReview lebih kecil dari atau sama dengan 0
+}
+
+
+
+
+
+
+
+
+
+
+
 CATATAN MASUKAN "REFACTOR SEMUA THRESHOLD HARUS SOFT DELETE".
 		
 		

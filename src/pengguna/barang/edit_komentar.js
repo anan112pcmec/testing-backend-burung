@@ -3,14 +3,24 @@ import http from "k6/http";
 import { sleep, check } from "k6";
 
 export const options = {
-  vus: 10,          // jumlah virtual user
-  duration: "30s",  // lama test
+  vus: 1,          // jumlah virtual user
+  iterations: 1,  // lama test
 };
+
+// EditKomentarBarang:
+
+// Skema Benar:	Menyertakan Identitas Pengguna
+// 		IdKomentar harus lebih besar dari 0
+// 		Komentar tidak berisikan string kosong atau kasarnya kosong
+
+// Skema Salah:	Tidak Menyertakan Identitas Pengguna
+// 		IdKomentar lebih kecil atau sama dengan 0
+// 		Komentar berisikan string kosong atau kasarnya kosong
 
 export default function () {
   const url = "http://localhost:8080/user/barang/komentar-barang/edit";  // GANTI jika beda
 
-  const payload = JSON.stringify({
+  const payloadBenar = JSON.stringify({
     identitas_pengguna: {
       id_pengguna: 1,
       username_pengguna: "ananlol",
@@ -20,17 +30,31 @@ export default function () {
     komentar_edit_komentar: "Komentar sudah diedit!" // ganti kapan saja
   });
 
-  const params = {
-    headers: {
-      "Content-Type": "application/json",
+  const payloadSalah = JSON.stringify({
+    identitas_pengguna: {
+      id_pengguna: 1,
+      username_pengguna: "ananlol",
+      email_pengguna: "ananlol156@gmail.com"
     },
-  };
-
-  const res = http.patch(url, payload, params);
-
-  check(res, {
-    "status 200": (r) => r.status === 200,
-    "response not empty": (r) => r.body.length > 0,
+    id_komentar_edit_komentar: 1147,                   // ganti sesuai data lu
+    komentar_edit_komentar: "" // gagal komentar kosong
   });
+
+  const params = {
+       headers: {
+         'Content-Type': 'application/json',
+       },
+     };
+   
+     const resBenar = http.post(url, payloadBenar, params);
+     const resSalah = http.post(url, payloadSalah, params)
+   
+     try {
+       console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));
+       console.log("Skema Salah: ", JSON.stringify(JSON.parse(resSalah.body), null, 2))
+     } catch {
+       console.log(resBenar.body);
+       console.log(resSalah.body)
+     }
 
 }

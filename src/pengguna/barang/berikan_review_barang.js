@@ -1,4 +1,4 @@
-// k6 run barang/tambah_keranjang.js
+// k6 run barang/berikan_review_barang.js
 import http from "k6/http";
 import { check, sleep } from "k6";
 
@@ -7,21 +7,18 @@ export const options = {
   iterations: 1,  // lama test
 };
 
-// TambahDataKeranjangBarang:
+// BerikanReviewBarang:
 
-// Skema Benar:  	Menyertakan Identitas Pengguna
-// 		IdSeller lebih besar dari 0
+// Skema Benar:	Menyertakan Identitas Pengguna
 // 		IdBarangInduk lebih besar dari 0
-// 		IdKategori Lebih besar dari 0
-
+// 		Rating berada dalam range 0 sampai 5
+		
 // Skema Salah:	Tidak Menyertakan Identitas Pengguna
-// 		IdSeller lebih kecil atau sama dengan 0
-// 		IdBarangInduk lebih kecil atau sama dengan 0	
-// 		IdKategori lebih kecil atau sama dengan 0
-
+// 		IdBarangInduk lebih kecil atau sama dengan 0
+// 		Rating tidak berada dalam range 0 sampai 5
 
 export default function () {
-  const url = "http://localhost:8080/user/barang/keranjang-barang/tambah"; // GANTI sesuai server
+  const url = "http://localhost:8080/user/barang/review/tambah"; // GANTI sesuai server
 
   const payloadBenar = JSON.stringify({
     identitas_pengguna: {
@@ -29,20 +26,20 @@ export default function () {
       username_pengguna: "ananlol",
       email_pengguna: "ananlol156@gmail.com"
     },
-    id_seller: 1,        // GANTI sesuai seller
-    id_barang_induk: 6,  // GANTI sesuai barang
-    id_kategori_barang: 14 // GANTI sesuai kategori
+    id_barang_induk: 1,        // GANTI sesuai seller
+    rating: 3.2,
+    ulasan: "Mantap"
   });
 
   const payloadSalah = JSON.stringify({
-    identitas_pengguna: {
+   identitas_pengguna: {
       id_pengguna: 1,
       username_pengguna: "ananlol",
       email_pengguna: "ananlol156@gmail.com"
     },
-    id_seller: -1,        // gagal lebih kecil dari 0
-    id_barang_induk: 6,  
-    id_kategori_barang: 14 
+    id_barang_induk: 1,        // GANTI sesuai seller
+    rating: 10, // salah diluar range 0 - 5
+    ulasan: "Mantap"
   });
 
   const params = {
