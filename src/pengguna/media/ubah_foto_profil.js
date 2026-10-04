@@ -1,45 +1,102 @@
 // k6 run media/ubah_foto_profil.js
-
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
-// 1️⃣ Tentukan file path & baca file di awal
-const fileBytes = open('foto/ndiaa.jpg', 'b'); // 'b' = binary
+// 🔥 BACA FILE SEKALI (foto profil pengguna)
+const fileBytes = open('foto/ndiaa.jpg', 'b');
 
 export let options = {
   vus: 1,
-  duration: '1s',
+  iterations: 1, // deterministic
 };
 
+// UbahFotoProfilPengguna:
+
+// Skema Benar:   Menyertakan Identitas Pengguna
+//                Ekstensi Valid Untuk foto
+
+// Skema Salah:   Tidak Menyertakan Identitas Pengguna
+//                Ekstensi Tidak Valid untuk foto
+
 export default function () {
-  // 2️⃣ Request presigned URL dari backend
-  const payload = JSON.stringify({
+  const url = 'http://localhost:8080/user/media/ubah-foto-profile';
+  const params = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  /* ===============================
+     1️⃣ SKEMA BENAR (PRESIGNED + UPLOAD)
+     =============================== */
+  const payloadBenar = JSON.stringify({
     identitas_pengguna: {
       id_pengguna: 1,
       username_pengguna: 'ananlol',
-      email_pengguna: 'ananlol156@gmail.com'
+      email_pengguna: 'ananlol156@gmail.com',
     },
-    ekstensi: 'jpg',
+    ekstensi: 'jpg', // Ekstensi valid untuk foto
   });
 
-  const presignedRes = http.put(
-    'http://localhost:8080/user/media/ubah-foto-profile',
-    payload,
-    { headers: { 'Content-Type': 'application/json' } }
-  );
+  const resBenar = http.put(url, payloadBenar, params);
 
-  check(presignedRes, { 'status 200': (r) => r.status === 200 });
-
-  const presignedData = presignedRes.json();
-  const uploadUrl = presignedData.upload_url;
-
-  // 3️⃣ Upload file ke MinIO via presigned URL
-  const uploadRes = http.put(uploadUrl, fileBytes, {
-    headers: { 'Content-Type': 'image/png' },
+  check(resBenar, {
+    'skema benar presigned status 200': (r) => r.status === 200,
   });
 
-  console.log(presignedRes.body);
+  // Parsing JSON & Upload ke MinIO untuk Skema Benar
+  let uploadUrl = null;
+  try {
+    const json = resBenar.json();
 
-  check(uploadRes, { 'upload ok': (r) => r.status === 200 });
+    uploadUrl =
+      json.upload_url ||
+      json.data?.upload_url ||
+      json.p?.upload_url ||
+      json.response_payload?.upload_url;
+  } catch (e) {
+    console.error('Gagal parse JSON Skema Benar:', resBenar.body);
+  }
+
+  if (!uploadUrl) {
+    console.error('UPLOAD URL SKEMA BENAR KOSONG!');
+    console.error('RESPONSE BENAR:', resBenar.body);
+  } else {
+    console.log('UPLOAD URL BENAR:', uploadUrl);
+
+    const uploadRes = http.put(uploadUrl, fileBytes, {
+      headers: {
+        'Content-Type': 'image/jpeg',
+      },
+    });
+
+    check(uploadRes, {
+      'upload foto profil success': (r) =>
+        r.status === 200 || r.status === 204,
+    });
+  }
+
+  /* ===============================
+     2️⃣ SKEMA SALAH (DITOLAK)
+     =============================== */
+  const payloadSalah = JSON.stringify({
+    // Tidak menyertakan identitas_pengguna
+    ekstensi: 'exe', // Ekstensi foto tidak valid
+  });
+
+  const resSalah = http.put(url, payloadSalah, params);
+
+  check(resSalah, {
+    'skema salah ditolak (bukan 200)': (r) => r.status !== 200,
+  });
+
+  try {
+    console.log('Skema Benar: ', JSON.stringify(JSON.parse(resBenar.body), null, 2));
+    console.log('Skema Salah: ', JSON.stringify(JSON.parse(resSalah.body), null, 2));
+  } catch {
+    console.log('Respon Benar: ', resBenar.body);
+    console.log('Respon Salah: ', resSalah.body);
+  }
+
   sleep(1);
 }

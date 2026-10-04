@@ -327,8 +327,67 @@ Skema Benar: 	Menyertakan Identitas Pengguna
 Skema Salah:	Tidak Menyertakan Identitas Seller
 		IdReview lebih kecil dari atau sama dengan 0
 }
+Catatan Keberhasilan Media Pengguna Services
+{
+UbahFotoProfilPengguna:
 
+Skema Benar:	Menyertakan Identitas Pengguna
+		Ekstensi Valid Untuk foto
 
+Skema Salah:	Tidak Menyertakan Identitas Pengguna
+		Ekstensi Tidak Valid untuk foto
+}
+{
+HapusFotoProfilPengguna:
+
+Skema Benar:	Menyertakan Identitas Pengguna
+		IdMediaDataPengguna lebih besar dari 0
+		keyfoto tak berupa string kosong
+
+Skema Salah:	Tidak Menyertakan Identitas Pengguna
+		IdMediaDataPengguna lebih kecil atau sama dengan 0
+		Keyfoto berupa string kosong
+}
+{
+TambahMediaReviewFoto:
+
+Skema Benar:	Menyertakan identitas pengguna
+		IdReviewData lebih besar dari 0
+		semua ekstensi adalah ekstensi foto yang valid
+
+Skema Salah: 	Tidak Menyertakan Identitas pengguna
+		IdReview data lebih kecil atau sama dengan 0
+		ada ekstensi dimana ekstensi bukan merupakan ekstensi foto yangvalid
+}
+{
+HapusMediaReviewFoto:
+
+Skema Benar:	Menyertakan identitas pengguna
+		IdReviewData lebih besar dari 0
+
+Skema Salah: 	Tidak Menyertakan Identitas pengguna
+		IdReviewData lebih kecil atau sama dengan 0
+}
+{
+TambahMediaReviewVideo:
+
+Skema Benar: 	Menyertakan identitas pengguna
+		IdReviewData lebih besar dari 0
+		Ekstensi adalah ekstensi video yang valid
+
+Skema Salah:	Tidak menyertakan identitas pengguna
+		IdReviewData lebih kecil dari 0
+		Ekstensi tidak berupa ekstensi video yang valid
+}
+{
+HapusMediaReviewVideo
+
+Skema Benar: 	Menyertakan identitas pengguna
+		KeyVideo tak berupa string kosong
+
+Skema Salah:	Tidak menyertakan identitas pengguna
+		KeyVideo berupa string kosong
+}
 
 
 
