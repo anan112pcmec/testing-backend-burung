@@ -1,0 +1,51 @@
+
+Catatan Keberhasilan Alamat Services Kurir:
+
+{
+MasukanAlamatKurir:
+
+Skema Benar: 	Menyertakan Identitas Kurir
+		NomorTelephone harus berisikan atleast 10-13 digit
+		Provinsi terdaftar
+		Kota terdaftar
+		KodeNegara harus IDN
+		KodePos harus 5 satuan
+
+Skema Salah: 	Tidak Menyertakan Identitas Kurir
+		NomorTelephone tidak berisikan atleast 10 - 13 digit atau lebih 
+		Provinsi tidak terdaftar
+		NamaKota tidak terdaftar
+		KodeNegara tidak IDN
+		KodePos tidak berisikan 5 satuan digit
+
+skemabenar: *, skemasalah: *,
+}
+
+{
+EditAlamatKurir:
+Skema Benar:   	IDAlamatKurir lebih besar dari 0
+		NomorTelephone harus berisikan atleast 10-13 digit
+		Provinsi terdaftar
+		Kota terdaftar
+		KodeNegara harus IDN
+		KodePos harus 5 satuan
+
+Skema Salah:   	IDAlamatKurir lebih kecil atau sama dengan 0
+		NomorTelephone tidak berisikan atleast 10 - 13 digit atau lebih 
+  		Provinsi tidak terdaftar
+  		NamaKota tidak terdaftar
+  		KodeNegara tidak IDN
+  		KodePos tidak berisikan 5 satuan digit
+}
+{
+HapusAlamatKurir:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		IdAlamatKurir lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Kurir 
+		IdAlamatKurir lebih kecil atau sama dengan 0
+}
+
+
+
