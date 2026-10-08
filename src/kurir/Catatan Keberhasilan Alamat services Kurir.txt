@@ -47,5 +47,41 @@ Skema Salah:	Tidak Menyertakan Identitas Kurir
 		IdAlamatKurir lebih kecil atau sama dengan 0
 }
 
+Catatan Keberhasilan Kurir Auth Services:
+{
+PreKurirRegistration:
+
+Skema Benar:	email memiliki karakter @gmail.com
+		username memiliki setidaknya 1 angka dan underscore
+		password setidaknya memiliki 1 angka dan 1 karakter unik
+dan kurang dari 10 karakter dan 1 huruf kapital
+
+Skema Salah:	email tidak memiliki @gmail.com
+		username tidak memiliki setidaknya 1 angka atau underscore
+		password tidak memiliki setidaknya 1 angka atau 1 karakter unik atau kurang dari 10 karakter atau 1 huruf kapital
+}
+{
+ValidateKurirRegistration:
+
+Skema Benar:	OTPkey berisikan 8 karakter, hanya berisikan angka
+
+Skema Salah: 	OTPkey tidak berisikan 8 karakter pas atau hanya berisikan angka
+}
+{
+KurirLogin:
+
+Skema Benar: 	email memiliki karakter @gmail.com
+		password setidaknya memiliki 1 angka dan 1 karakter unik
+dan kurang dari 10 karakter dan 1 huruf kapital
+
+Skema Salah: 	email tidak memiliki karakter @gmail.com
+		password tidak memiliki 1 setidaknya angka atau 1 karakter unik
+dan kurang dari 10 karakter atau 1 huruf kapital
+}
+
+
+
+
+
 
 

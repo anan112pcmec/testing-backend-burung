@@ -25,11 +25,7 @@ export let options = {
 
 export default function () {
   const url = 'http://localhost:8080/kurir/alamat/masukan-alamat';
-  const params = {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  };
+  
 
   /* ===============================
      1️⃣ SKEMA BENAR
@@ -52,11 +48,8 @@ export default function () {
     latitude: -6.21462,
   });
 
-  const resBenar = http.post(url, payloadBenar, params);
 
-  check(resBenar, {
-    "skema benar status 200/201": (r) => r.status === 200 || r.status === 201,
-  });
+
 
   /* ===============================
      2️⃣ SKEMA SALAH (DITOLAK)
@@ -75,7 +68,20 @@ export default function () {
     latitude: -6.21462,
   });
 
+  const params = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+    const resBenar = http.post(url, payloadBenar, params);
+
+
   const resSalah = http.post(url, payloadSalah, params);
+
+  check(resBenar, {
+    "skema benar status 200/201": (r) => r.status === 200 || r.status === 201,
+  });
 
   check(resSalah, {
     "skema salah ditolak (bukan 200/201)": (r) => r.status !== 200 && r.status !== 201,
