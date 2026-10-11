@@ -78,6 +78,117 @@ Skema Salah: 	email tidak memiliki karakter @gmail.com
 		password tidak memiliki 1 setidaknya angka atau 1 karakter unik
 dan kurang dari 10 karakter atau 1 huruf kapital
 }
+Catatan keberhasilan informasi services kurir:
+{
+InformasiDataKendaraan:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		JenisKendaraan diantara (Motor, mobil, truk, pickup, lainnya, unknown)
+		Nama Kendaraan minimal 1 karakter
+		Roda Kendaraan diantara(2, 3, 4)
+
+Skema Salah: 	Tidak menyertakan Identitas Kurir
+		Jenis Kendaraan tidak diantara (Motor, Mobil, truk, pickup Lainnya, Unknown)
+		Nama Kendaraan tidak ada alias string kosong
+		Roda Kendaraan selain 2/3/4
+}
+{
+EditInformasiDataKendaraan:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		IdInformasiKendaraan lebih besar dari 0
+		JenisKendaraan diantara (Motor, mobil, truk, pickup, lainnya, unknown)
+		Nama Kendaraan minimal 1 karakter
+		Roda Kendaraan diantara(2, 3, 4)
+
+Skema Salah: 	Tidak menyertakan Identitas Kurir	
+		IdInformasiKendaraan lebih kecil atau sama dengan 0
+		Jenis Kendaraan tidak diantara (Motor, Mobil, truk, pickup Lainnya, Unknown)
+		Nama Kendaraan tidak ada alias string kosong
+		Roda Kendaraan selain 2/3/4
+}
+{
+InformasiDataKurir:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		Tanggal Lahir berformat string ymd
+		
+Skema Salah:	Tidak Menyertakan Identitas Kurir
+		Tanggal Lahir tidak berformat string ymd
+}
+{
+EditInformasiDataKurir:
+
+Skema Benar:	Menyertakan Identitas Kurir	
+		IdInformasiKurir lebih besar dari 0
+		Tanggal Lahir berformat string ymd
+		
+Skema Salah:	Tidak Menyertakan Identitas Kurir
+		IdInformasiKurir lebih kecil atau sama dengan 0
+		Tanggal Lahir tidak berformat string ymd
+
+}
+
+Catatan Keberhasilan Kurir Profiling services:
+{
+PersonalProfilingKurir:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		Username harus memiliki 1 angka dan koma
+		Email harus memiliki @gmail.com di dalam nya
+
+Skema Salah: 	Tidak Menyertakan Identitas Kurir
+		Username tidak memiliki 1 angka atau koma 
+		email tidak memiliki @gmail.com di dalam nya
+}
+{
+GeneralProfilingKurir:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		
+Skema Salah: 	Tidak Menyertakan Identitas Kurir
+}
+
+Catatan Keberhasilan Rekening Kurir Services:
+{
+MasukanRekeningKurir:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		Bank Harus terdaftar
+		nomor rekening harus memiliki stuan digit antara 10 sampai 15 dan semuanya berisikan angka
+		Pemilik Rekening Harus Setidaknya berisikan 5 Karakter
+
+Skema Salah:	Tidak Menyertakan Identitas Kurir
+		Bank Tidak terdaftar
+		nomor rekening tidak memiliki satuan digit antara 10 sampai 15 dan semuanya berisikan angka
+		Pemilik Rekening kurang berisikan 5 Karakter
+}
+{
+EditRekeningKurir:
+
+Skema Benar:	Menyertakan Identitas Kurir	
+		Bank Harus terdaftar
+		IdRekening Lebih besar dari 0
+		nomor rekening harus memiliki stuan digit antara 10 sampai 15 dan semuanya berisikan angka
+		Pemilik Rekening Harus Setidaknya berisikan 5 Karakter
+
+Skema Salah:	Tidak Menyertakan Identitas Kurir	
+		Bank tidak terdaftar	
+		IdRekening lebih kecil atau sama dengan 0
+		nomor rekening tidak memiliki satuan digit antara 10 sampai 15 dan semuanya berisikan angka
+		Pemilik Rekening kurang berisikan 5 Karakter
+
+}
+{
+HapusRekeningKurir:
+
+Skema Benar:	Menyertakan Identitas Seller
+		IdRekening lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Seller
+		IdRekening lebih kecil atau sama dengan 0
+}
+
 
 
 

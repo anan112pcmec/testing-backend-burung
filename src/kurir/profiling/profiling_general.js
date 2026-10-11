@@ -2,37 +2,64 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
-export const options = {
-    vus: 1,       // jumlah virtual users
-    duration: '3s', // durasi test
+export let options = {
+  vus: 1,         // jumlah virtual user
+  iterations: 1,  // deterministic
 };
 
+// GeneralProfilingKurir:
+
+// Skema Benar:   Menyertakan Identitas Kurir
+
+// Skema Salah:   Tidak Menyertakan Identitas Kurir
+
 export default function () {
-    const url = 'http://localhost:8080/kurir/profiling/general-update';
+  const url = 'http://localhost:8080/kurir/profiling/general-update';
+  const params = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
 
-    const payload = JSON.stringify({
-         identitas_kurir: {
-            id_kurir: 1,
-            email_kurir: "faizbaru@mail.com",
-            username_kurir: "faizkurirbaru"
-        },
-        ubah_deskripsi_kurir: "Kurir profesional dengan pengalaman 5 tahun"
-    });
+  /* ===============================
+     1️⃣ SKEMA BENAR
+     =============================== */
+  const payloadBenar = JSON.stringify({
+    identitas_kurir: {
+      id_kurir: 1,
+      email_kurir: "faizbaru@mail.com",
+      username_kurir: "faizkurirbaru",
+    },
+    ubah_deskripsi_kurir: "Kurir profesional dengan pengalaman 5 tahun",
+  });
 
-    const params = {
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    };
+  const resBenar = http.patch(url, payloadBenar, params);
 
-    const res = http.patch(url, payload, params);
+  check(resBenar, {
+    "skema benar status 200": (r) => r.status === 200,
+  });
 
-    check(res, {
-        'status 200': (r) => r.status === 200,
-        'body tidak kosong': (r) => r.body && r.body.length > 0,
-    });
+  /* ===============================
+     2️⃣ SKEMA SALAH (DITOLAK)
+     =============================== */
+  const payloadSalah = JSON.stringify({
+    // Tidak menyertakan identitas_kurir
+    ubah_deskripsi_kurir: "Deskripsi tanpa identitas kurir",
+  });
 
-    console.log(res.body);
+  const resSalah = http.patch(url, payloadSalah, params);
 
-    sleep(1);
+  check(resSalah, {
+    "skema salah ditolak (bukan 200)": (r) => r.status !== 200,
+  });
+
+  try {
+    console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));
+    console.log("Skema Salah: ", JSON.stringify(JSON.parse(resSalah.body), null, 2));
+  } catch {
+    console.log("Respon Benar: ", resBenar.body);
+    console.log("Respon Salah: ", resSalah.body);
+  }
+
+  sleep(1);
 }
