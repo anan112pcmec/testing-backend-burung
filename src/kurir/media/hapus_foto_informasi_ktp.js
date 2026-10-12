@@ -1,39 +1,71 @@
 // k6 run media/hapus_foto_informasi_ktp.js
-
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export let options = {
-  vus: 1,
-  iterations: 1,
+  vus: 1,         // jumlah virtual user
+  iterations: 1,  // deterministic
 };
 
+// HapusMediaInformasiKurirKTPFoto:
+
+// Skema Benar:   Menyertakan Identitas Kurir
+//                IdMediaInformasiKurirKTPFoto lebih besar dari 0
+//                KeyFoto bukan string kosong
+
+// Skema Salah:   Tidak Menyertakan Identitas Kurir
+//                IdMediaInformasiKurirKTPFoto lebih kecil atau sama dengan 0
+//                KeyFoto berupa string kosong
+
 export default function () {
-  // Payload hapus foto KTP kurir
-  const payload = JSON.stringify({
+  const url = "http://localhost:8080/kurir/media/hapus-foto-informasi-kurir-ktp";
+  const params = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  /* ===============================
+     1️⃣ SKEMA BENAR
+     =============================== */
+  const payloadBenar = JSON.stringify({
     identitas_kurir: {
       id_kurir: 2,
       username_kurir: "kurir_4d09a543",
-      email_kurir: "anan29837@gmail.com"
+      email_kurir: "anan29837@gmail.com",
     },
-    id_media_informasi_kurir_ktp_foto: 20, // ⬅️ pastikan ID ada di DB
-    key_foto: "kurir_ktp_20251215.jpg"
+    id_media_informasi_kurir_ktp_foto: 20, // > 0
+    key_foto: "kurir_ktp_20251215.jpg",     // Tidak kosong
   });
 
-  const res = http.del(
-    "http://localhost:8080/kurir/media/hapus-foto-informasi-kurir-ktp",
-    payload,
-    {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
+  const resBenar = http.del(url, payloadBenar, params);
 
-  check(res, {
-    "hapus foto KTP status 200": (r) => r.status === 200,
+  check(resBenar, {
+    "skema benar status 200 / 204": (r) => r.status === 200 || r.status === 204,
   });
 
-  console.log("Response:", res.body);
+  /* ===============================
+     2️⃣ SKEMA SALAH (DITOLAK)
+     =============================== */
+  const payloadSalah = JSON.stringify({
+    // Tidak menyertakan identitas_kurir
+    id_media_informasi_kurir_ktp_foto: 0,  // <= 0
+    key_foto: "",                          // String kosong
+  });
+
+  const resSalah = http.del(url, payloadSalah, params);
+
+  check(resSalah, {
+    "skema salah ditolak (bukan 200/204)": (r) => r.status !== 200 && r.status !== 204,
+  });
+
+  try {
+    console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));
+    console.log("Skema Salah: ", JSON.stringify(JSON.parse(resSalah.body), null, 2));
+  } catch {
+    console.log("Respon Benar: ", resBenar.body);
+    console.log("Respon Salah: ", resSalah.body);
+  }
+
   sleep(1);
 }

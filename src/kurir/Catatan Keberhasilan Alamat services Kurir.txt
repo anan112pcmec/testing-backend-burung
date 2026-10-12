@@ -188,6 +188,153 @@ Skema Benar:	Menyertakan Identitas Seller
 Skema Salah:	Tidak Menyertakan Identitas Seller
 		IdRekening lebih kecil atau sama dengan 0
 }
+Catatan Keberhasilan media services kurir:
+{
+UbahKurirProfilFoto:
+
+Skema Benar: 	Menyertakan Identitas Kurir
+		Ekstensi foto valid
+
+Skema Salah: 	Tidak Menyertakan Identitas Kurir
+		Ekstensi foto tidak valid
+}
+{
+HapusKurirProfilFoto:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		IdMediaKurirProfilFoto lebih besar dari 0
+		KeyFoto bukan string kosong
+
+Skema Salah:	Tidak menyertakan Identitas Kurir
+		IdMediaKurirProfilFoto lebih kecil atau sama dengan 0
+		Keyfoto string kosong
+}
+{
+TambahMediaInformasiKurirKendaraanFoto:
+
+Skema Benar: 	Menyertakan Identitas Kurir
+		Ekstensi foto valid
+
+Skema Salah: 	Tidak Menyertakan Identitas Kurir
+		Ekstensi foto tidak valid
+}
+{
+HapusMediaInformasiKurirKendaraanFoto:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		IdMediaKendaraanKurirKendaraanFoto lebih besar dari 0
+		KeyFoto bukan string kosong
+
+Skema Salah:	Tidak menyertakan Identitas Kurir
+		IdMediaKendaraanKurirKendaraanFoto lebih kecil atau sama dengan 0
+		Keyfoto string kosong
+}
+{
+TambahMediaInformasiKendaraanKurirBPKBFoto:
+
+Skema Benar: 	Menyertakan Identitas Kurir
+		Ekstensi foto valid
+
+Skema Salah: 	Tidak Menyertakan Identitas Kurir
+		Ekstensi foto tidak valid
+}
+{
+HapudMediaInformasiKendaraanKurirBPKBFoto:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		IdMediaInformasiKendaraanKurirBPKBFoto lebih besar dari 0
+		KeyFoto bukan string kosong
+
+Skema Salah:	Tidak menyertakan Identitas Kurir
+		IdMediaInformasiKendaraanKurirBPKBFoto lebih kecil atau sama dengan 0
+		Keyfoto string kosong
+}
+{
+TambahMediaInformasiKendaraanKurirSTNKFoto:
+
+Skema Benar: 	Menyertakan Identitas Kurir
+		Ekstensi foto valid
+
+Skema Salah: 	Tidak Menyertakan Identitas Kurir
+		Ekstensi foto tidak valid
+}
+{
+HapusMediaInformasiKendaraanKurirSTNKFoto:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		IdMediaInformasiKendaraanKurirSTNKFoto lebih besar dari 0
+		KeyFoto bukan string kosong
+
+Skema Salah:	Tidak menyertakan Identitas Kurir
+		IdMediaInformasiKendaraanKurirSTNKFoto lebih kecil atau sama dengan 0
+		Keyfoto string kosong
+
+}
+{
+TambahMediaInformasiKurirKTPFoto:
+
+Skema Benar: 	Menyertakan Identitas Kurir
+		Ekstensi foto valid
+
+Skema Salah: 	Tidak Menyertakan Identitas Kurir
+		Ekstensi foto tidak valid
+}
+{
+HapusMediaInformasiKurirKTPFoto:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		IdMediaInformasiKurirKTPFoto lebih besar dari 0
+		KeyFoto bukan string kosong
+
+Skema Salah:	Tidak menyertakan Identitas Kurir
+		IdMediaInformasiKurirKTPFoto lebih kecil atau sama dengan 0
+		Keyfoto string kosong
+}
+{
+TambahPengirimanPickedUpFoto:
+
+Skema Benar: 	Menyertakan Identitas Kurir
+		IdPengiriman Lebih besar dari 0
+		Ekstensi foto valid
+
+Skema Salah: 	Tidak Menyertakan Identitas Kurir
+		IdPengiriman Lebih kecil atau sama dengan 0
+		Ekstensi foto tidak valid
+}
+{
+TambahPengirimanSampaiFoto:
+
+Skema Benar: 	Menyertakan Identitas Kurir
+		IdPengiriman Lebih besar dari 0
+		Ekstensi foto valid
+
+Skema Salah: 	Tidak Menyertakan Identitas Kurir
+		IdPengiriman Lebih kecil atau sama dengan 0
+		Ekstensi foto tidak valid
+
+}
+{
+TambahPengirimanEkspedisiPickedUpFoto:
+
+Skema Benar: 	Menyertakan Identitas Kurir
+		IdPengirimanEkspedisi Lebih besar dari 0
+		Ekstensi foto valid
+
+Skema Salah: 	Tidak Menyertakan Identitas Kurir
+		IdPengirimankspedisi Lebih kecil atau sama dengan 0
+		Ekstensi foto tidak valid
+}
+{
+TambahPengirimanEkspedisiSampaiAgentFoto:
+
+Skema Benar: 	Menyertakan Identitas Kurir
+		IdPengirimanEkspedisi Lebih besar dari 0
+		Ekstensi foto valid
+
+Skema Salah: 	Tidak Menyertakan Identitas Kurir
+		IdPengirimanEkspedisi Lebih kecil atau sama dengan 0
+		Ekstensi foto tidak valid
+}
 
 
 
