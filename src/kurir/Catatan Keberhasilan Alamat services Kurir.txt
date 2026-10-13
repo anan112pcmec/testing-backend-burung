@@ -239,7 +239,7 @@ Skema Salah: 	Tidak Menyertakan Identitas Kurir
 		Ekstensi foto tidak valid
 }
 {
-HapudMediaInformasiKendaraanKurirBPKBFoto:
+HapusMediaInformasiKendaraanKurirBPKBFoto:
 
 Skema Benar:	Menyertakan Identitas Kurir
 		IdMediaInformasiKendaraanKurirBPKBFoto lebih besar dari 0
@@ -335,11 +335,163 @@ Skema Salah: 	Tidak Menyertakan Identitas Kurir
 		IdPengirimanEkspedisi Lebih kecil atau sama dengan 0
 		Ekstensi foto tidak valid
 }
+Catatan Keberhasilan pengiriman services kurir:
+{
+AktifkanBidKurir:
 
+Skema Benar:	Menyertakan Identitas Kurir
+		JenisPengiriman Diantara Reguler/Instant/Express
+		Mode diantara Auto/Manual
+		Provinsi valid
+		Kota Valid
+		
+Skema Salah:	Tidak Menyertakan Identitas Kurir
+		Jenis Pengiriman Tidak Diantara Reguler/Instant/Express
+		Mode tidak diantara Auto/Manual
+		Provinsi tidak valid
+		Kota tidak valid
+}
+{
+UpdatePosisiBid:
 
+Skema Benar:	Menyertakan Identitas Kurir
+		IdBidKurir lebih besar dari 0
 
+Skema Salah:	Tidak Menyertakan Identitas Kurir
+		IdBidKurir lebih kecil atau sama dengan 0
+}
+{
+AmbilPengirimanNonEks: 
 
+Skema Benar:	Menyertakan Identitas Kurir 
+		IdPengiriman Lebih besar dari 0
+		IdBid Lebih besar dari 0
+		JenisPengiriman diantara Reguler/Express/Instant
 
+Skema Salah:	Tidak Menyertakan Identitas Kurir 
+		IdPengiriman Lebih kecil atau sama dengan 0
+		IdBid Lebih kecil atau sama dengan 0
+		JenisPengiriman Tidak diantara Reguler/Express/Instant
+}
+{
+AmbilPengirimanEks: 
 
+Skema Benar:	Menyertakan Identitas Kurir 
+		IdPengiriman Lebih besar dari 0
+		IdBid Lebih besar dari 0
+		JenisPengiriman diantara Reguler/Express/Instant
+
+Skema Salah:	Tidak Menyertakan Identitas Kurir 
+		IdPengiriman Lebih kecil atau sama dengan 0
+		IdBid Lebih kecil atau sama dengan 0
+		JenisPengiriman Tidak diantara Reguler/Express/Instant
+}
+{
+LockSiapAntar:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		IdBidKurir lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Kurir
+		IdBidKurir lebih kecil atau sama dengan 0
+}
+{
+PickedUpPengirimanNonEks:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		IdBidKurir lebih besar dari 0
+		IdPengiriman Lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Kurir
+		IdBidKurir lebih kecil atau sama dengan 0
+		IdPengiriman lebih kecil atau sama dengan 0
+}
+{
+KirimPengirimanNonEks:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		IdBidKurir lebih besar dari 0
+		IdPengiriman Lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Kurir
+		IdBidKurir lebih kecil atau sama dengan 0
+		IdPengiriman lebih kecil atau sama dengan 0
+
+}
+{
+UpdateInformasiPerjalananPengiriman:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		IdPengiriman lebih besar dari 0
+
+Skema Salah: 	Tidak Menyertakan Identitas Kurir
+		IdPengiriman lebih kecil atau sama dengan 0
+}
+{
+SampaiPengirimanNonEks:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		IdBidKurir lebih besar dari 0
+		IdPengiriman Lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Kurir
+		IdBidKurir lebih kecil atau sama dengan 0
+		IdPengiriman lebih kecil atau sama dengan 0
+}
+{
+PickedUpPengirimanEks:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		IdBidKurir lebih besar dari 0
+		IdPengirimanEks Lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Kurir
+		IdBidKurir lebih kecil atau sama dengan 0
+		IdPengirimanEks lebih kecil atau sama dengan 0
+}
+{
+KirimPengirimanEks:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		IdBidKurir lebih besar dari 0
+		IdPengirimanEks Lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Kurir
+		IdBidKurir lebih kecil atau sama dengan 0
+		IdPengirimanEks lebih kecil atau sama dengan 0
+}
+{
+UpdateInformasiPerjalananPengirimanEks:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		IdBid lebih besar dari 0
+		IdPengirimanEks Lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Kurir
+		IdBid lebih kecil atau sama dengan 0
+		IdPengirimanEks lebih kecil atau sama dengan 0
+}
+{
+SampaiPengirimanNonEks:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		NoResiEkspedisi tak boleh string kosong
+		IdBidKurir lebih besar dari 0
+		IdPengirimanEks Lebih besar dari 0
+
+Skema Salah:	Tidak Menyertakan Identitas Kurir
+		NoResiEkspedisi string kosong
+		IdBidKurir lebih kecil atau sama dengan 0
+		IdPengirimanEks lebih kecil atau sama dengan 0
+}
+{
+NonaktifkanBidKurir:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		IdBidKurir lebih besar dari 0
+
+Skema Salah: 	Tidak menyertakan identitas kurir 
+		IdBidKurir lebih ecil atau sama dengan 0
+}
 
 
