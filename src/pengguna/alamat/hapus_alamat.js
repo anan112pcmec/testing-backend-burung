@@ -15,11 +15,11 @@ export default function () {
 
   const payloadBenar = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlol156_cuy",
+      id_pengguna: 2,
+      username_pengguna: "ananlol_anjay11",
       email_pengguna: "anan29837@gmail.com",
     },
-    id_alamat_hapus_alamat: 3, 
+    id_alamat_hapus_alamat: 10, 
   });
 
   const payloadSalah = JSON.stringify({
@@ -48,3 +48,16 @@ export default function () {
     console.log(resSalah.body);
   }
 }
+
+// INFO[0000] Skema Benar:  {
+//   "status": 200,
+//   "service": "HapusAlamatPengguna",
+//   "pesan": "Berhasil",
+//   "response_payload": null
+// }  source=console
+// INFO[0000] Skema Salah:  {
+//   "status": 200,
+//   "service": "HapusAlamatPengguna",
+//   "pesan": "Gagal data pengguna tidak ditemukan",
+//   "response_payload": null
+// }  source=console

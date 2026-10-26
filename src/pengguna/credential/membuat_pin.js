@@ -27,11 +27,11 @@ export default function () {
   
   const payloadBenar = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlolanjay11",
+      id_pengguna: 2,
+      username_pengguna: "ananlol_anjay11",
       email_pengguna: "anan29837@gmail.com",
     },
-    password_user_membuat_pin: "MakannAtap12_",
+    password_user_membuat_pin: "Bismillah_13",
     pin_user_membuat_pin: "120076"
   });
 

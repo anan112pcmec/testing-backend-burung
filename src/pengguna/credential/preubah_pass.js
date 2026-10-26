@@ -26,13 +26,13 @@ export default function () {
 
   const payloadBenar = JSON.stringify({
      identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlolanjay11",
+      id_pengguna: 2,
+      username_pengguna: "ananlol_anjay11",
       email_pengguna: "anan29837@gmail.com",
     },
-    password_sebelum_user: "MakannAtap12_",     // ⚠️ HARUS sesuai password di DB
-    password_baru_user: "MakannAtap13_",
-    faktor_kedua_ganti_password_user: "PIN",    // misalnya OTP, PIN, dll
+    password_sebelum_user: "Bismillah_12",     // ⚠️ HARUS sesuai password di DB
+    password_baru_user: "Bismillah_11",
+    faktor_kedua_ganti_password_user: "OTP",    // misalnya OTP, PIN, dll
   });
 
   const payloadSalah = JSON.stringify({

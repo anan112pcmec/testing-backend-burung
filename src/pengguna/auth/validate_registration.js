@@ -27,10 +27,10 @@ export default function () {
   const url = 'http://localhost:8080/auth/user/registration/validate';
 
   const payloadBenar = JSON.stringify({
-    otp_key:  '15415835', // ganti sesuai OTP yang kamu pakai
+    otp_key:  '84415212', // ganti sesuai OTP yang kamu pakai
   });
   const payloadSalah = JSON.stringify({
-    otp_key: "jcd92n92"
+    otp_key: "516351"
   })
 
   const params = {

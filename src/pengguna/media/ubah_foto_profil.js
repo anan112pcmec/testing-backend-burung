@@ -31,9 +31,9 @@ export default function () {
      =============================== */
   const payloadBenar = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: 'ananlol',
-      email_pengguna: 'ananlol156@gmail.com',
+      id_pengguna: 2,
+      username_pengguna: 'ananlol_anjay11',
+      email_pengguna: 'anan29837@gmail.com',
     },
     ekstensi: 'jpg', // Ekstensi valid untuk foto
   });

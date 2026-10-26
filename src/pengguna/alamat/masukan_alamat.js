@@ -29,20 +29,20 @@ export default function () {
 
   let payloadBenar = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlol156_cuy",
+      id_pengguna: 2,
+      username_pengguna: "ananlol_anjay11",
       email_pengguna: "anan29837@gmail.com",
     },
-    panggilan_alamat: "Rumah Saya",
-    nomor_telefon: "0812847928",
-    nama_alamat: "Jalan Melati No. 7",
-    provinsi: "jawa_timur",
-    kota:     "bandung",
-    kode_pos: "40123",
-    kode_negara: "IDN",
-    deskripsi: "Rumah utama buat kirim barang",
-    longitude: 108.6098,
-    latitude: -7.9147,
+    panggilan_alamat: "Gudang Logistik",
+  nomor_telefon: "085698712345",
+  nama_alamat: "Jl. Rungkut Industri Raya No. 22",
+  provinsi: "jawa_timur",
+  kota: "surabaya",
+  kode_pos: "60293",
+  kode_negara: "IDN",
+  deskripsi: "Gudang penyimpanan stok barang jualan",
+  longitude: 112.7508,
+  latitude: -7.3200,
   });
 
   let payloadSalah = JSON.stringify({

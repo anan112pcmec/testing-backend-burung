@@ -30,12 +30,12 @@ export default function () {
      =============================== */
   const payloadBenar = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlol",
-      email_pengguna: "ananlol156@gmail.com",
+      id_pengguna: 2,
+      username_pengguna: "ananlol_anjay11",
+      email_pengguna: "anan29837@gmail.com",
     },
-    id_media_foto_profil_pengguna: 5, // > 0
-    key_foto: "/media-pengguna-profil-foto/1/beb930f8df96abb3c63bcc34-pto.jpg", // tidak kosong
+    id_media_foto_profil_pengguna: 1, // > 0
+    key_foto: "/media-pengguna-profil-foto/2/4cd37e4670b3caf62c2d977a-pto.jpg", // tidak kosong
   });
 
   const resBenar = http.del(url, payloadBenar, params);

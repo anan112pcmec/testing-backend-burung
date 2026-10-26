@@ -25,8 +25,8 @@ export default function () {
   const url = `${BASE_URL}/user/credential/validate-password-pin`;
 
   const payloadBenar = JSON.stringify({
-    id_pengguna: 1,                   // Ubah sesuai test
-    pin_key_ubah_password: "123456"   // PIN yang sedang diuji
+    id_pengguna: 2,                   // Ubah sesuai test
+    pin_key_ubah_password: "120076"   // PIN yang sedang diuji
   });
 
   const payloadSalah = JSON.stringify({

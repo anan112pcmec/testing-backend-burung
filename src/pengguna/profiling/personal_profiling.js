@@ -24,13 +24,13 @@ export default function () {
 
   const payloadBenar = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlol156_cuy",
-      email_pengguna: "ananlol156@gmail.com",
+      id_pengguna: 2,
+      username_pengguna: "ananlol_anjay11",
+      email_pengguna: "anan29837@gmail.com",
     },
     update_username_user: "BLANK",
-    update_nama_user: "Faiz Hanan Hakim",
-    update_email_user: "anan29837@gmail.com"
+    update_nama_user: "Faiz Hanan",
+    update_email_user: "ananlol156@gmail.com"
   });
 
   const payloadSalah = JSON.stringify({

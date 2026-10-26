@@ -27,12 +27,12 @@ export default function () {
 
   const payloadBenar = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlolanjay11",
+      id_pengguna: 2,
+      username_pengguna: "ananlol_anjay11",
       email_pengguna: "anan29837@gmail.com",
     },
-    pin_baru_update_pin: "120076",
-    pin_lama_update_pin: "123456",
+    pin_baru_update_pin: "123456",
+    pin_lama_update_pin: "120076",
   });
 
   const payloadSalah = JSON.stringify({

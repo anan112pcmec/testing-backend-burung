@@ -33,7 +33,7 @@ export default function () {
   const url = 'http://localhost:8080/auth/user/registration';
 
   const payloadBenar = JSON.stringify({
-    username: 'ananlolanjay11',
+    username: 'ananlol_anjay11',
     nama: "Faiz Hannan Hakim",
     email: "anan29837@gmail.com",
     password_hash: "Bismillah_13",

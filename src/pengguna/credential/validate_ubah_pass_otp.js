@@ -21,8 +21,8 @@ const BASE_URL = "http://localhost:8080"; // ganti dengan URL API kamu
 export default function () {
   const url = `${BASE_URL}/user/credential/validate-password-otp`;
   const payloadBenar = JSON.stringify({
-    id_pengguna: 1,                // UBAH
-    otp_key_ubah_password: "01529333"  // UBAH
+    id_pengguna: 2,                // UBAH
+    otp_key_ubah_password: "47663742"  // UBAH
   });
 
   const payloadSalah = JSON.stringify({

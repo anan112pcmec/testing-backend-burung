@@ -25,12 +25,12 @@ export default function () {
 
   let payloadBenar = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlol156_cuy",
+      id_pengguna: 2,
+      username_pengguna: "ananlol_anjay11",
       email_pengguna: "anan29837@gmail.com",
     },
-    id_alamat_pengguna: 2,
-    panggilan_alamat: "Kantor Utama",
+    id_alamat_pengguna: 10,
+    panggilan_alamat: "Rumah Mamang",
     nomor_telefon: "0812847928",
     nama_alamat: "Jalan Melati No. 7",
     provinsi: "jawa_timur",
