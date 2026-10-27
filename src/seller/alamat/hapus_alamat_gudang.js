@@ -17,7 +17,7 @@ export default function () {
   let payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
+      username_seller: "1nikereal_",
       email_seller: "anan29837@gmail.com",
     },
     id_hapus_alamat_gudang: 1,

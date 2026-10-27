@@ -27,9 +27,9 @@ export default function () {
 
   let payloadBenar = JSON.stringify({
     identitas_seller: {
-      id_seller: 8,
-      username_seller: "ananapparel",
-      email_seller: "appburung@gmail.com",
+      id_seller: 1,
+      username_seller: "1nikereal_",
+      email_seller: "anan29837@gmail.com",
     },
     panggilan_alamat: "Gudang Surabaya",
     nomor_telefon: "081234567890", // angka saja, 12 karakter
@@ -45,9 +45,9 @@ export default function () {
 
   let payloadSalah = JSON.stringify({
     identitas_seller: {
-      id_seller: 8,
-      username_seller: "ananapparel",
-      email_seller: "appburung@gmail.com",
+      id_seller: 1,
+      username_seller: "1nikereal_",
+      email_seller: "anan29837@gmail.com",
     },
     panggilan_alamat: "Gudang Surabaya",
     nomor_telefon: "+62 812-3456-7890", // mengandung simbol/karakter selain angka atau panjang tidak sesuai

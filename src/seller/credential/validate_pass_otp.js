@@ -16,10 +16,10 @@ export default function () {
   let payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
+      username_seller: "1nikereal_",
       email_seller: "anan29837@gmail.com",
     },
-    otp_key_validate_ubah_password_seller: "22781958",
+    otp_key_validate_ubah_password_seller: "70842218",
   });
 
   // Skema Salah:

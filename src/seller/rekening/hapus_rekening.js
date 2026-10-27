@@ -17,11 +17,11 @@ export default function () {
   let payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
+      username_seller: "1nikereal_",
       email_seller: "anan29837@gmail.com",
     },
-    id_rekening: 12990,
-    nomor_rekening_hapus_rekening: "9876543210",
+    id_rekening:5,
+    nomor_rekening_hapus_rekening: "034101000123508",
   });
 
   // Skema Salah:

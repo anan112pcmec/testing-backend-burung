@@ -884,6 +884,7 @@ Skema Salah: 	Tidak Menyertakan Identitas Seller
 		Dedication Tidak Valid
 
 Catatan Keberhasilan Barang Services Seller
+}
 {
 MasukanBarangInduk:
 

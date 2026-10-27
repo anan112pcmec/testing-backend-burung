@@ -16,15 +16,15 @@ export default function () {
   // - Nomor rekening 10-15 digit dan semuanya angka ("123456789012" -> 12 digit)
   // - Pemilik rekening setidaknya 5 karakter ("Anan Apparel" -> 12 karakter)
   let payloadBenar = JSON.stringify({
-    identitas_seller: {
-      id_seller: 8,
-      username_seller: "ananapparel",
-      email_seller: "appburung@gmail.com",
-    },
-    nama_bank: "bni",
-    nomor_rekening: "123456789012",
-    pemilik_rekening: "Anan Apparel",
-  });
+  identitas_seller: {
+    id_seller: 1,
+    username_seller: "1nikereal_",
+    email_seller: "anan29837@gmail.com",
+  },
+  nama_bank: "bri",
+  nomor_rekening: "034101000123508",
+  pemilik_rekening: "Anan Apparel",
+});
 
   // Skema Salah:
   // - Tidak menyertakan identitas seller (atau kosong/null)

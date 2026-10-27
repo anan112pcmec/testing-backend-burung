@@ -13,7 +13,7 @@ export default function () {
   const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
+      username_seller: "1nikereal_",
       email_seller: "anan29837@gmail.com"
     },
     update_jam_operasional_seller: "08:00 - 17:00",
@@ -41,8 +41,8 @@ export default function () {
        },
      };
    
-     const resBenar = http.post(url, payloadBenar, params);
-     const resSalah = http.post(url, payloadSalah, params);
+     const resBenar = http.patch(url, payloadBenar, params);
+     const resSalah = http.patch(url, payloadSalah, params);
    
      check(resBenar, {
        "skema benar status 200": (r) => r.status === 200,

@@ -32,9 +32,9 @@ export default function () {
      =============================== */
   const payloadBenar = JSON.stringify({
     identitas_seller: {
-      id_seller: 8,
-      username_seller: "ananapparel",
-      email_seller: "appburung@gmail.com",
+      id_seller: 1,
+      username_seller: "1nikereal_",
+      email_seller: "anan29837@gmail.com",
     },
     data_barang_induk: {
       id_seller: 8,

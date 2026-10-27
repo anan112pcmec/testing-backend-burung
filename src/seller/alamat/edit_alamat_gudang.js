@@ -30,13 +30,13 @@ export default function () {
   let payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
+      username_seller: "1nikereal_",
       email_seller: "anan29837@gmail.com",
     },
     id_alamat_gudang: 1,
     panggilan_alamat: "Gudang Satu",
-    nomor_telefon: "081289707890", // angka saja, 12 karakter
-    nama_alamat: "Gudang Pusat Anan Apparel Indonesia",
+    nomor_telefon: "081289707222", // angka saja, 12 karakter
+    nama_alamat: "Gudang Pusat Nike Apparel Indonesia",
     provinsi: "banten",
     kota: "serang",
     kode_pos: "42111", // contoh kode pos terdaftar valid

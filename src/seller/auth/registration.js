@@ -29,7 +29,7 @@ export default function () {
   const payloadBenar = JSON.stringify({
     username: '1nikereal_',
     nama: 'NIKE',
-    email: 'ananlol156@gmail.com',
+    email: 'anan29837@gmail.com',
     jenis: 'Personal',
     seller_dedication: 'Pakaian & Fashion',
     password_hash: 'ApparelNikeSecure@2025',
