@@ -1,6 +1,6 @@
 // k6 run jenis/ajukan_data_distributor.js
 import http from "k6/http";
-import { sleep } from "k6";
+import { check, sleep } from "k6";
 
 export const options = {
   vus: 1,
@@ -28,26 +28,26 @@ export default function () {
   const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
-    nama_perusahaan: "PT Burung Nusantara",
+    nama_perusahaan: "PT Burung Nike Nusantara",
     kode_nib: "1234567890123",
     kode_npwp: "12.345.678.9-012.345",
-    dokumen_izi_distributor_url: "https://example.com/dokumen.pdf",
+    dokumen_izin_distributor_url: "https://example.com/dokumen.pdf",
     alasan: "Memenuhi syarat menjadi distributor resmi produk burung hias.",
   });
 
    const payloadSalah = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     nama_perusahaan: "", // Salah Nama Perusahaan Kosong
     kode_nib: "8172927", // Salah kurang dari 13 angka digit
     kode_npwp: "12.345.678.9-012.", // Salah saat di clean kurang dari 15-16 angka digit
-    dokumen_izi_distributor_url: "ugbcwq98gbswoubb.com", // salah url tak valid
+    dokumen_izin_distributor_url: "ugbcwq98gbswoubb.com", // salah url tak valid
     alasan: "Memenuhi syarat menjadi distributor resmi produk burung hias.",
   });
 
@@ -57,8 +57,8 @@ export default function () {
       },
     };
   
-    const resBenar = http.patch(url, payloadBenar, params);
-          const resSalah = http.patch(url, payloadSalah, params);
+    const resBenar = http.post(url, payloadBenar, params);
+          const resSalah = http.post(url, payloadSalah, params);
              
                  check(resBenar, {
                    "skema benar status 200": (r) => r.status === 200,

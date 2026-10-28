@@ -1,6 +1,6 @@
 // k6 run jenis/hapus_data_distributor.js
 import http from "k6/http";
-import { sleep } from "k6";
+import { check, sleep } from "k6";
 
 export const options = {
   vus: 1,
@@ -22,17 +22,17 @@ export default function () {
   const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
-    id_data_distributor: 2, // ganti sesuai ID data distributor yang ingin dihapus
+    id_data_distributor: 1, // ganti sesuai ID data distributor yang ingin dihapus
   });
 
   const payloadSalah = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     id_data_distributor: -2, // ganti sesuai ID data distributor yang ingin dihapus
   });
@@ -43,8 +43,8 @@ export default function () {
       },
     };
   
-    const resBenar = http.patch(url, payloadBenar, params);
-    const resSalah = http.patch(url, payloadSalah, params);
+    const resBenar = http.del(url, payloadBenar, params);
+    const resSalah = http.del(url, payloadSalah, params);
              
                 check(resBenar, {
                    "skema benar status 200": (r) => r.status === 200,

@@ -23,8 +23,8 @@ export default function () {
   const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     nama: "Etalase Baju Modis",
     deksripsi: "Etalase khusus untuk semua produk Baju premium.",
@@ -33,8 +33,8 @@ export default function () {
   const payloadSalah = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     nama: "dis", // salah kurang dari 5 karakter
     deksripsi: "Etalase khusus untuk semua produk Baju premium.",

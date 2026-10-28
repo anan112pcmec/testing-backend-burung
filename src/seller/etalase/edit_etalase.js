@@ -25,8 +25,8 @@ export default function () {
   const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     id_etalase: 1, // ganti sesuai ID etalase yang mau diedit
     nama: "Etalase Burung Premium",
@@ -36,8 +36,8 @@ export default function () {
   const payloadSalah = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     id_etalase: -10, // Salah id kurang dari 0
     nama: "Etalase Burung Premium",

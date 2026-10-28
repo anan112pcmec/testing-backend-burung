@@ -24,8 +24,8 @@ export default function () {
   const payloadBenar = JSON.stringify({
      identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     id_media_seller_profil_foto: 1,
     key_foto:"/media_seller_profil_foto/1/ddf9c747ebbf22bc69f06ab1-pto.jpg"  // GANTI sesuai id komentar yg mau dihapus
@@ -34,8 +34,8 @@ export default function () {
   const payloadSalah = JSON.stringify({
      identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     id_media_seller_profil_foto: -10, // Salah id lebih kecil dari 0
     key_foto:"/media_seller_profil_foto/1/ddf9c747ebbf22bc69f06ab1-pto.jpg"  // GANTI sesuai id komentar yg mau dihapus

@@ -29,8 +29,8 @@ export default function () {
   const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     id_diskon_produk: 1, // ganti sesuai ID diskon yang ingin diterapkan
     id_barang_induk: 2, // ganti sesuai ID barang induk
@@ -40,8 +40,8 @@ export default function () {
   const payloadSalah = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     id_diskon_produk: -1, // Salah
     id_barang_induk: -2, // Salah

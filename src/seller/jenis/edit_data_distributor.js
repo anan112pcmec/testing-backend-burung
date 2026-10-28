@@ -1,6 +1,6 @@
 // k6 run jenis/edit_data_distributor.js
 import http from "k6/http";
-import { sleep } from "k6";
+import { check, sleep } from "k6";
 
 export const options = {
   vus: 1,
@@ -31,28 +31,28 @@ export default function () {
   const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
-    id_data_distributor: 2, // ganti sesuai ID data distributor yang ingin diedit
-    nama_perusahaan: "PT Burung Nusantara Updated",
-    kode_nib: "1234567890123",
+    id_data_distributor: 1, // ganti sesuai ID data distributor yang ingin diedit
+    nama_perusahaan: "PT Burung Nusantara",
+    kode_nib: "9927492739233",
     kode_npwp: "12.345.678.9-012.345",
-    dokumen_izi_distributor_url: "https://example.com/dokumen_updated.pdf",
+    dokumen_izin_distributor_url: "https://example.com/dokumen_updated.pdf",
     alasan: "Memperbarui data distributor sesuai perubahan terbaru.",
   });
 
   const payloadSalah = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     id_data_distributor: -2, // salah id kurang dari 0
     nama_perusahaan: "PT Burung Nusantara Updated",
     kode_nib: "1234567890123",
     kode_npwp: "12.345.678.9-012.345",
-    dokumen_izi_distributor_url: "https://example.com/dokumen_updated.pdf",
+    dokumen_izin_distributor_url: "https://example.com/dokumen_updated.pdf",
     alasan: "Memperbarui data distributor sesuai perubahan terbaru.",
   });
 

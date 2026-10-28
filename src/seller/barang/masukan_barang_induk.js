@@ -34,7 +34,7 @@ export default function () {
     identitas_seller: {
       id_seller: 1,
       username_seller: "1nikereal_",
-      email_seller: "anan29837@gmail.com",
+      email_seller: "appburung@gmail.com",
     },
     data_barang_induk: {
       id_seller: 8,
@@ -59,11 +59,11 @@ export default function () {
         dimensi_panjang_cm_kategori_barang: 32,
         dimensi_tinggi_cm_kategori_barang: 2,
         sku_kategori: "TS-MRN-OV-XL",
-        is_original_kategori_barang: false,
+        is_original_kategori_barang: true,
       },
     ],
-    id_alamat_gudang: 1, // > 0
-    id_rekening: 2,      // > 0
+    id_alamat_gudang: 2, // > 0
+    id_rekening: 1,      // > 0
   });
 
   const resBenar = http.post(url, payloadBenar, params);

@@ -1,6 +1,6 @@
 // k6 run jenis/edit_data_brand.js
 import http from "k6/http";
-import { sleep } from "k6";
+import { check, sleep } from "k6";
 
 export const options = {
   vus: 1,
@@ -37,13 +37,13 @@ export default function () {
   const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     id_data_brand: 1, // ganti sesuai ID data brand yang ingin diedit
-    nama_perusahaan: "PT Burung Nusantara Updated",
+    nama_perusahaan: "PT NIKE Real",
     negara_asal: "Indonesia",
-    lembaga_pendaftaran: "Direktorat Jenderal Kekayaan Intelektual",
+    lembaga_pendaftaran: "DJKI",
     nomor_pendaftaran_merek: "IDM-9876543210",
     sertifikat_merek_url: "https://example.com/sertifikat_updated.pdf",
     dokumen_perwakilan_url: "https://example.com/dokumen_perwakilan_updated.pdf",
@@ -55,13 +55,13 @@ export default function () {
    const payloadSalah = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     id_data_brand: -1, // Salah Id data brand kurang dari 0
     nama_perusahaan: "PT Burung Nusantara Updated",
     negara_asal: "Indonesia",
-    lembaga_pendaftaran: "Direktorat Jenderal Kekayaan Intelektual",
+    lembaga_pendaftaran: "DJKI",
     nomor_pendaftaran_merek: "IDM-9876543210",
     sertifikat_merek_url: "https://example.com/sertifikat_updated.pdf",
     dokumen_perwakilan_url: "https://example.com/dokumen_perwakilan_updated.pdf",

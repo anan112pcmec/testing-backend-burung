@@ -49,8 +49,8 @@ export default function () {
   let payloadSalah = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     id_alamat_gudang: 0, // tidak lebih besar dari 0 / tidak valid
     panggilan_alamat: "Gudang Satu",

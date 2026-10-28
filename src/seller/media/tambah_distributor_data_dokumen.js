@@ -34,8 +34,8 @@ export default function () {
   const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     id_distributor_data: 8,
     ekstensi: "pdf",
@@ -85,8 +85,8 @@ export default function () {
   const payloadSalah = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     id_distributor_data: 0, // IdDistributorData <= 0
     ekstensi: "gajelas",     // Ekstensi dokumen tidak valid

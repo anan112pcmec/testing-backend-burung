@@ -25,8 +25,8 @@ export default function () {
   const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     id_distributor_data: 8,
     id_media_distributor_data_dokumen: 5,
@@ -36,8 +36,8 @@ export default function () {
   const payloadSalah = JSON.stringify({
      identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     id_distributor_data: 0,                 // IdDistributorData <= 0
     id_media_distributor_data_dokumen: -1,  // IdMediaDistributorDataDokumen <= 0

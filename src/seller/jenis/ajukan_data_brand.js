@@ -1,6 +1,6 @@
 // k6 run jenis/ajukan_data_brand.js
 import http from "k6/http";
-import { sleep } from "k6";
+import { check, sleep } from "k6";
 
 export const options = {
   vus: 1,
@@ -35,12 +35,12 @@ export default function () {
   const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
-    nama_perusahaan: "PT Burung Nusantara",
+    nama_perusahaan: "PT NIKE Nusantara",
     negara_asal: "Indonesia",
-    lembaga_pendaftaran: "Direktorat Jenderal Kekayaan Intelektual",
+    lembaga_pendaftaran: "DJKI",
     nomor_pendaftaran_merek: "IDM-1234567890",
     sertifikat_merek_url: "https://example.com/sertifikat.pdf",
     dokumen_perwakilan_url: "https://example.com/dokumen_perwakilan.pdf",
@@ -52,12 +52,12 @@ export default function () {
   const payloadSalah = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     nama_perusahaan: "", // Salah Nama Perusahaan kosong
     negara_asal: "bhap", // Salah negara asal gak valid
-    lembaga_pendaftaran: "Direktorat Jenderal Kekayaan Intelektual",
+    lembaga_pendaftaran: "DJKI",
     nomor_pendaftaran_merek: "IDM-1234567890",
     sertifikat_merek_url: "https://example.com/sertifikat.pdf",
     dokumen_perwakilan_url: "https://example.com/dokumen_perwakilan.pdf",
@@ -72,8 +72,8 @@ export default function () {
      },
    };
  
-   const resBenar = http.patch(url, payloadBenar, params);
-         const resSalah = http.patch(url, payloadSalah, params);
+   const resBenar = http.post(url, payloadBenar, params);
+         const resSalah = http.post(url, payloadSalah, params);
             
                 check(resBenar, {
                   "skema benar status 200": (r) => r.status === 200,

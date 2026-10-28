@@ -23,8 +23,8 @@ export default function () {
   const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     id_media_kategori_barang_foto: 21,
     key_foto: "seller/kategori_barang/25/14/foto_21.jpg",
@@ -33,8 +33,8 @@ export default function () {
   const payloadSalah = JSON.stringify({
      identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     id_media_kategori_barang_foto: 0, // IdMediaKategoriBarangFoto <= 0
     key_foto: "",                     // KeyFoto kosong

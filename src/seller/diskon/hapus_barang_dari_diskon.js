@@ -24,8 +24,8 @@ export default function () {
   const payload = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     id_barang_di_diskon: 3, // ganti sesuai ID barang yang ingin dihapus dari diskon
   });

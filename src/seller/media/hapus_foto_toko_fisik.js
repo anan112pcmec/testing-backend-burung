@@ -21,8 +21,8 @@ export default function () {
   const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com",
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com",
     },
     data_media_dan_key: [
       { id_media_seller_fisik_toko: 10, key: "toko1.jpg" },
