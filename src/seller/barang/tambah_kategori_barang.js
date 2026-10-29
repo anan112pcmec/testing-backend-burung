@@ -33,28 +33,61 @@ export default function () {
      1️⃣ SKEMA BENAR
      =============================== */
   const payloadBenar = JSON.stringify({
-    identitas_seller: {
-      id_seller: 1,
-      username_seller: "1nikereal_",
-      email_seller: "anan29837@gmail.com",
+  identitas_seller: {
+    id_seller: 1,
+    username_seller: "1nikereal_",
+    email_seller: "appburung@gmail.com",
+  },
+  id_barang_induk_tambah_kategori: 7, // > 0
+  tambah_kategori_barang: [
+    {
+      nama_kategori_barang: "Kaos Oversize Denim Blue L", // >= 5 karakter
+      warna_kategori_barang: "#1A2B3C",                  // Hexa color
+      harga_kategori_barang: 95000,                        // > 200
+      berat_gram_kategori_barang: 200,                     // > 0
+      dimensi_panjang_cm_kategori_barang: 30,              // > 0
+      dimensi_lebar_cm_kategori_barang: 20,                // > 0
+      sku_kategori: "TS-DNM-OV-L",                         // Sku
+      stok_kategori_barang: 70,
+      deskripsi_kategori_barang: "Kaos denim blue oversize size L bahan cotton combed.",
     },
-    id_barang_induk: 1, // > 0
-    data_kategori_barang_induk: [
-      {
-        nama_kategori_barang: "Kaos Oversize Denim Blue L", // >= 5 karakter
-        warna_kategori_barang: "#1A2B3C",                  // Hexa color
-        harga_kategori_barang: 95000,                       // > 200
-        berat_gram_kategori_barang: 200,                    // > 0
-        dimensi_panjang_cm_kategori_barang: 30,             // > 0
-        dimensi_lebar_cm_kategori_barang: 20,               // > 0
-        sku_kategori: "TS-DNM-OV-L",                        // Sku
-        stok_kategori_barang: 70,
-        deskripsi_kategori_barang: "Kaos denim blue oversize size L bahan cotton combed.",
-      },
-    ],
-    id_alamat_gudang: 1, // > 0
-    id_rekening: 2,      // > 0
-  });
+    {
+      nama_kategori_barang: "Kaos Oversize Maroon XL",
+      warna_kategori_barang: "#800000",
+      harga_kategori_barang: 95000,
+      berat_gram_kategori_barang: 220,
+      dimensi_panjang_cm_kategori_barang: 32,
+      dimensi_lebar_cm_kategori_barang: 22,
+      sku_kategori: "TS-MRN-OV-XL",
+      stok_kategori_barang: 40,
+      deskripsi_kategori_barang: "Kaos maroon oversize size XL bahan cotton combed.",
+    },
+    {
+      nama_kategori_barang: "Kaos Oversize Hitam M",
+      warna_kategori_barang: "#000000",
+      harga_kategori_barang: 95000,
+      berat_gram_kategori_barang: 190,
+      dimensi_panjang_cm_kategori_barang: 28,
+      dimensi_lebar_cm_kategori_barang: 19,
+      sku_kategori: "TS-BLK-OV-M",
+      stok_kategori_barang: 50,
+      deskripsi_kategori_barang: "Kaos hitam oversize size M bahan cotton combed.",
+    },
+    {
+      nama_kategori_barang: "Kaos Oversize Sage Green L",
+      warna_kategori_barang: "#87A96B",
+      harga_kategori_barang: 95000,
+      berat_gram_kategori_barang: 200,
+      dimensi_panjang_cm_kategori_barang: 30,
+      dimensi_lebar_cm_kategori_barang: 20,
+      sku_kategori: "TS-SGE-OV-L",
+      stok_kategori_barang: 35,
+      deskripsi_kategori_barang: "Kaos sage green oversize size L bahan cotton combed.",
+    },
+  ],
+  id_alamat_gudang: 2, // > 0
+  id_rekening: 1,      // > 0
+});
 
   const resBenar = http.post(url, payloadBenar, params);
 

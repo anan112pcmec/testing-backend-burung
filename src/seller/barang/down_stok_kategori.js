@@ -17,8 +17,8 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com"
     },
-    id_barang_induk: 3,        // contoh ID barang induk
-    id_kategori_barang: 3     // contoh ID rekening seller baru
+    id_barang_induk: 7,        // contoh ID barang induk
+    id_kategori_barang: 18     // contoh ID rekening seller baru
   });
 
    const payloadSalah = JSON.stringify({

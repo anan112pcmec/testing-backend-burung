@@ -36,7 +36,7 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    id_barang_induk: 1,                 // > 0
+    id_barang_induk: 4,                 // > 0
     nama_barang: "Kemeja Polos",        // >= 5 karakter
     jenis_barang: "Pakaian & Fashion",  // Jenis valid terdaftar
     deskripsi: "untuk foto wisuda.",

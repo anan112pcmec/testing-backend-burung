@@ -13,11 +13,11 @@ export default function () {
   const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com"
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com"
     },
-    id_barang_induk: 2,
-    id_kategori: 5,
+    id_barang_induk: 7,
+    id_kategori_barang: 19,
     harga_barang_baru:20000
   });
 

@@ -1,3 +1,5 @@
+// k6 run barang/down_barang_induk.js
+
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
@@ -12,17 +14,17 @@ export default function () {
   const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com"
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com"
     },
-    id_barang_induk_down: 3  // contoh ID barang induk yang ingin di-down stok
+    id_barang_induk_down: 6  // contoh ID barang induk yang ingin di-down stok
   });
 
    const payloadSalah = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com"
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com"
     },
     id_barang_induk_down: -2  // salah, id barang induk lebih kecil dari 0
   });
