@@ -1016,6 +1016,15 @@ Skema Salah: 	Tidak Menyertakan Identitas Seller
 		IdKategoriBarang lebih kecil atau sama dengan 0
 }
 {
+UpBarangInduk:
+Skema Benar: 	Menyertakan Identitas Seller
+		IdBarangInduk lebih besar dari 0
+
+Skema Salah: 	Tidak Menyertakan Identitas Seller
+		IdBarangInduk lebih kecil atau sama dengan 0
+Skema Benar
+}
+{
 EditRekeningBarangInduk:
 
 Skema Benar: 	Menyertakan Identitas Seller

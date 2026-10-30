@@ -1,3 +1,4 @@
+// k6 run barang/edit_stok_kategori.js
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
@@ -12,11 +13,11 @@ export default function () {
   const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com"
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com"
     },
-    id_barang_induk: 2,
-    id_kategori: 5,
+    id_barang_induk: 18,
+    id_kategori: 42,
     update_stok: 20
   });
 

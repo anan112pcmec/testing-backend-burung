@@ -16,9 +16,9 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com"
     },
-    id_barang_induk: 7,
-    id_kategori_barang: 19,
-    harga_barang_baru:20000
+    id_barang_induk: 18,
+    id_kategori_barang: 42,
+    harga_barang_baru:100000
   });
 
   const payloadSalah = JSON.stringify({

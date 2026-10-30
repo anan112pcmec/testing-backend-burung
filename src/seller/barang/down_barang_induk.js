@@ -17,7 +17,7 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com"
     },
-    id_barang_induk_down: 6  // contoh ID barang induk yang ingin di-down stok
+    id_barang_induk_down: 7  // contoh ID barang induk yang ingin di-down stok
   });
 
    const payloadSalah = JSON.stringify({

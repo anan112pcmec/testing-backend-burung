@@ -40,7 +40,7 @@ export default function () {
   },
   data_barang_induk: {
     id_seller: 8,
-    nama: "Kaos Oversize Premium", // >= 5 karakter
+    nama: "Kaos Oversize PPremium", // >= 5 karakter
     jenis: "Semua Barang",         // Jenis valid
     deskripsi: "Kaos oversize bahan cotton combed 30s, adem dan nyaman.",
     original_kategori: 1,
