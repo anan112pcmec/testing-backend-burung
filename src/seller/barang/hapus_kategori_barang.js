@@ -34,8 +34,8 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    id_barang_induk: 7,     // > 0
-    id_kategori_barang: 18,  // > 0
+    id_barang_induk: 19,     // > 0
+    id_kategori_barang: 44,  // > 0
   });
 
   const resBenar = http.del(url, payloadBenar, params);

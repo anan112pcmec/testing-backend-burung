@@ -1,5 +1,6 @@
 // k6 run barang/up_barang_induk.js
 
+import http from "k6/http"
 import {check, sleep} from "k6"
 
 export const options = {
@@ -24,10 +25,10 @@ export default function(){
         username_seller: "1nikereal_",
         email_seller: "appburung@gmail.com",
       },
-      id_barang_induk_up: 18,
+      id_barang_induk_up: 19,
     });
     
-      const resBenar = http.post(url, payloadBenar, params);
+      const resBenar = http.patch(url, payloadBenar, params);
     
       check(resBenar, {
         "skema benar status 200": (r) => r.status === 200,
@@ -45,7 +46,7 @@ export default function(){
       id_barang_induk_up: -2
       });
     
-      const resSalah = http.post(url, payloadSalah, params);
+      const resSalah = http.patch(url, payloadSalah, params);
     
       check(resSalah, {
         "skema salah ditolak (bukan 200)": (r) => r.status !== 200,

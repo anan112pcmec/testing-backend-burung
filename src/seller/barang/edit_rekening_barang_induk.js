@@ -14,11 +14,11 @@ export default function () {
   const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com"
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com"
     },
-    id_barang_induk: 2,        // contoh ID barang induk
-    id_rekening_seller: 12     // contoh ID rekening seller baru
+    id_barang_induk: 19,        // contoh ID barang induk
+    id_rekening_seller: 6     // contoh ID rekening seller baru
   });
 
    const payloadSalah = JSON.stringify({

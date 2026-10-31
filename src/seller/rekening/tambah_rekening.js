@@ -19,11 +19,11 @@ export default function () {
   identitas_seller: {
     id_seller: 1,
     username_seller: "1nikereal_",
-    email_seller: "anan29837@gmail.com",
+    email_seller: "appburung@gmail.com",
   },
-  nama_bank: "bri",
-  nomor_rekening: "034101000123508",
-  pemilik_rekening: "Anan Apparel",
+  nama_bank: "bca",
+  nomor_rekening: "574795368964798",
+  pemilik_rekening: "Anancuy",
 });
 
   // Skema Salah:

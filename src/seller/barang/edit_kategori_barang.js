@@ -46,8 +46,8 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    id_barang_induk_edit_kategori: 7, // > 0
-    id_kategori_barang: 18,            // > 0
+    id_barang_induk_edit_kategori: 19, // > 0
+    id_kategori_barang: 44,            // > 0
     nama: "Kemeja Linen Super",       // > 5 karakter
     deskripsi: "Kemeja linen dengan kualitas premium, ringan, dan nyaman untuk cuaca tropis.",
     warna: "#006699",                 // Format hexa

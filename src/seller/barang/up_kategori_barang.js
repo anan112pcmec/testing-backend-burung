@@ -1,5 +1,6 @@
 // k6 run barang/up_kategori_barang.js
 
+import http from 'k6/http';
 import {check, sleep} from "k6"
 
 export const options = {
@@ -24,12 +25,12 @@ export default function(){
         username_seller: "1nikereal_",
         email_seller: "appburung@gmail.com",
       },
-       id_barang_induk: 18,
-      id_kategori_barang: 8,
-      jumlah: 20,
+       id_barang_induk: 19,
+      id_kategori_barang: 45,
+      jumlah: 0, //nol untuk up semua
     });
     
-      const resBenar = http.post(url, payloadBenar, params);
+      const resBenar = http.patch(url, payloadBenar, params);
     
       check(resBenar, {
         "skema benar status 200": (r) => r.status === 200,
@@ -49,7 +50,7 @@ export default function(){
       jumlah: 20,
       });
     
-      const resSalah = http.post(url, payloadSalah, params);
+      const resSalah = http.patch(url, payloadSalah, params);
     
       check(resSalah, {
         "skema salah ditolak (bukan 200)": (r) => r.status !== 200,

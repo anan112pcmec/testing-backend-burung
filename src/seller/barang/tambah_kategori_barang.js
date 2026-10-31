@@ -38,7 +38,7 @@ export default function () {
     username_seller: "1nikereal_",
     email_seller: "appburung@gmail.com",
   },
-  id_barang_induk_tambah_kategori: 7, // > 0
+  id_barang_induk_tambah_kategori: 19, // > 0
   tambah_kategori_barang: [
     {
       nama_kategori_barang: "Kaos Oversize Denim Blue L", // >= 5 karakter

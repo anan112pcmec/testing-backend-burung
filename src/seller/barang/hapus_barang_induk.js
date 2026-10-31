@@ -32,7 +32,7 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    id_barang_induk: 17, // > 0
+    id_barang_induk: 18, // > 0
   });
 
   const resBenar = http.del(url, payloadBenar, params);
