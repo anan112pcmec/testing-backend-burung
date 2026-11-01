@@ -1,6 +1,6 @@
 // k6 run etalase/hapus_etalase.js
 import http from "k6/http";
-import { sleep } from "k6";
+import { sleep, check } from "k6";
 
 export const options = {
   vus: 1,
@@ -43,8 +43,8 @@ export default function () {
     },
   };
 
-   const resBenar = http.patch(url, payloadBenar, params);
-      const resSalah = http.patch(url, payloadSalah, params);
+   const resBenar = http.del(url, payloadBenar, params);
+      const resSalah = http.del(url, payloadSalah, params);
          
              check(resBenar, {
                "skema benar status 200": (r) => r.status === 200,

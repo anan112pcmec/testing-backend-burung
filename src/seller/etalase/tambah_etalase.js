@@ -1,6 +1,6 @@
 // k6 run etalase/tambah_etalase.js
 import http from "k6/http";
-import { sleep } from "k6";
+import { sleep, check } from "k6";
 
 export const options = {
   vus: 1,
@@ -26,7 +26,7 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    nama: "Etalase Baju Modis",
+    nama: "Etalase Burung Premium",
     deksripsi: "Etalase khusus untuk semua produk Baju premium.",
   });
 
@@ -46,8 +46,8 @@ export default function () {
          },
        };
      
-        const resBenar = http.patch(url, payloadBenar, params);
-         const resSalah = http.patch(url, payloadSalah, params);
+        const resBenar = http.post(url, payloadBenar, params);
+         const resSalah = http.post(url, payloadSalah, params);
        
          check(resBenar, {
            "skema benar status 200": (r) => r.status === 200,

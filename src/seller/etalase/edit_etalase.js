@@ -1,6 +1,6 @@
 // k6 run etalase/edit_etalase.js
 import http from "k6/http";
-import { sleep } from "k6";
+import { sleep, check } from "k6";
 
 export const options = {
   vus: 1,

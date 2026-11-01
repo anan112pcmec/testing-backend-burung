@@ -1,6 +1,6 @@
 // k6 run etalase/hapus_barang_dari_etalase.js
 import http from "k6/http";
-import { sleep } from "k6";
+import { sleep, check } from "k6";
 
 export const options = {
   vus: 1,
@@ -18,7 +18,7 @@ export default function () {
     },
     id_barang_ke_etalase: 1,  // ganti sesuai ID barang di etalase
     id_etalase: 1,             // ganti sesuai ID etalase
-    id_barang_induk: 2,       // ganti sesuai ID barang induk
+    id_barang_induk: 19,       // ganti sesuai ID barang induk
   });
 
   const payloadSalah = JSON.stringify({
@@ -38,8 +38,8 @@ export default function () {
     },
   };
 
-  const resBenar = http.patch(url, payloadBenar, params);
-        const resSalah = http.patch(url, payloadSalah, params);
+  const resBenar = http.del(url, payloadBenar, params);
+        const resSalah = http.del(url, payloadSalah, params);
            
                check(resBenar, {
                  "skema benar status 200": (r) => r.status === 200,

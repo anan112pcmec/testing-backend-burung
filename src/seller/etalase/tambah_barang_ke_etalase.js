@@ -1,6 +1,6 @@
 // k6 run etalase/tambah_barang_ke_etalase.js
 import http from "k6/http";
-import { sleep } from "k6";
+import { sleep, check } from "k6";
 
 export const options = {
   vus: 1,
@@ -28,7 +28,7 @@ export default function () {
       email_seller: "appburung@gmail.com",
     },
     id_etalase: 1,        // ganti sesuai ID etalase tujuan
-    id_barang_induk: 2,  // ganti sesuai ID barang induk yang ingin ditambahkan
+    id_barang_induk: 19,  // ganti sesuai ID barang induk yang ingin ditambahkan
   });
 
    const payloadSalah = JSON.stringify({
@@ -47,8 +47,8 @@ export default function () {
     },
   };
 
-  const resBenar = http.patch(url, payloadBenar, params);
-        const resSalah = http.patch(url, payloadSalah, params);
+  const resBenar = http.post(url, payloadBenar, params);
+        const resSalah = http.post(url, payloadSalah, params);
            
                check(resBenar, {
                  "skema benar status 200": (r) => r.status === 200,
