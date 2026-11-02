@@ -4,7 +4,7 @@ import { check, sleep } from "k6";
 
 export const options = {
   vus: 1, // jumlah virtual user
-  duration: "5s", // lama pengujian
+  iterations: 1, // lama pengujian
 };
 
 // TambahDiskonProduk: 
@@ -29,8 +29,8 @@ export default function () {
   const payloadBenar = JSON.stringify({
      identitas_seller: {
       id_seller: 1,
-      username_seller: "ananapparel",
-      email_seller: "anan29837@gmail.com"
+      username_seller: "1nikereal_",
+      email_seller: "appburung@gmail.com"
     },
     nama: "Diskon Musim Panas",
     deksripsi: "Potongan harga besar untuk semua produk burung hias.",
@@ -58,8 +58,8 @@ export default function () {
     },
   };
 
-   const resBenar = http.patch(url, payloadBenar, params);
-    const resSalah = http.patch(url, payloadSalah, params);
+   const resBenar = http.post(url, payloadBenar, params);
+    const resSalah = http.post(url, payloadSalah, params);
   
     check(resBenar, {
       "skema benar status 200": (r) => r.status === 200,

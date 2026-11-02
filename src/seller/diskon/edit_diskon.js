@@ -4,7 +4,7 @@ import { check } from "k6";
 
 export const options = {
   vus: 1, // jumlah virtual user
-  duration: "5s", // lama pengujian
+  iterations: 1, // lama pengujian
 };
 
 // EditDiskonProduk: 
@@ -28,13 +28,13 @@ export default function () {
    const payloadBenar = JSON.stringify({
        identitas_seller: {
         id_seller: 1,
-        username_seller: "ananapparel",
-        email_seller: "anan29837@gmail.com"
+        username_seller: "1nikereal_",
+        email_seller: "appburung@gmail.com"
       },
       id_diskon_produk: 1,
-      nama: "Diskon Musim Panas",
+      nama: "Mucim Panas",
       deksripsi: "Potongan harga besar untuk semua produk burung hias.",
-      diskon_persen: 20,
+      diskon_persen: 40,
       berlaku_mulai: "2025-11-13T00:00:00Z",
       berlaku_sampai: "2025-12-13T00:00:00Z"
     });

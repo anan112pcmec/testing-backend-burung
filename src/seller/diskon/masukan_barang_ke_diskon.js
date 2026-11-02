@@ -1,10 +1,10 @@
 // k6 run diskon/masukan_barang_ke_diskon.js
 import http from "k6/http";
-import { sleep } from "k6";
+import { sleep, check } from "k6";
 
 export const options = {
   vus: 1,
-  duration: "1s",
+  iterations: 1,
 };
 
 // TetapkanDiskonPadaBarang: 
@@ -32,9 +32,9 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    id_diskon_produk: 1, // ganti sesuai ID diskon yang ingin diterapkan
-    id_barang_induk: 2, // ganti sesuai ID barang induk
-    id_kategori_barang: 3, // ganti sesuai ID kategori barang
+    id_diskon_produk: 2, // ganti sesuai ID diskon yang ingin diterapkan
+    id_barang_induk: 19, // ganti sesuai ID barang induk
+    id_kategori_barang: 47, // ganti sesuai ID kategori barang
   });
 
   const payloadSalah = JSON.stringify({
@@ -54,8 +54,8 @@ export default function () {
        },
      };
    
-      const resBenar = http.patch(url, payloadBenar, params);
-       const resSalah = http.patch(url, payloadSalah, params);
+      const resBenar = http.post(url, payloadBenar, params);
+       const resSalah = http.post(url, payloadSalah, params);
      
        check(resBenar, {
          "skema benar status 200": (r) => r.status === 200,

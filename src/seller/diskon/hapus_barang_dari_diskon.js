@@ -1,10 +1,10 @@
 // k6 run diskon/hapus_barang_dari_diskon.js
 import http from "k6/http";
-import { sleep } from "k6";
+import { sleep, check } from "k6";
 
 export const options = {
   vus: 1,
-  duration: "1s",
+  iterations: 1,
 };
 
 // HapusDiskonPadaBarang:
@@ -21,13 +21,22 @@ export const options = {
 export default function () {
   const url = "http://localhost:8080/seller/diskon/hapus-diskon-barang";
 
-  const payload = JSON.stringify({
+  const payloadBenar = JSON.stringify({
     identitas_seller: {
       id_seller: 1,
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    id_barang_di_diskon: 3, // ganti sesuai ID barang yang ingin dihapus dari diskon
+    id_barang_di_diskon: 1, // ganti sesuai ID barang yang ingin dihapus dari diskon
+  });
+
+  const payloadSalah = JSON.stringify({
+    identitas_seller: {
+      id_seller: 1,
+      username_seller: "1nikereal",
+      email_seller: "appburung@gmail.com",
+    },
+    id_barang_di_diskon: 47, // ganti sesuai ID barang yang ingin dihapus dari diskon
   });
 
   const params = {
@@ -36,8 +45,8 @@ export default function () {
         },
       };
     
-       const resBenar = http.patch(url, payloadBenar, params);
-        const resSalah = http.patch(url, payloadSalah, params);
+       const resBenar = http.del(url, payloadBenar, params);
+        const resSalah = http.del(url, payloadSalah, params);
       
         check(resBenar, {
           "skema benar status 200": (r) => r.status === 200,

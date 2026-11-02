@@ -3,8 +3,8 @@ import http from "k6/http";
 import { check, sleep } from "k6";
 
 export let options = {
-  vus: 10, // jumlah virtual users
-  duration: "15s", // durasi test
+  vus: 1, // jumlah virtual users
+  iterations: 1, // durasi test
 };
 
 // HapusDiskonProduk:
@@ -45,8 +45,8 @@ export default function () {
       },
     };
   
-     const resBenar = http.patch(url, payloadBenar, params);
-      const resSalah = http.patch(url, payloadSalah, params);
+     const resBenar = http.del(url, payloadBenar, params);
+      const resSalah = http.del(url, payloadSalah, params);
     
       check(resBenar, {
         "skema benar status 200": (r) => r.status === 200,
