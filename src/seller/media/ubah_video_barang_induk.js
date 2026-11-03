@@ -3,7 +3,7 @@ import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 // 1️⃣ BACA FILE SEKALI DI AWAL (VIDEO)
-const fileBytes = open('video/barang_induk.mp4', 'b');
+const fileBytes = open('foto/video.mp4');
 
 export let options = {
   vus: 1,
@@ -37,7 +37,7 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    id_barang_induk: 25,
+    id_barang_induk: 19,
     ekstensi: "mp4",
   });
 

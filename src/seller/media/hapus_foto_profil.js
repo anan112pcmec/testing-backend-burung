@@ -28,7 +28,7 @@ export default function () {
       email_seller: "appburung@gmail.com",
     },
     id_media_seller_profil_foto: 1,
-    key_foto:"/media_seller_profil_foto/1/ddf9c747ebbf22bc69f06ab1-pto.jpg"  // GANTI sesuai id komentar yg mau dihapus
+    key_foto:"/media_seller_profil_foto/1/5670f44535025f174fa0f1f8-pto.jpg"  // GANTI sesuai id komentar yg mau dihapus
   });
 
   const payloadSalah = JSON.stringify({
@@ -47,8 +47,8 @@ export default function () {
       },
     };
   
-      const resBenar = http.patch(url, payloadBenar, params);
-      const resSalah = http.patch(url, payloadSalah, params);
+      const resBenar = http.del(url, payloadBenar, params);
+      const resSalah = http.del(url, payloadSalah, params);
          
              check(resBenar, {
                "skema benar status 200": (r) => r.status === 200,

@@ -4,9 +4,9 @@ import { check, sleep } from 'k6';
 
 // 1️⃣ Baca file sekali di awal (bisa lebih dari 1)
 const filePaths = [
-  'foto/barang1.jpg',
-  'foto/barang2.jpg',
-  'foto/barang3.jpg',
+  'foto/nike1.jpg',
+  'foto/nike2.jpg',
+  'foto/ndiaa.jpg',
 ]; // maksimal 5 foto, urut sesuai yang dikirim ke backend
 const fileBytesArray = filePaths.map((p) => open(p, 'b'));
 
@@ -45,7 +45,7 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    id_barang_induk: 1001,
+    id_barang_induk: 19,
     ekstensi: ekstensiArrayValid,
   });
 

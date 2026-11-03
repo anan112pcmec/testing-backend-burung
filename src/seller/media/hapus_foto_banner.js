@@ -27,7 +27,7 @@ export default function () {
       email_seller: "appburung@gmail.com",
     },
     id_media_seller_banner_foto: 1,
-    key_foto: "/media_seller_banner_foto/1/5dbc86481c5d135a28c6dab9-pto.jpg",
+    key_foto: "/media_seller_banner_foto/1/dfb0524bf6b2e58f0f3fb015-pto.jpg",
   });
 
   const payloadSalah = JSON.stringify({
@@ -42,8 +42,8 @@ export default function () {
     },
   };
 
-  const resBenar = http.patch(url, payloadBenar, params);
-  const resSalah = http.patch(url, payloadSalah, params);
+  const resBenar = http.del(url, payloadBenar, params);
+  const resSalah = http.del(url, payloadSalah, params);
 
   check(resBenar, {
     "skema benar status 200": (r) => r.status === 200,

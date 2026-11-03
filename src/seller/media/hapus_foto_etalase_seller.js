@@ -26,8 +26,8 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    id_media_etalase_foto: 7,
-    key_foto: "seller/etalase/ananapparel/etalase_7.jpg",
+    id_media_etalase_foto: 2,
+    key_foto: "/media_etalase_foto/2/2ef65dad5c1b9cdb5616103d-pto.jpg",
   });
 
   const payloadSalah = JSON.stringify({
@@ -42,8 +42,8 @@ export default function () {
     },
   };
 
-  const resBenar = http.patch(url, payloadBenar, params);
-  const resSalah = http.patch(url, payloadSalah, params);
+  const resBenar = http.del(url, payloadBenar, params);
+  const resSalah = http.del(url, payloadSalah, params);
 
   check(resBenar, {
     "skema benar status 200": (r) => r.status === 200,

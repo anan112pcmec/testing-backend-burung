@@ -25,9 +25,9 @@ export default function () {
       email_seller: "appburung@gmail.com",
     },
     data_media_dan_key: [
-      { id_media_seller_fisik_toko: 10, key: "toko1.jpg" },
-      { id_media_seller_fisik_toko: 11, key: "toko2.jpg" },
-      { id_media_seller_fisik_toko: 12, key: "toko3.jpg" },
+      { id_media_seller_fisik_toko: 1, key: "/media_seller_toko_fisik_foto/1/28d38b8b82d0a07660e9d303-pto.jpg" },
+      { id_media_seller_fisik_toko: 2, key: "/media_seller_toko_fisik_foto/1/8d72645cf436e1b0323e5d2d-pto.jpg" },
+      { id_media_seller_fisik_toko: 3, key: "/media_seller_toko_fisik_foto/1/30504c0f2f62415d47daaa93-pto.jpg" },
     ],
   });
 
@@ -45,8 +45,8 @@ export default function () {
     },
   };
 
-  const resBenar = http.patch(url, payloadBenar, params);
-  const resSalah = http.patch(url, payloadSalah, params);
+  const resBenar = http.del(url, payloadBenar, params);
+  const resSalah = http.del(url, payloadSalah, params);
 
   check(resBenar, {
     "skema benar status 200": (r) => r.status === 200,

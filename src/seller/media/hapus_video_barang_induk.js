@@ -26,8 +26,8 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    id_media_barang_induk_video: 9,
-    key_video: "seller/barang_induk/video/barang_25/video_9.mp4",
+    id_media_barang_induk_video: 1,
+    key_video: "/media_barang_induk_video/19/755ded4e94324ee6fd-vd.mp4",
   });
 
   const payloadSalah = JSON.stringify({
@@ -42,8 +42,8 @@ export default function () {
     },
   };
 
-  const resBenar = http.patch(url, payloadBenar, params);
-  const resSalah = http.patch(url, payloadSalah, params);
+  const resBenar = http.del(url, payloadBenar, params);
+  const resSalah = http.del(url, payloadSalah, params);
 
   check(resBenar, {
     "skema benar status 200": (r) => r.status === 200,

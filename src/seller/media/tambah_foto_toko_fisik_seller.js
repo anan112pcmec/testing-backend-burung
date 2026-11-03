@@ -4,9 +4,9 @@ import { check, sleep } from 'k6';
 
 // 1️⃣ Baca file sekali di awal (bisa lebih dari 1)
 const filePaths = [
-  'foto/toko1.jpg',
-  'foto/toko2.jpg',
-  'foto/toko3.jpg',
+  'foto/nike1.jpg',
+  'foto/nike2.jpg',
+  'foto/jaket.jpg',
 ]; // maksimal 5 foto, urut sesuai yang dikirim ke backend
 const fileBytesArray = filePaths.map((p) => open(p, 'b'));
 
