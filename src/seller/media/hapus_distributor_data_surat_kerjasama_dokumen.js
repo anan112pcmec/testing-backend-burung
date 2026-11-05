@@ -1,4 +1,4 @@
-// k6 run media/hapus_dokumen_distributor_data_surat_kerjasama.js
+// k6 run media/hapus_distributor_data_surat_kerjasama_dokumen.js
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
@@ -28,9 +28,9 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    id_distributor_data: 8,
-    id_media_distributor_data_surate_kerjasama_dokumen: 12,
-    key_dokumen: "distributor/surat_kerjasama/abc123.pdf",
+    id_distributor_data: 2,
+    id_media_distributor_data_surate_kerjasama_dokumen: 1,
+    key_dokumen: "/media_distributor_data_surat_kerjasama_dokumen/2/9e07722315f973e7db7a2d-dok.pdf",
   });
 
   const payloadSalah = JSON.stringify({
@@ -46,8 +46,8 @@ export default function () {
     },
   };
 
-  const resBenar = http.patch(url, payloadBenar, params);
-  const resSalah = http.patch(url, payloadSalah, params);
+  const resBenar = http.del(url, payloadBenar, params);
+  const resSalah = http.del(url, payloadSalah, params);
 
   check(resBenar, {
     "skema benar status 200": (r) => r.status === 200,

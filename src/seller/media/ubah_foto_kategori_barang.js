@@ -3,7 +3,7 @@ import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 // 1️⃣ BACA FILE SEKALI DI AWAL
-const fileBytes = open('foto/kategori_barang.jpg', 'b');
+const fileBytes = open('foto/ndiaa.jpg');
 
 export let options = {
   vus: 1,
@@ -39,8 +39,8 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    id_barang_induk: 25,
-    id_kategori_barang: 14,
+    id_barang_induk: 19,
+    id_kategori_barang: 46,
     ekstensi: "jpg",
   });
 

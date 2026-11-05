@@ -1,9 +1,9 @@
-// k6 run media/tambah_dokumen_distributor_data_surat_kerjasama.js
+// k6 run media/tambah_distributor_data_surat_kerjasama_dokumen.js
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 // 🔥 BACA FILE SEKALI
-const fileBytes = open('dokumen/surat_kerjasama.pdf', 'b');
+const fileBytes = open('dokumen/Nike_Aerogami.pdf');
 
 export let options = {
   vus: 1,
@@ -37,7 +37,7 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    id_distributor_data: 8,
+    id_distributor_data: 2,
     ekstensi: "pdf",
   });
 

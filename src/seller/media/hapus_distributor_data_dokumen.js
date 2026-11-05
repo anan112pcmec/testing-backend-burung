@@ -28,9 +28,9 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    id_distributor_data: 8,
-    id_media_distributor_data_dokumen: 5,
-    key_dokumen: "seller/distributor_data/8/dokumen_5.pdf",
+    id_distributor_data: 2,
+    id_media_distributor_data_dokumen: 1,
+    key_dokumen: "/media_distributor_data_dokumen/2/cf8e0dd1838293c80bb3db-dok.pdf",
   });
 
   const payloadSalah = JSON.stringify({
@@ -50,8 +50,8 @@ export default function () {
     },
   };
 
-  const resBenar = http.patch(url, payloadBenar, params);
-  const resSalah = http.patch(url, payloadSalah, params);
+  const resBenar = http.del(url, payloadBenar, params);
+  const resSalah = http.del(url, payloadSalah, params);
 
   check(resBenar, {
     "skema benar status 200": (r) => r.status === 200,

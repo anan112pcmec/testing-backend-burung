@@ -1,4 +1,4 @@
-// k6 run media/hapus_dokumen_brand_data_perwakilan.js
+// k6 run media/hapus_brand_data_perwakilan_dokumen.js
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
@@ -28,9 +28,9 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    id_brand_data: 5,
-    id_media_brand_data_perwakilan_dokumen: 11,
-    key_dokumen: "brand/perwakilan/surat_perwakilan_abc.pdf",
+    id_brand_data: 2,
+    id_media_brand_data_perwakilan_dokumen: 1,
+    key_dokumen: "/media_brand_data_perwakilan_dokumen/2/8c7cffea1e0c0950441a1f-dok.pdf",
   });
 
   const payloadSalah = JSON.stringify({
@@ -46,8 +46,8 @@ export default function () {
     },
   };
 
-  const resBenar = http.patch(url, payloadBenar, params);
-  const resSalah = http.patch(url, payloadSalah, params);
+  const resBenar = http.del(url, payloadBenar, params);
+  const resSalah = http.del(url, payloadSalah, params);
 
   check(resBenar, {
     "skema benar status 200": (r) => r.status === 200,

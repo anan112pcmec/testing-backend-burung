@@ -3,7 +3,7 @@ import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 // 1️⃣ BACA FILE SEKALI DI AWAL (FOTO NIB)
-const fileBytes = open('foto/nib.jpg', 'b');
+const fileBytes = open('foto/nike1.jpg');
 
 export let options = {
   vus: 1,
@@ -37,7 +37,7 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    id_distributor_data: 8,
+    id_distributor_data: 2,
     ekstensi: "jpg",
   });
 
