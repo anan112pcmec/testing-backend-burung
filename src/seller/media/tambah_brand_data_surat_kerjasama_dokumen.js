@@ -3,7 +3,7 @@ import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 // 🔥 BACA FILE SEKALI (surat kerjasama)
-const fileBytes = open('dokumen/brand_surat_kerjasama.pdf', 'b');
+const fileBytes = open('dokumen/Nike_Aerogami.pdf');
 
 export let options = {
   vus: 1,
@@ -37,7 +37,7 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    id_brand_data: 5,
+    id_brand_data: 2,
     ekstensi: "pdf",
   });
 

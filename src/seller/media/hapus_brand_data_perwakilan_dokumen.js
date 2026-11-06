@@ -29,8 +29,8 @@ export default function () {
       email_seller: "appburung@gmail.com",
     },
     id_brand_data: 2,
-    id_media_brand_data_perwakilan_dokumen: 1,
-    key_dokumen: "/media_brand_data_perwakilan_dokumen/2/8c7cffea1e0c0950441a1f-dok.pdf",
+    id_media_brand_data_perwakilan_dokumen: 2,
+    key_dokumen: "/media_brand_data_perwakilan_dokumen/2/0731b165ab840040392419-dok.pdf",
   });
 
   const payloadSalah = JSON.stringify({

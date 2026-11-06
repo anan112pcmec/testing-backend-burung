@@ -20,7 +20,7 @@ export let options = {
 //                KeyDokumen Kosong
 
 export default function () {
-  const url = "http://localhost:8080/seller/media/hapus-dokumen-brand-data-surat-kerjasama";
+  const url = "http://localhost:8080/seller/media/hapus/-dokumen-brand-data-surat-kerjasama";
 
   const payloadBenar = JSON.stringify({
     identitas_seller: {
@@ -28,9 +28,9 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    id_brand_data: 5,
-    id_media_brand_data_surat_kerjasama_dokumen: 12,
-    key_dokumen: "brand/5/surat_kerjasama/uuid.pdf",
+    id_brand_data: 2,
+    id_media_brand_data_surat_kerjasama_dokumen: 1,
+    key_dokumen: "/media_brand_data_surat_kerjasama_dokumen/2/7043b4aeb8a8e8e357eb3f-dok.pdf",
   });
 
   const payloadSalah = JSON.stringify({
@@ -46,8 +46,8 @@ export default function () {
     },
   };
 
-  const resBenar = http.patch(url, payloadBenar, params);
-  const resSalah = http.patch(url, payloadSalah, params);
+  const resBenar = http.del(url, payloadBenar, params);
+  const resSalah = http.del(url, payloadSalah, params);
 
   check(resBenar, {
     "skema benar status 200": (r) => r.status === 200,

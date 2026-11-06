@@ -28,9 +28,9 @@ export default function () {
       username_seller: "1nikereal_",
       email_seller: "appburung@gmail.com",
     },
-    id_brand_data: 5,
-    id_media_brand_data_npwp_foto: 41,
-    key_foto: "brand/npwp/npwp_abc.jpg",
+    id_brand_data: 2,
+    id_media_brand_data_npwp_foto: 1,
+    key_foto: "/media_brand_data_npwp_foto/2/e6d39300aa9e6f58460df29f-pto.jpg",
   });
 
   const payloadSalah = JSON.stringify({
@@ -46,8 +46,8 @@ export default function () {
     },
   };
 
-  const resBenar = http.patch(url, payloadBenar, params);
-  const resSalah = http.patch(url, payloadSalah, params);
+  const resBenar = http.del(url, payloadBenar, params);
+  const resSalah = http.del(url, payloadSalah, params);
 
   check(resBenar, {
     "skema benar status 200": (r) => r.status === 200,
