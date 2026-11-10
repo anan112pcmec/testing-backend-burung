@@ -30,7 +30,7 @@ export default function () {
     identitas_kurir: {
       id_kurir: 1,
       email_kurir: "anan29837@gmail.com",
-      username_kurir: "kurir_310f2592",
+      username_kurir: "Abangkuabang1_",
     },
     id_alamat_kurir: 1, // > 0
   });

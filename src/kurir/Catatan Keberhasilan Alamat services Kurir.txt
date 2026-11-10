@@ -47,6 +47,33 @@ Skema Salah:	Tidak Menyertakan Identitas Kurir
 		IdAlamatKurir lebih kecil atau sama dengan 0
 }
 
+Catatan Keberhasilan Kurir Credential Services: 
+{
+PreUbahPassword:
+
+Skema Benar: 	Menyertakan Identitas Kurir	
+		PasswordLama setidaknya memiliki 1 angka dan 1 karakter unik
+dan kurang dari 10 karakter dan 1 huruf kapital
+		PasswordBaru setidaknya memiliki 1 angka dan 1 karakter unik
+dan kurang dari 10 karakter dan 1 huruf kapital
+		PasswordBaru tidak sama dengan PasswordLama
+
+Skema Salah: 	Tidak Menyertakan Identitas Kurir
+		PasswordLama tidak memiliki setidaknya 1 angka dan 1 karakter unik
+dan kurang dari 10 karakter dan 1 huruf kapital
+		PasswordBaru tidak memiliki setidaknya 1 angka dan 1 karakter unik
+dan kurang dari 10 karakter dan 1 huruf kapital
+		PasswordBaru sama dengan PasswordLama
+}
+{
+ValidateUbahPasswordKurir:
+Skema Benar:	OTPkey berisikan 8 karakter, hanya berisikan angka
+
+Skema Salah: 	OTPkey tidak berisikan 8 karakter pas atau hanya berisikan angka
+}
+
+
+
 Catatan Keberhasilan Kurir Auth Services:
 {
 PreKurirRegistration:

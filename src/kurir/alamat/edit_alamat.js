@@ -38,11 +38,11 @@ export default function () {
      =============================== */
   const payloadBenar = JSON.stringify({
     identitas_kurir: {
-      id_kurir: 2,
-      username_kurir: "kurir_4d09a543",
+      id_kurir: 1,
+      username_kurir: "Abangkuabang1_",
       email_kurir: "anan29837@gmail.com",
     },
-    id_alamat_kurir: 2,              // > 0
+    id_alamat_kurir: 1,              // > 0
     panggilan_alamat: "1Edited Rumah",
     nomor_telephone: "081234567890", // 12 digit (10-13 digit)
     nama_alamat: "Alamat Utama",

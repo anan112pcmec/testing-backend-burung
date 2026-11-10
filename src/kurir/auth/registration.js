@@ -23,10 +23,10 @@ export default function () {
   const url = 'http://localhost:8080/auth/kurir/registration';
 
   const payloadBenar = JSON.stringify({
-    nama: `andhi`,
-    email: `ananlol156@gmail.com`,
+    nama: `Faiz Hannan`,
+    email: `anan29837@gmail.com`,
     password_hash: "Password12345_$2",
-    username: `Abangkuabangcelek_`
+    username: `Abangkuabang1_`
   });
 
    const payloadSalah = JSON.stringify({

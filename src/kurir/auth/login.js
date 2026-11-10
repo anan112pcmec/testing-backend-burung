@@ -1,5 +1,6 @@
 // k6 run auth/login.js
 import http from 'k6/http';
+import {check} from "k6"
 
 export let options  = {
     vus: 1,         // jumlah virtual user
@@ -22,8 +23,8 @@ export default function(){
     const url = "http://localhost:8080/auth/kurir/login"
 
     const payloadBenar = JSON.stringify({
-        email: "ananlol156@gmail.com",
-        password_hash: "Bismillah_$13"
+        email: "anan29837@gmail.com",
+        password_hash: "Password12345_$2"
     })
 
     const payloadSalah = JSON.stringify({
