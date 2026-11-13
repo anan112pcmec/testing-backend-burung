@@ -3,7 +3,7 @@ import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 // 🔥 BACA FILE SEKALI DI AWAL (FOTO)
-const fileBytes = open('foto/foto_profil_kurir.jpg', 'b');
+const fileBytes = open('foto/jaket.jpg');
 
 export let options = {
   vus: 1,         // jumlah virtual user
@@ -39,7 +39,11 @@ export default function () {
   });
 
   const payloadSalah = JSON.stringify({
-    // Tidak menyertakan identitas_kurir
+    identitas_kurir: {
+      id_kurir: 1,
+      username_kurir: "Abangkuabang1_",
+      email_kurir: "anan29837@gmail.com",
+    },
     ekstensi: "exe", // Ekstensi foto tidak valid
   });
   

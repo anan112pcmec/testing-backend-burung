@@ -1,3 +1,4 @@
+// k6 run /informasi/hapus_informasi_kendaraan.js
 import http from "k6/http"
 import {sleep, check} from "k6"
 
@@ -23,7 +24,7 @@ export default function(){
           username_kurir: "Abangkuabang1_",
           email_kurir: "anan29837@gmail.com",
         },
-        id_informasi_kurir: 2,       // > 0
+        id_informasi_kendaraan: 1,       // > 0
       });
     
       const resBenar = http.del(url, payloadBenar, params);
