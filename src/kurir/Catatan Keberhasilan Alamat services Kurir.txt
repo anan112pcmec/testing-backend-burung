@@ -134,6 +134,17 @@ Skema Salah: 	Tidak menyertakan Identitas Kurir
 		Nama Kendaraan tidak ada alias string kosong
 		Roda Kendaraan selain 2/3/4
 }
+
+{
+HapusInformasiDataKendaraanKurir:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		IdInformasiKendaraan lebih besar dari 0
+
+Skema Salah: 	Tidak Menyertakan Identitas Kurir
+		IdInformasiKendaraan lebih kecil atau sama dengan 0
+}
+
 {
 InformasiDataKurir:
 
@@ -155,17 +166,26 @@ Skema Salah:	Tidak Menyertakan Identitas Kurir
 		Tanggal Lahir tidak berformat string ymd
 
 }
+{
+HapusInformasiDataKurir:
+
+Skema Benar:	Menyertakan Identitas Kurir
+		IdInformasiKurir lebih besar dari 0
+
+Skema Salah: 	Tidak menyertakan Identitas Kurir
+		IdInformasiKurir lebih kecil atau sama dengan 0
+}
 
 Catatan Keberhasilan Kurir Profiling services:
 {
 PersonalProfilingKurir:
 
 Skema Benar:	Menyertakan Identitas Kurir
-		Username harus memiliki 1 angka dan koma
+		Username harus memiliki 1 angka dan underscore
 		Email harus memiliki @gmail.com di dalam nya
 
 Skema Salah: 	Tidak Menyertakan Identitas Kurir
-		Username tidak memiliki 1 angka atau koma 
+		Username tidak memiliki 1 angka atau underscore
 		email tidak memiliki @gmail.com di dalam nya
 }
 {

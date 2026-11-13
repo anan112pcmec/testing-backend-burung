@@ -32,13 +32,13 @@ export default function () {
      =============================== */
   const payloadBenar = JSON.stringify({
     identitas_kurir: {
-      id_kurir: 3,
-      username_kurir: "kurir_db1b0b65",
-      email_kurir: "ananlol156@gmail.com",
+      id_kurir: 1,
+      username_kurir: "Abangkuabang1_",
+      email_kurir: "anan29837@gmail.com",
     },
     jenis_kendaraan: "Motor",       // Diantara (Motor, Mobil, Truk, Pickup, Lainnya, Unknown)
     nama_kendaraan: "Honda Beat",   // Minimal 1 karakter
-    roda_kendaraan: 2,              // Diantara 2, 3, 4 (sesuaikan format angka/string tipe backend)
+    roda_kendaraan: "2",              // Diantara 2, 3, 4 (sesuaikan format angka/string tipe backend)
     informasi_stnk: true,
     informasi_bpkb: false,
     nomor_rangka: "MH12ABCD1234567",

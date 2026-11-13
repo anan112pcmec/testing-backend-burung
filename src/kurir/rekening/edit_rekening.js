@@ -38,10 +38,10 @@ export default function () {
       username_kurir: "Abangkuabang1_",
       email_kurir: "anan29837@gmail.com",
     },
-    id_rekening: 2,                   // > 0
-    nama_bank: "BRI",                 // Terdaftar
+    id_rekening: 1,                   // > 0
+    nama_bank: "bri",                 // Terdaftar
     nomor_rekening: "123456789012",   // 12 digit angka (antara 10-15 digit)
-    pemilik_rekening: "Faiz Hannan",  // >= 5 karakter
+    pemilik_rekening: "CELEK",  // >= 5 karakter
   });
 
   const resBenar = http.patch(url, payloadBenar, params);

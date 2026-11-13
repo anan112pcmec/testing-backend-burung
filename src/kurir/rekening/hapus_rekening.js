@@ -29,8 +29,8 @@ export default function () {
   const payloadBenar = JSON.stringify({
     identitas_kurir: {
       id_kurir: 1,
-      email_kurir: "faizbaru@mail.com",
-      username_kurir: "faizkurirbaru",
+      email_kurir: "anan29837@gmail.com",
+      username_kurir: "Abangkuabang1_",
     },
     id_rekening: 1, // > 0
   });

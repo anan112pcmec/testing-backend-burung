@@ -41,7 +41,7 @@ export default function () {
     id_informasi_kendaraan: 1,      // > 0
     jenis_kendaraan: "Motor",       // Diantara (Motor, Mobil, Truk, Pickup, Lainnya, Unknown)
     nama_kendaraan: "Honda Vario",  // Minimal 1 karakter
-    roda_kendaraan: 2,              // Diantara 2, 3, 4
+    roda_kendaraan: "2",              // Diantara 2, 3, 4
     informasi_stnk: true,
     informasi_bpkb: false,
     nomor_rangka: "MH12ABCD1234567",

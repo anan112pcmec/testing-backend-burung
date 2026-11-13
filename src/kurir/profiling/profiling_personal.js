@@ -10,11 +10,11 @@ export let options = {
 // PersonalProfilingKurir:
 
 // Skema Benar:   Menyertakan Identitas Kurir
-//                Username harus memiliki minimal 1 angka dan 1 koma (atau sesuai aturan validasi: 1 angka dan koma)
+//                Username harus memiliki minimal 1 angka dan 1 underscore (atau sesuai aturan validasi: 1 angka dan underscore)
 //                Email harus memiliki domain `@gmail.com`
 
 // Skema Salah:   Tidak Menyertakan Identitas Kurir
-//                Username tidak memiliki angka atau koma
+//                Username tidak memiliki angka atau underscore
 //                Email tidak memiliki `@gmail.com`
 
 export default function () {
@@ -31,12 +31,12 @@ export default function () {
   const payloadBenar = JSON.stringify({
     identitas_kurir: {
       id_kurir: 1,
-      email_kurir: "anan29837@gmail.com",
-      username_kurir: "faiz,kurir1", // Memiliki koma dan angka
+      email_kurir: "ananlol156@gmail.com",
+      username_kurir: "Abangkuabang1_", // Memiliki underscore dan angka
     },
-    ubah_username_kurir: "faiz,baru1",
-    ubah_nama_kurir: "Faiz Kurir",
-    ubah_email_kurir: "faizbaru@gmail.com", // Mengandung @gmail.com
+    ubah_username_kurir: "Abangkuabang1_",
+    ubah_nama_kurir: "Dika Kurir",
+    ubah_email_kurir: "anan29837@gmail.com", // Mengandung @gmail.com
   });
 
   const resBenar = http.patch(url, payloadBenar, params);
@@ -50,7 +50,7 @@ export default function () {
      =============================== */
   const payloadSalah = JSON.stringify({
     // Tidak menyertakan identitas_kurir
-    ubah_username_kurir: "faizkurir",     // Tidak ada angka atau koma
+    ubah_username_kurir: "faizkurir",     // Tidak ada angka atau underscore
     ubah_nama_kurir: "Faiz Kurir",
     ubah_email_kurir: "faizbaru@yahoo.com", // Tidak mengandung @gmail.com
   });

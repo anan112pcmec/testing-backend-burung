@@ -34,8 +34,8 @@ export default function () {
       username_kurir: "Abangkuabang1_",
       email_kurir: "anan29837@gmail.com",
     },
-    id_informasi_kurir: 1,       // > 0
-    tanggal_lahir: "1998-05-20", // Berformat YYYY-MM-DD (ymd)
+    id_informasi_kurir: 2,       // > 0
+    tanggal_lahir: "2007-02-11", // Berformat YYYY-MM-DD (ymd)
     alasan: "Perubahan informasi kurir untuk pembaruan data.",
     informasi_ktp: true,
     informasi_sim: true,

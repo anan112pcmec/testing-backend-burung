@@ -38,7 +38,7 @@ export default function () {
     },
     nama_bank: "bca",                 // Terdaftar
     nomor_rekening: "123456789028",   // 12 digit angka (antara 10-15 digit)
-    pemilik_rekening: "Kurir Dua",    // >= 5 karakter
+    pemilik_rekening: "Andhika",    // >= 5 karakter
   });
 
   const resBenar = http.post(url, payloadBenar, params);
@@ -51,7 +51,11 @@ export default function () {
      2️⃣ SKEMA SALAH (DITOLAK)
      =============================== */
   const payloadSalah = JSON.stringify({
-    // Tidak menyertakan identitas_kurir
+    identitas_kurir: {
+      id_kurir: 1,
+      username_kurir: "Abangkuabang1_",
+      email_kurir: "anan29837@gmail.com",
+    },
     nama_bank: "BankFiktif",          // Tidak terdaftar
     nomor_rekening: "123",            // Kurang dari 10 digit
     pemilik_rekening: "Kur",          // < 5 karakter
