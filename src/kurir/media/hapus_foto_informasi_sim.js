@@ -1,4 +1,4 @@
-// k6 run media/hapus_foto_informasi_sim.js
+//  k6 run media/hapus_foto_informasi_sim.js
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
@@ -34,8 +34,8 @@ export default function () {
       username_kurir: "Abangkuabang1_",
       email_kurir: "anan29837@gmail.com",
     },
-    id_media_informasi_kurir_sim_foto: 20, // > 0
-    key_foto: "kurir_sim_20251215.jpg",     // Tidak kosong
+    id_media_informasi_kurir_sim_foto: 2, // > 0
+    key_foto: "/media_informasi_kurir_sim_foto/3/a309ff06b67ff055d4a5e4bd-pto.jpg",     // Tidak kosong
   });
 
   const resBenar = http.del(url, payloadBenar, params);

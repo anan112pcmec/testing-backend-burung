@@ -24,7 +24,6 @@ export default function () {
       "Content-Type": "application/json",
     },
   };
-
   /* ===============================
      1️⃣ SKEMA BENAR
      =============================== */
@@ -34,8 +33,8 @@ export default function () {
       username_kurir: "Abangkuabang1_",
       email_kurir: "anan29837@gmail.com",
     },
-    id_media_informasi_kendaraan_kurir_stnk_foto: 123, // > 0
-    key_foto: "stnk_kurir/abc123.jpg",                 // Tidak kosong
+    id_media_informasi_kendaraan_kurir_stnk_foto: 1, // > 0
+    key_foto: "/media_informasi_kendaraan_kurir_stnk_foto/2/ad743f3d75b5ca515bec2626-pto.jpg",                 // Tidak kosong
   });
 
   const resBenar = http.del(url, payloadBenar, params);

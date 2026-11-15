@@ -34,8 +34,8 @@ export default function () {
       username_kurir: "Abangkuabang1_",
       email_kurir: "anan29837@gmail.com",
     },
-    id_media_informasi_kendaraan_kurir_bpkb_foto: 15, // > 0
-    key_foto: "kurir_bpkb_20251215.pdf",             // Tidak kosong
+    id_media_informasi_kendaraan_kurir_bpkb_foto: 1, // > 0
+    key_foto: "/media_informasi_kendaraan_kurir_bpkb_foto/2/47d8d66ce9daba354ad7761d-pto.jpg",             // Tidak kosong
   });
 
   const resBenar = http.del(url, payloadBenar, params);

@@ -3,7 +3,7 @@ import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 // 🔥 BACA FILE SEKALI DI AWAL (sim)
-const fileBytes = open('foto/sim.jpg', 'b');
+const fileBytes = open('foto/nike1.jpg');
 
 export let options = {
   vus: 1,         // jumlah virtual user

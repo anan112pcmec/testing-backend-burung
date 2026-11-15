@@ -34,8 +34,8 @@ export default function () {
       username_kurir: "Abangkuabang1_",
       email_kurir: "anan29837@gmail.com",
     },
-    id_media_kurir_profil_foto: 123,                 // > 0
-    key_foto: "profil/kurir/2025/12/15/foto123.jpg", // Tidak kosong
+    id_media_kurir_profil_foto: 2,                 // > 0
+    key_foto: "/media_kurir_profil_foto/1/1522a0877f276906ed4b834c-pto.jpg", // Tidak kosong
   });
 
   const resBenar = http.del(url, payloadBenar, params);

@@ -3,7 +3,7 @@ import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 // 🔥 BACA FILE SEKALI DI AWAL (STNK)
-const fileBytes = open('foto/stnk_kurir.jpg', 'b');
+const fileBytes = open('foto/ndiaa.jpg');
 
 export let options = {
   vus: 1,         // jumlah virtual user
