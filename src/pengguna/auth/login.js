@@ -29,8 +29,8 @@ export default function () {
   const url = 'http://localhost:8080/auth/user/login';
 
   const payloadBenar = JSON.stringify({
-    email: 'anan29837@gmail.com',
-    password_hash: 'Bismillah_13',
+    email: 'ananlol156@gmail.com',
+    password_hash: 'Bismillah_11',
   });
 
   const payloadSalah = JSON.stringify({

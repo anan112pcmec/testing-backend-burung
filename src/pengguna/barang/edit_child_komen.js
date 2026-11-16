@@ -23,8 +23,8 @@ export default function () {
 
   const payloadBenar = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlol",
+      id_pengguna: 2,
+      username_pengguna: "ananlol_anjay11",
       email_pengguna: "ananlol156@gmail.com"
     },
     id_child_komentar: 7283,                        // GANTI sesuai data real
@@ -33,8 +33,8 @@ export default function () {
 
   const payloadSalah = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlol",
+      id_pengguna: 2,
+      username_pengguna: "ananlol_anjay11",
       email_pengguna: "ananlol156@gmail.com"
     },
     id_child_komentar: -7283,                        // salah lebih kecil dari 0

@@ -22,18 +22,18 @@ export default function () {
 
   const payloadBenar = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlol",
+      id_pengguna: 2,
+      username_pengguna: "ananlol_anjay11",
       email_pengguna: "ananlol156@gmail.com"
     },
-    id_komentar_edit_komentar: 1147,                   // ganti sesuai data lu
-    komentar_edit_komentar: "Komentar sudah diedit!" // ganti kapan saja
+    id_komentar_edit_komentar: 1,                   // ganti sesuai data lu
+    komentar_edit_komentar: "Kerenn" // ganti kapan saja
   });
 
   const payloadSalah = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlol",
+      id_pengguna: 2,
+      username_pengguna: "ananlol_anjay11",
       email_pengguna: "ananlol156@gmail.com"
     },
     id_komentar_edit_komentar: 1147,                   // ganti sesuai data lu
@@ -46,8 +46,8 @@ export default function () {
        },
      };
    
-     const resBenar = http.post(url, payloadBenar, params);
-     const resSalah = http.post(url, payloadSalah, params)
+     const resBenar = http.patch(url, payloadBenar, params);
+     const resSalah = http.patch(url, payloadSalah, params)
    
      try {
        console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));

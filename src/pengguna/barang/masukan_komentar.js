@@ -19,16 +19,16 @@ export const options = {
 
 
 export default function () {
-  const url = 'http://localhost:8080/user/komentar-barang/tambah'; // ganti sesuai server
+  const url = 'http://localhost:8080/user/barang/komentar-barang/tambah'; // ganti sesuai server
 
   const payloadBenar = JSON.stringify({
     identitas_pengguna:{
-        id_pengguna:1,
-        username_pengguna:"ananlol",
+        id_pengguna:2,
+        username_pengguna:"ananlol_anjay11",
         email_pengguna:"ananlol156@gmail.com",
     },
-    id_barang_induk_Masukan_komentar:"makna atap",
-    komentar_masukan_komentar:2 // contoh ID barang induk yang ingin di-down stok
+    id_barang_induk_Masukan_komentar:20,
+    komentar_masukan_komentar:"makna atap" // contoh ID barang induk yang ingin di-down stok
   });
 
   const payloadSalah = JSON.stringify({
@@ -37,7 +37,7 @@ export default function () {
         username_pengguna:"ananlol",
         email_pengguna:"ananlol156@gmail.com",
     },
-    id_barang_induk_Masukan_komentar:"makna atap",
+    id_barang_induk_masukan_komentar:"makna atap",
     komentar_masukan_komentar:-22 // salah lebih kecil dari 0
   });
 

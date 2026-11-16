@@ -1,4 +1,4 @@
-// k6 run barang/hapus_komen
+// k6 run barang/hapus_komentar.js
 import http from "k6/http";
 import { sleep, check } from "k6";
 
@@ -21,17 +21,17 @@ export default function () {
 
   const payloadBenar = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlol",
+      id_pengguna: 2,
+      username_pengguna: "ananlol_anjay11",
       email_pengguna: "ananlol156@gmail.com"
     },
-    id_komentar_hapus_komentar: 1147  // GANTI sesuai id komentar yg mau dihapus
+    id_komentar_hapus_komentar: 2  // GANTI sesuai id komentar yg mau dihapus
   });
 
   const payloadSalah = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlol",
+      id_pengguna: 2,
+      username_pengguna: "ananlol_anjay11",
       email_pengguna: "ananlol156@gmail.com"
     },
     id_komentar_hapus_komentar: -1147  // gagal, lebih kecil dari 0
@@ -43,8 +43,8 @@ export default function () {
          },
        };
      
-       const resBenar = http.post(url, payloadBenar, params);
-       const resSalah = http.post(url, payloadSalah, params)
+       const resBenar = http.del(url, payloadBenar, params);
+       const resSalah = http.del(url, payloadSalah, params)
      
        try {
          console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));

@@ -26,12 +26,12 @@ export default function () {
 
   const payloadBenar = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlol",
+      id_pengguna: 2,
+      username_pengguna: "ananlol_anjay11",
       email_pengguna: "ananlol156@gmail.com",
     },
     id_komentar_child_komentar: 2,   // ganti
-    username_mention_komentar: "anan123_",
+    username_mention_komentar: "ananlol_anjay11",
     komentar_mention_komentar: "Barang ini bagus banget!" // ganti
   });
 

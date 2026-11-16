@@ -32,7 +32,7 @@ export default function () {
      =============================== */
 
 
-     const payloadBenar = JSON.stringify({
+   const payloadBenar = JSON.stringify({
   identitas_seller: {
     id_seller: 1,
     username_seller: "1nikereal_",
@@ -40,11 +40,11 @@ export default function () {
   },
   data_barang_induk: {
     id_seller: 8,
-    nama: "Kaos Oversize PPremium", // >= 5 karakter
+    nama: "Sepatu Sneakers Casual", // >= 5 karakter
     jenis: "Semua Barang",         // Jenis valid
-    deskripsi: "Kaos oversize bahan cotton combed 30s, adem dan nyaman.",
+    deskripsi: "Sepatu sneakers kasual dengan bahan mesh breathable dan sol empuk.",
     original_kategori: 1,
-    harga_kategori_barang: 95000,
+    harga_kategori_barang: 350000,
   },
   data_kategori_barang_induk: [
     {
@@ -52,15 +52,15 @@ export default function () {
       id_barang_induk_kategori: 0,
       id_alamat_gudang_kategori_barang: 1,
       id_rekening_kategori_barang: 2,
-      nama_kategori_barang: "Kaos Oversize Maroon XL",
-      deskripsi_kategori_barang: "Kaos maroon oversize size XL bahan cotton combed.",
-      warna_kategori_barang: "#800000", // Kode HEX valid untuk Maroon
-      stok_kategori_barang: 40,
-      harga_kategori_barang: 95000,
-      berat_gram_kategori_barang: 220,
+      nama_kategori_barang: "Sepatu Sneakers Putih Size 42",
+      deskripsi_kategori_barang: "Sepatu sneakers warna putih ukuran 42.",
+      warna_kategori_barang: "#FFFFFF", // Kode HEX valid untuk Putih
+      stok_kategori_barang: 15,
+      harga_kategori_barang: 350000,
+      berat_gram_kategori_barang: 700,
       dimensi_panjang_cm_kategori_barang: 32,
-      dimensi_lebar_cm_kategori_barang: 2,
-      sku_kategori: "TS-MRN-OV-XL",
+      dimensi_lebar_cm_kategori_barang: 20,
+      sku_kategori: "SNP-WHT-42",
       is_original_kategori_barang: true,
     },
     {
@@ -68,15 +68,15 @@ export default function () {
       id_barang_induk_kategori: 0,
       id_alamat_gudang_kategori_barang: 1,
       id_rekening_kategori_barang: 2,
-      nama_kategori_barang: "Kaos Oversize Hitam L",
-      deskripsi_kategori_barang: "Kaos hitam oversize size L bahan cotton combed.",
+      nama_kategori_barang: "Sepatu Sneakers Hitam Size 41",
+      deskripsi_kategori_barang: "Sepatu sneakers warna hitam ukuran 41.",
       warna_kategori_barang: "#000000", // Kode HEX valid untuk Hitam
-      stok_kategori_barang: 25,
-      harga_kategori_barang: 95000,
-      berat_gram_kategori_barang: 210,
-      dimensi_panjang_cm_kategori_barang: 30,
-      dimensi_lebar_cm_kategori_barang: 2,
-      sku_kategori: "TS-BLK-OV-L",
+      stok_kategori_barang: 20,
+      harga_kategori_barang: 350000,
+      berat_gram_kategori_barang: 680,
+      dimensi_panjang_cm_kategori_barang: 32,
+      dimensi_lebar_cm_kategori_barang: 20,
+      sku_kategori: "SNP-BLK-41",
       is_original_kategori_barang: false,
     },
   ],

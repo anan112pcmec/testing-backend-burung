@@ -12,8 +12,8 @@ export default function () {
 
   const payload = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlol",
+      id_pengguna: 2,
+      username_pengguna: "ananlol_anjay11",
       email_pengguna: "ananlol156@gmail.com"
     },
     id_barang_induk: 2 // ganti sesuai barang

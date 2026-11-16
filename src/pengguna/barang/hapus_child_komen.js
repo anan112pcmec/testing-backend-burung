@@ -21,8 +21,8 @@ export default function () {
 
   const payloadBenar = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlol",
+      id_pengguna: 2,
+      username_pengguna: "ananlol_anjay11",
       email_pengguna: "ananlol156@gmail.com"
     },
     id_child_komentar: 7284 // GANTI sesuai id child komentar yang ingin dihapus
@@ -30,8 +30,8 @@ export default function () {
 
    const payloadSalah = JSON.stringify({
     identitas_pengguna: {
-      id_pengguna: 1,
-      username_pengguna: "ananlol",
+      id_pengguna: 2,
+      username_pengguna: "ananlol_anjay11",
       email_pengguna: "ananlol156@gmail.com"
     },
     id_child_komentar: -112 // gagal lebih kecil dari 0
