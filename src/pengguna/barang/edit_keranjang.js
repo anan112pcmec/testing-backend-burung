@@ -28,9 +28,9 @@ export default function () {
       username_pengguna: "ananlol_anjay11",
       email_pengguna: "ananlol156@gmail.com"
     },
-    id_keranjang: 9,       // ID keranjang yang mau di-edit
-    id_barang_induk: 6,    // GANTI sesuai barang
-    id_kategori_barang: 14, // GANTI sesuai kategori
+    id_keranjang: 1,       // ID keranjang yang mau di-edit
+    id_barang_induk: 20,    // GANTI sesuai barang
+    id_kategori_barang: 48, // GANTI sesuai kategori
     jumlah_di_keranjang: 10   // GANTI sesuai jumlah baru
   });
 
@@ -53,8 +53,8 @@ export default function () {
         },
       };
     
-      const resBenar = http.post(url, payloadBenar, params);
-      const resSalah = http.post(url, payloadSalah, params)
+      const resBenar = http.patch(url, payloadBenar, params);
+      const resSalah = http.patch(url, payloadSalah, params)
     
       try {
         console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));

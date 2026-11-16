@@ -43,8 +43,8 @@ export default function () {
           },
         };
       
-        const resBenar = http.post(url, payloadBenar, params);
-        const resSalah = http.post(url, payloadSalah, params)
+        const resBenar = http.del(url, payloadBenar, params);
+        const resSalah = http.del(url, payloadSalah, params)
       
         try {
           console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));

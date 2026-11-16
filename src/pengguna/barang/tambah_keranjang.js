@@ -30,8 +30,8 @@ export default function () {
       email_pengguna: "ananlol156@gmail.com"
     },
     id_seller: 1,        // GANTI sesuai seller
-    id_barang_induk: 6,  // GANTI sesuai barang
-    id_kategori_barang: 14 // GANTI sesuai kategori
+    id_barang_induk: 20,  // GANTI sesuai barang
+    id_kategori_barang: 48 // GANTI sesuai kategori
   });
 
   const payloadSalah = JSON.stringify({
