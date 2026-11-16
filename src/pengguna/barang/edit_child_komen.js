@@ -27,7 +27,7 @@ export default function () {
       username_pengguna: "ananlol_anjay11",
       email_pengguna: "ananlol156@gmail.com"
     },
-    id_child_komentar: 7283,                        // GANTI sesuai data real
+    id_child_komentar: 4,                        // GANTI sesuai data real
     komentar_child_komentar: "Komentar child ini sudah saya ubah via k6!"
   });
 
@@ -48,8 +48,8 @@ export default function () {
          },
        };
      
-       const resBenar = http.post(url, payloadBenar, params);
-       const resSalah = http.post(url, payloadSalah, params)
+       const resBenar = http.patch(url, payloadBenar, params);
+       const resSalah = http.patch(url, payloadSalah, params)
      
        try {
          console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));

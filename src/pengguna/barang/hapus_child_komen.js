@@ -4,7 +4,7 @@ import { sleep, check } from "k6";
 
 export const options = {
   vus: 1,          // jumlah virtual user
-  duration: "1s",  // lama test
+  iterations: 1  // lama test
 };
 
 // HapusChildKomentar:
@@ -25,7 +25,7 @@ export default function () {
       username_pengguna: "ananlol_anjay11",
       email_pengguna: "ananlol156@gmail.com"
     },
-    id_child_komentar: 7284 // GANTI sesuai id child komentar yang ingin dihapus
+    id_child_komentar: 3 // GANTI sesuai id child komentar yang ingin dihapus
   });
 
    const payloadSalah = JSON.stringify({
@@ -43,8 +43,8 @@ export default function () {
          },
        };
      
-       const resBenar = http.post(url, payloadBenar, params);
-       const resSalah = http.post(url, payloadSalah, params)
+       const resBenar = http.del(url, payloadBenar, params);
+       const resSalah = http.del(url, payloadSalah, params)
      
        try {
          console.log("Skema Benar: ", JSON.stringify(JSON.parse(resBenar.body), null, 2));
