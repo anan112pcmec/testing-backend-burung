@@ -404,68 +404,59 @@ Skema Salah: 	Tidak Menyertakan Identitas Seller
 
 }
 
-Catatan Keberhasilan Alamat Services Kurir:
-
+Catatan Keberhasilan Wishlist Services Pengguna:
 {
-MasukanAlamatKurir:
+TambahWishlist
 
-Skema Benar: 	Menyertakan Identitas Kurir
-		NomorTelephone harus berisikan atleast 10-13 digit
-		Provinsi terdaftar
-		Kota terdaftar
-		KodeNegara harus IDN
-		KodePos harus 5 satuan
+Skema Benar: 	Menyertakan Identitas Pengguna
+		Nama Wishlist tidak boleh kosong 
+		Visibility Diantara "Public" atau Private
 
-Skema Salah: 	Tidak Menyertakan Identitas Kurir
-		NomorTelephone tidak berisikan atleast 10 - 13 digit atau lebih 
-		Provinsi tidak terdaftar
-		NamaKota tidak terdaftar
-		KodeNegara tidak IDN
-		KodePos tidak berisikan 5 satuan digit
-
-skemabenar: *, skemasalah: *,
-}
-
-{
-EditAlamatKurir:
-Skema Benar:   	IDAlamatKurir lebih besar dari 0
-		NomorTelephone harus berisikan atleast 10-13 digit
-		Provinsi terdaftar
-		Kota terdaftar
-		KodeNegara harus IDN
-		KodePos harus 5 satuan
-
-Skema Salah:   	IDAlamatKurir lebih kecil atau sama dengan 0
-		NomorTelephone tidak berisikan atleast 10 - 13 digit atau lebih 
-  		Provinsi tidak terdaftar
-  		NamaKota tidak terdaftar
-  		KodeNegara tidak IDN
-  		KodePos tidak berisikan 5 satuan digit
+Skema Salah:	Tidak Menyertakan Identitas Pengguna 
+		Nama Wishlist kosong 
+		Visibility Tidak Diantara "Public" atau "Private"
 }
 {
-HapusAlamatKurir:
+EditWishlist
 
-Skema Benar:	Menyertakan Identitas Kurir
-		IdAlamatKurir lebih besar dari 0
+Skema Benar: 	Menyertakan Identitas Pengguna
+		IdWishlist tak boleh lebih kecil atau sama dengan 0
+		Nama Wishlist tidak boleh kosong 
+		Visibility Diantara "Public" atau Private
 
-Skema Salah:	Tidak Menyertakan Identitas Kurir 
-		IdAlamatKurir lebih kecil atau sama dengan 0
+Skema Salah:	Tidak Menyertakan Identitas Pengguna 
+		IdWishlist lebih kecil atau sama dengan 0
+		Nama Wishlist kosong 
+		Visibility Tidak Diantara "Public" atau "Private"
 }
+{
+HapusWishlist
 
+Skema Benar: 	Menyertakan Identitas Pengguna
+		IdWishlist tak boleh lebih kecil atau sama dengan 0
 
+Skema Salah: 	Tidak Menyertakan Identitas Pengguna 
+		IdWishlist lebih kecil atau sama dengan 0
+}
+{
+TambahBarangKeWishlist
 
+Skema Benar:	Menyertakan Identitas Pengguna
+		IdWishlist tak boleh lebih kecil atau sama dengan 0
+		IdBarangInduk tak boleh lebih kecil atau sama dengan 0
+	
+Skema Salah: 	Tidak Menyertakan Identitas Pengguna 
+		IdWishlist lebih kecil atau sama dengan 0
+		IdBarangIndu lebib kecil atau sama dengan 0
+}
+{
+HapusBarangDariWishlist
 
-
-
-
-
-
-
-
-CATATAN MASUKAN "REFACTOR SEMUA THRESHOLD HARUS SOFT DELETE".
-		
-		
-
-
-
-
+Skema Benar:	Menyertakan Identitas Pengguna
+		IdWishlist tak boleh lebih kecil atau sama dengan 0
+		IdBarangInduk tak boleh lebih kecil atau sama dengan 0
+	
+Skema Salah: 	Tidak Menyertakan Identitas Pengguna 
+		IdWishlist lebih kecil atau sama dengan 0
+		IdBarangIndu lebib kecil atau sama dengan 0
+}
