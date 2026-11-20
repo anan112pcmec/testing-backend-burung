@@ -47,7 +47,7 @@ export default function () {
     "skema benar presigned status 200": (r) => r.status === 200,
   });
 
-  // Parsing JSON & Upload ke MinIO untuk Skema Benar
+  // Parsing JSON & Upload ke MinIO untuk Skema Benar aka
   let uploadUrl = null;
   try {
     const json = resBenar.json();
